@@ -1,0 +1,1131 @@
+{
+  "obras": [
+    {
+      "id": "esquina",
+      "titulo": "Esquina",
+      "ano": "2023",
+      "ano_num": 2023,
+      "tipo": "instalação",
+      "materiais": "Madeira, tinta acrílica, áudios, sensores de presença",
+      "dimensoes": "Dimensões variáveis",
+      "local": "Futuros – Arte e Tecnologia, Rio de Janeiro",
+      "exposicao": "a-pele-do-mundo",
+      "texto": [
+        "Paredes vermelhas, amarelas e azuis cruzam a parede fixa que separa a galeria do patamar da escada. Sensores de presença acionam alto-falantes que emitem motores, ônibus, motos e carros: oito sons que se misturam em quatro pontos e reaparecem, mais adiante, em outro lugar.",
+        "O visitante não escuta um som isolado; escuta o próprio percurso. A repetição produz uma espécie de déjà vu: a esquina da rua trazida para dentro da galeria."
+      ],
+      "mapa": {
+        "x": 641,
+        "y": 216,
+        "tier": 3,
+        "lx": 14,
+        "ly": -30
+      }
+    },
+    {
+      "id": "esquinas",
+      "titulo": "Esquinas I–X",
+      "ano": "2023",
+      "ano_num": 2023,
+      "tipo": "desenho",
+      "materiais": "Acrílica sobre tela",
+      "dimensoes": "10 peças, 100 × 100 cm cada",
+      "local": "Futuros – Arte e Tecnologia, Rio de Janeiro",
+      "exposicao": "a-pele-do-mundo",
+      "texto": [
+        "Esquinas são lugares de encontro, linhas em um mapa impossível, cruzamentos. Uma deriva entre a percepção da caminhada e o som das ruas.",
+        "As linhas se cruzam formando trajetórias que se alternam visualmente e jogam com o ponto de vista do observador: uma perspectiva simultânea que representa a multiplicidade de visões do mundo."
+      ],
+      "mapa": {
+        "x": 778,
+        "y": 369,
+        "tier": 3,
+        "lx": 14,
+        "ly": 10
+      },
+      "autoria_texto": "Texto do artista",
+      "imagens": [
+        {
+          "src": "media-pendente/esquinas/esquina-01.jpg",
+          "alt": "Esquina I, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina I · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-02.jpg",
+          "alt": "Esquina II, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina II · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-03.jpg",
+          "alt": "Esquina III, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina III · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-04.jpg",
+          "alt": "Esquina IV, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina IV · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-05.jpg",
+          "alt": "Esquina V, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina V · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-06.jpg",
+          "alt": "Esquina VI, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina VI · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-07.jpg",
+          "alt": "Esquina VII, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina VII · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-08.jpg",
+          "alt": "Esquina VIII, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina VIII · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-09.jpg",
+          "alt": "Esquina IX, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina IX · Foto: Pedro Tressi",
+          "aprovar": true
+        },
+        {
+          "src": "media-pendente/esquinas/esquina-10.jpg",
+          "alt": "Esquina X, linhas pretas sobre quadrado branco, na parede da galeria",
+          "credito": "Esquina X · Foto: Pedro Tressi",
+          "aprovar": true
+        }
+      ]
+    },
+    {
+      "id": "mascara-sonora",
+      "titulo": "Máscara Sonora",
+      "ano": "2011 / 2023",
+      "ano_num": 2023,
+      "tipo": "performance",
+      "materiais": "Máscara de gás alterada com alto-falantes; videoperformance",
+      "dimensoes": "",
+      "local": "Rio de Janeiro",
+      "exposicao": "a-pele-do-mundo",
+      "texto": [
+        "O artista atravessa a cidade com uma máscara respiratória em que os filtros foram trocados por alto-falantes. Em vez de purificar o ar, a máscara emite uma respiração pesada.",
+        "Apresentada pela primeira vez em 2011, a ação foi refeita depois da pandemia, quando o aviso de perigo e contaminação deixou de ser metáfora. A versão de 2023 foi mostrada como videoperformance."
+      ],
+      "video": [
+        {
+          "plataforma": "vimeo",
+          "id": "150685592",
+          "titulo": "Máscara Sonora"
+        }
+      ],
+      "mapa": {
+        "x": 830,
+        "y": 116,
+        "tier": 3,
+        "lx": 14,
+        "ly": 10
+      }
+    },
+    {
+      "id": "turbina",
+      "titulo": "Turbina",
+      "ano": "2013 / 2023",
+      "ano_num": 2023,
+      "tipo": "instalação",
+      "materiais": "Madeira, tinta acrílica, PVC, áudio do mar",
+      "dimensoes": "261 × 263 cm (2013); 410 × 285 × 30 cm (2023)",
+      "local": "Casa de Cultura Laura Alvim (2013); Futuros – Arte e Tecnologia (2023)",
+      "exposicao": "a-pele-do-mundo",
+      "texto": [
+        "Uma parede de alto-falantes dispostos em grade reproduz o som do mar. Na primeira montagem, na exposição Sonar, a parede estava voltada para a praia de Ipanema: o mar real e sua reprodução se confundiam.",
+        "Em 2023, alterada para o espaço da Futuros, Turbina leva as ondas para dentro da galeria, um andar acima das máquinas de Esquina."
+      ],
+      "soundcloud": "https://soundcloud.com/floriano-romano/mar-frado-varios-falantes-441khz",
+      "mapa": {
+        "x": 524,
+        "y": 385,
+        "tier": 3,
+        "lx": -14,
+        "ly": 12,
+        "lado": "esquerda"
+      }
+    },
+    {
+      "id": "historias-anonimas",
+      "titulo": "Histórias Anônimas",
+      "ano": "2022",
+      "ano_num": 2022,
+      "tipo": "instalação",
+      "materiais": "Caixa de som amplificada com tripé, gravações ficcionais e gravações de campo",
+      "dimensoes": "3 × 2 × 1,80 m; 3 min 45 s. Versão em coluna de caixas de som artesanais em madeira: 160 × 20 cm",
+      "local": "",
+      "texto": [
+        "O trabalho é uma ficção construída a partir dos dados particulares de pessoas anônimas que podem ter existido na construção da cidade. Decerto poderia se chamar história do comum: uma voz para colocar em evidência o trabalho de pessoas que se tornaram invisíveis na grande narrativa, mas que foram determinantes para a história do mundo.",
+        "Afetos e força de trabalho constituem os laços de amizade e uma economia que foi baseada no esforço dessas vidas. O som contínuo da leitura e da ação de trabalhar cria uma tensão que carrega o espectador num atravessamento temporal pela cidade e seus habitantes."
+      ],
+      "mapa": {
+        "x": 425,
+        "y": 142,
+        "tier": 2,
+        "lx": 12,
+        "ly": -24
+      },
+      "audio": "media/historias-anonimas/historias-anonimas.mp3",
+      "autoria_texto": "Texto do artista",
+      "citacao": "E se a rua do Ouvidor se chamasse Maria das Dores / E se a rua do Senado se chamasse João da Silva / E se a Presidente Vargas se chamasse João Cândido / E se as ruas fossem todas dos Silvas e dos Santos / E se a cidade lembrasse dos seus corpos / O que ela diria"
+    },
+    {
+      "id": "mar-sobre-mar",
+      "titulo": "Mar Sobre Mar",
+      "ano": "2018",
+      "ano_num": 2018,
+      "tipo": "instalação",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "pendente": "ficha técnica, texto e registros",
+      "mapa": {
+        "x": 302,
+        "y": 453,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      }
+    },
+    {
+      "id": "espreguicadeiras-sonoras",
+      "titulo": "Espreguiçadeiras Sonoras",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "objeto sonoro",
+      "materiais": "Madeira, áudio do mar",
+      "dimensoes": "210 × 84 × 83 cm",
+      "local": "Parque das Ruínas, Rio de Janeiro (2016); Futuros – Arte e Tecnologia (2023)",
+      "exposicao": "muro-de-som",
+      "texto": [
+        "Três espreguiçadeiras de madeira com alto-falantes na cabeceira. Deitado, o visitante ouve o mar enquanto olha a paisagem — no Parque das Ruínas, a Baía de Guanabara; na galeria, o teto.",
+        "O som desloca-se do lugar de origem para o objeto, e a escuta passa a ser um hábito do corpo em repouso."
+      ],
+      "soundcloud": "https://soundcloud.com/floriano-romano/espreguicadeiras-sonoras",
+      "exposicoes_extra": [
+        "a-pele-do-mundo"
+      ]
+    },
+    {
+      "id": "muro-de-som",
+      "titulo": "Muro de Som",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "instalação",
+      "materiais": "Duas paredes com 32 alto-falantes cada, som de vento",
+      "dimensoes": "2 paredes de 330 × 170 cm",
+      "local": "Parque das Ruínas, Rio de Janeiro",
+      "exposicao": "muro-de-som",
+      "texto": [
+        "No coração do casarão em ruínas, duas paredes com 32 alto-falantes incrustados emitem vento — um vento feito da expiração do próprio artista.",
+        "A escada diante da obra obriga o visitante a se deslocar, e é nesse deslocamento que o campo sonoro ganha volume e profundidade."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "RQZQ_OrHj-E",
+          "titulo": "Muro de Som"
+        }
+      ],
+      "soundcloud": "https://soundcloud.com/floriano-romano/muro",
+      "mapa": {
+        "x": 255,
+        "y": 258,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      }
+    },
+    {
+      "id": "binoculos-sonoros",
+      "titulo": "Binóculos Sonoros",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "objeto sonoro",
+      "materiais": "Binóculos panorâmicos de moeda adaptados, narrativa ficcional",
+      "dimensoes": "",
+      "local": "Parque das Ruínas, Rio de Janeiro",
+      "exposicao": "muro-de-som",
+      "texto": [
+        "Binóculos turísticos apontados para a cidade, com o Pão de Açúcar ao fundo. O zoom óptico foi ligado a uma engrenagem que controla também o volume de uma narrativa ficcional: quanto mais nítida a vista, mais presente a voz.",
+        "A história é a de alguém que chegou à cidade há muito tempo e ajudou a construí-la. Quem tenta mover o binóculo além do limite ouve microfonia."
+      ]
+    },
+    {
+      "id": "errancia",
+      "titulo": "Errância",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "instalação",
+      "materiais": "Alto-falantes, gravações feitas com um sistema de captação montado no corpo de um passante",
+      "dimensoes": "Dimensões variáveis",
+      "local": "Sala A Contemporânea, Centro Cultural Banco do Brasil, Rio de Janeiro — Prêmio CCBB Contemporâneo",
+      "exposicao": "errancia",
+      "texto": [
+        "Gravações feitas no entorno de bares da Gávea, Lapa, Leblon, Rocinha e Praça Tiradentes, emitidas por alto-falantes dispostos em grade sobre o piso da sala.",
+        "A uniformidade da montagem faz aparecer, por contraste, as divisões sociais da cidade: a vida noturna carioca entra no cubo branco com seus desníveis."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "oAYrpRn_qBw",
+          "titulo": "Errância"
+        }
+      ],
+      "mapa": {
+        "x": 137,
+        "y": 401,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      }
+    },
+    {
+      "id": "praca-sonora",
+      "titulo": "Praça Sonora",
+      "ano": "2015",
+      "ano_num": 2015,
+      "tipo": "intervenção urbana",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "pendente": "ficha técnica, texto e registros"
+    },
+    {
+      "id": "sonar",
+      "titulo": "Sonar",
+      "ano": "2013",
+      "ano_num": 2013,
+      "tipo": "exposição",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "Casa de Cultura Laura Alvim, Rio de Janeiro",
+      "exposicao": "sonar",
+      "texto": [
+        "Retrospectiva com curadoria de Glória Ferreira na Casa de Cultura Laura Alvim, de frente para o mar de Ipanema: a primeira vez que as obras saíram da rua para dentro de uma casa.",
+        "Mais de 200 alto-falantes em objetos cotidianos — um móvel com vinte gavetas (O estrangeiro), máquinas de escrever acionadas por motores (Kafka), caixas de papelão (O passeio), rádios antigos (Radionovelas) — além de Turbina, Acusmata, os Chuveiros Sonoros e os desenhos com fita isolante."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "Q6EmfPI_vtI",
+          "titulo": "Sonar"
+        }
+      ],
+      "mapa": {
+        "x": 292,
+        "y": 69,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      }
+    },
+    {
+      "id": "cidades-sonoras",
+      "titulo": "Cidades Sonoras",
+      "ano": "2012",
+      "ano_num": 2012,
+      "tipo": "instalação",
+      "materiais": "Orelhões, paisagens sonoras de 15 cidades",
+      "dimensoes": "Dimensões variáveis",
+      "local": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro",
+      "exposicao": "a-cidade-sonora",
+      "texto": [
+        "Orelhões caídos pelo chão emitem as paisagens sonoras de quinze cidades do mundo. O visitante mergulha em cada uma ao se aproximar.",
+        "No Palácio Capanema — marco da arquitetura moderna, uma cidade dentro da cidade — o projeto de Chu Ming Silveira e o edifício se encontram no mesmo declínio: soluções elegantes, cada vez mais obsoletas."
+      ],
+      "mapa": {
+        "x": 113,
+        "y": 121,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      }
+    },
+    {
+      "id": "sapatos-sonoros",
+      "titulo": "Sapatos Sonoros",
+      "ano": "2009–2015",
+      "ano_num": 2011,
+      "tipo": "objeto sonoro",
+      "materiais": "Sapatos pandeiro, sapatos guizo, sapatos chocalho e conchas; materiais variados",
+      "dimensoes": "Dimensões variáveis",
+      "local": "Panorama da Arte Brasileira, MAM São Paulo (2011); performances em aberturas de exposições (2011, 2013, 2015)",
+      "texto": [
+        "Sapatos com pandeiros, guizos, chocalhos e conchas: cada passo vira som. O corpo que anda passa a tocar o chão como um instrumento."
+      ],
+      "video": [
+        {
+          "plataforma": "vimeo",
+          "id": "127425686",
+          "titulo": "Sapatos Sonoros"
+        }
+      ]
+    },
+    {
+      "id": "guarda-chuva-sonoro",
+      "titulo": "Guarda-Chuva Sonoro",
+      "ano": "2010",
+      "ano_num": 2010,
+      "tipo": "performance",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "video": [
+        {
+          "plataforma": "vimeo",
+          "id": "121074505",
+          "titulo": "Guarda-Chuva"
+        }
+      ],
+      "pendente": "ficha técnica e texto"
+    },
+    {
+      "id": "chuveiros-sonoros",
+      "titulo": "Chuveiros Sonoros",
+      "ano": "2008",
+      "ano_num": 2008,
+      "tipo": "objeto sonoro",
+      "materiais": "Chuveiros de aço inoxidável, amplificador, alto-falante e gravações caseiras",
+      "dimensoes": "249 × 70 × 70 cm",
+      "local": "7ª Bienal do Mercosul, Mostra Absurdo, Porto Alegre (2009); Casa de Cultura Laura Alvim (2013)",
+      "colecao": "Museu de Arte Contemporânea de Niterói — adquirida pelo Prêmio Marcantonio Vilaça, Funarte, 2012",
+      "texto": [
+        "Chuveiros transformados em alto-falantes: o registro controla o volume, não a água. Deles sai a voz de alguém que canta no banho, alheio a quem escuta.",
+        "Ao subir na base, o visitante passa a encarnar a voz do cantor solitário — uma atividade íntima tornada pública."
+      ],
+      "soundcloud": "https://soundcloud.com/floriano-romano/chuveiro-sonoro",
+      "exposicoes_extra": [
+        "sonar",
+        "a-pele-do-mundo"
+      ],
+      "mapa": {
+        "x": 75,
+        "y": 512,
+        "tier": 1,
+        "lx": 10,
+        "ly": -20
+      }
+    },
+    {
+      "id": "chapeu-panoramico",
+      "titulo": "Chapéu Panorâmico",
+      "ano": "2008",
+      "ano_num": 2008,
+      "tipo": "performance",
+      "materiais": "Chapéus com câmeras de vigilância, vídeo em vários canais",
+      "dimensoes": "",
+      "local": "Praia, Rio de Janeiro; MAC Niterói (2009)",
+      "texto": [
+        "Mestre Garrincha e Mestre Feijão jogam capoeira usando chapéus com quatro câmeras de vigilância. As falhas do equipamento barato produzem uma imagem fraturada e simultânea.",
+        "O jogo é visto do ponto de vista de quem joga, não de quem assiste de fora da roda. O artista desocupa o centro do círculo para que o outro possa entrar."
+      ]
+    },
+    {
+      "id": "falante",
+      "titulo": "Falante",
+      "ano": "2007",
+      "ano_num": 2007,
+      "tipo": "performance",
+      "materiais": "Mochila com alto-falante, poema sonoro “Não preste atenção”",
+      "dimensoes": "",
+      "local": "São Paulo e Fortaleza",
+      "colecao": "Museu de Artes Visuais de Santiago do Chile",
+      "texto": [
+        "Com um alto-falante adaptado numa mochila, o artista atravessa mercados e praças, somando-se aos camelôs e às pechinchas de quiosque. A voz amplificada repete: não preste atenção.",
+        "Quem se vira para olhar já desobedeceu. Entre o indivíduo e a multidão, a caminhada encena a dificuldade de passar despercebido."
+      ],
+      "video": [
+        {
+          "plataforma": "vimeo",
+          "id": "117441311",
+          "titulo": "Falante, São Paulo"
+        },
+        {
+          "plataforma": "vimeo",
+          "id": "136529229",
+          "titulo": "Falante, Fortaleza"
+        }
+      ],
+      "mapa": {
+        "x": 415,
+        "y": 517,
+        "tier": 1,
+        "lx": 10,
+        "ly": -20
+      }
+    },
+    {
+      "id": "radiomochilas",
+      "titulo": "RadioMochilas",
+      "ano": "2007",
+      "ano_num": 2007,
+      "tipo": "rádio",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "video": [
+        {
+          "plataforma": "vimeo",
+          "id": "121069132",
+          "titulo": "RadioMochilas"
+        }
+      ],
+      "pendente": "ficha técnica e texto",
+      "radio": {
+        "freq": 2007.5
+      }
+    },
+    {
+      "id": "cruz",
+      "titulo": "Cruz",
+      "ano": "início dos anos 2000",
+      "ano_num": 2002,
+      "tipo": "rádio",
+      "materiais": "Micro-rádio transmissor, trilha sonora; registro em fotografia aérea e vídeo",
+      "dimensoes": "Cruzamento das ruas Imperatriz Leopoldina e Luís de Camões",
+      "local": "Centro do Rio de Janeiro",
+      "texto": [
+        "Um micro-rádio instalado de improviso transmite uma trilha nas ruas do centro antigo. O alcance das ondas desenha uma cruz sobre o cruzamento das ruas Imperatriz Leopoldina e Luís de Camões, ao lado do Centro Hélio Oiticica.",
+        "No vídeo, gravado de dentro de um carro com o rádio sintonizado, a transmissão some de repente quando o carro ultrapassa o limite da cruz."
+      ],
+      "mapa": {
+        "x": 47,
+        "y": 264,
+        "tier": 1,
+        "lx": 10,
+        "ly": 6
+      },
+      "radio": {
+        "freq": 2002
+      },
+      "ano_mapa": "anos 2000"
+    },
+    {
+      "id": "o-inusitado",
+      "titulo": "O Inusitado",
+      "ano": "2002–2004",
+      "ano_num": 2003,
+      "tipo": "rádio",
+      "materiais": "Programa semanal",
+      "dimensoes": "",
+      "local": "Rádio Madame Satã, Lapa, Rio de Janeiro",
+      "texto": [
+        "Programa semanal na rádio comunitária Madame Satã, na Lapa. Artistas, músicos, poetas — quem tivesse algo a dizer — eram convidados para experiências poéticas, musicais e plásticas no ar.",
+        "Foi um ponto de encontro da cena de arte sonora carioca entre 2002 e 2004."
+      ],
+      "radio": {
+        "freq": 2003.5
+      }
+    },
+    {
+      "id": "radionovelas",
+      "titulo": "Radionovelas",
+      "ano": "2013",
+      "ano_num": 2013,
+      "tipo": "rádio",
+      "materiais": "Rádios antigos e gravações ficcionais",
+      "dimensoes": "",
+      "local": "Casa de Cultura Laura Alvim, na exposição Sonar",
+      "texto": [
+        "Aparelhos de rádio antigos transmitem curtas radionovelas escritas pelo artista: histórias com muitos sonhos e reflexões sobre o som."
+      ],
+      "soundcloud": "https://soundcloud.com/floriano-romano/radionovela",
+      "radio": {
+        "freq": 2013.5
+      },
+      "exposicao": "sonar"
+    },
+    {
+      "id": "a-dama",
+      "titulo": "A Dama",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "rádio",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "soundcloud": "https://soundcloud.com/floriano-romano/a-dama",
+      "pendente": "ficha técnica e texto",
+      "radio": {
+        "freq": 2016.3
+      }
+    },
+    {
+      "id": "motoboy",
+      "titulo": "Motoboy",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "rádio",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "soundcloud": "https://soundcloud.com/floriano-romano/motoboy",
+      "pendente": "ficha técnica e texto",
+      "radio": {
+        "freq": 2016.9
+      }
+    },
+    {
+      "id": "desenhos",
+      "titulo": "Desenhos",
+      "ano": "2007–",
+      "ano_num": 2007,
+      "tipo": "desenho",
+      "materiais": "Fita isolante sobre papel",
+      "dimensoes": "Tamanhos variados (20 × 30, 50 × 40, 40 × 20 cm)",
+      "local": "Casa de Cultura Laura Alvim, na exposição Sonar (2013)",
+      "texto": [
+        "Linhas de fita isolante preta cruzam o papel em direções que mudam a cada encontro. Os desenhos acompanham a obra desde 2007 e estão na origem das Esquinas: trajetos, cruzamentos, possíveis encontros."
+      ],
+      "imagens": [
+        {
+          "src": "media/desenhos/desenho-01.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-02.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-03.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-04.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-05.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-06.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-07.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        },
+        {
+          "src": "media/desenhos/desenho-08.jpg",
+          "alt": "Desenho com fita isolante preta sobre papel branco",
+          "credito": "Arquivo do artista"
+        }
+      ],
+      "mapa": {
+        "x": 930,
+        "y": 505,
+        "tier": 1,
+        "lx": -12,
+        "ly": 6,
+        "lado": "esquerda"
+      }
+    },
+    {
+      "id": "cidade-labirinto",
+      "titulo": "Cidade Labirinto",
+      "ano": "2021",
+      "ano_num": 2021,
+      "tipo": "instalação",
+      "materiais": "Instalação sonora com paredes móveis; exposição digital e podcast",
+      "dimensoes": "",
+      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro (maio de 2021); cidadelabirinto.art (agosto de 2021)",
+      "texto": [
+        "Construir uma cidade imaginária a partir da escuta e da memória coletiva das ruas. No Centro Municipal de Arte Hélio Oiticica, o visitante abre passagens por paredes móveis: um labirinto vivo, que muda conforme quem anda por ele.",
+        "Quantos mapas afetivos cabem numa cidade? Quem vive ali, quais são suas histórias, quem construiu seus territórios? Escutar a cidade faz enxergar o outro."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "TLXa8qAuUSE",
+          "titulo": "Cidade Labirinto — o artista na instalação"
+        }
+      ],
+      "mapa": {
+        "x": 700,
+        "y": 505,
+        "tier": 2,
+        "lx": 12,
+        "ly": 6
+      },
+      "exposicao": "cidade-labirinto"
+    },
+    {
+      "id": "cidade-sensivel",
+      "titulo": "Cidade Sensível",
+      "ano": "2021",
+      "ano_num": 2021,
+      "tipo": "rádio",
+      "materiais": "Obra sonora em três partes: Cinelândia, Pedra do Sal e Praça Mauá; podcast",
+      "dimensoes": "",
+      "local": "Rio de Janeiro; gravações de 20 de fevereiro de 2021",
+      "texto": [
+        "A cidade tem camadas sonoras, históricas, de experiência vivida. Em três caminhadas pelo centro do Rio durante a pandemia — Cinelândia, Pedra do Sal, Praça Mauá — o artista narra o que vê e escuta, sobre o som ambiente gravado em cada lugar."
+      ],
+      "radio": {
+        "freq": 2021
+      },
+      "exposicao": "cidade-labirinto"
+    },
+    {
+      "id": "espacos-do-ainda",
+      "titulo": "Espaços do Ainda",
+      "ano": "2022–2023",
+      "ano_num": 2022,
+      "tipo": "instalação",
+      "materiais": "Instalação e objeto sonoro, poema sonoro",
+      "dimensoes": "",
+      "local": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)",
+      "texto": [],
+      "pendente": "texto e registros"
+    },
+    {
+      "id": "poema-tornado",
+      "titulo": "Poema Tornado",
+      "ano": "2020",
+      "ano_num": 2020,
+      "tipo": "exposição",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "Galeria Reserva Cultural, Niterói",
+      "texto": [],
+      "pendente": "texto e registros",
+      "exposicao": "poema-tornado"
+    },
+    {
+      "id": "o-rio-dos-navegantes",
+      "titulo": "O Rio dos Navegantes",
+      "ano": "2019",
+      "ano_num": 2019,
+      "tipo": "instalação",
+      "materiais": "Instalação sonora comissionada",
+      "dimensoes": "",
+      "local": "Museu de Arte do Rio",
+      "colecao": "Museu de Arte do Rio",
+      "texto": [],
+      "pendente": "texto e registros"
+    },
+    {
+      "id": "nuvem",
+      "titulo": "Nuvem",
+      "ano": "2018",
+      "ano_num": 2018,
+      "tipo": "instalação",
+      "materiais": "Instalação sonora com guarda-chuvas",
+      "dimensoes": "",
+      "local": "Centro Cultural Furnas, Rio de Janeiro",
+      "texto": [],
+      "pendente": "texto e registros",
+      "exposicao": "nuvem"
+    }
+  ],
+  "mapa_pares": [
+    [
+      "esquina",
+      "cruz"
+    ],
+    [
+      "esquina",
+      "mar-sobre-mar"
+    ],
+    [
+      "esquina",
+      "mascara-sonora"
+    ],
+    [
+      "esquina",
+      "sonar"
+    ],
+    [
+      "esquinas",
+      "historias-anonimas"
+    ],
+    [
+      "esquinas",
+      "errancia"
+    ],
+    [
+      "turbina",
+      "mascara-sonora"
+    ],
+    [
+      "turbina",
+      "cidades-sonoras"
+    ],
+    [
+      "turbina",
+      "falante"
+    ],
+    [
+      "muro-de-som",
+      "historias-anonimas"
+    ],
+    [
+      "muro-de-som",
+      "chuveiros-sonoros"
+    ],
+    [
+      "sonar",
+      "errancia"
+    ],
+    [
+      "esquinas",
+      "chuveiros-sonoros"
+    ],
+    [
+      "cruz",
+      "cidades-sonoras"
+    ],
+    [
+      "mar-sobre-mar",
+      "mascara-sonora"
+    ],
+    [
+      "falante",
+      "historias-anonimas"
+    ],
+    [
+      "cidade-labirinto",
+      "historias-anonimas"
+    ],
+    [
+      "cidade-labirinto",
+      "muro-de-som"
+    ],
+    [
+      "desenhos",
+      "esquina"
+    ],
+    [
+      "desenhos",
+      "sonar"
+    ]
+  ],
+  "exposicoes": [
+    {
+      "id": "a-pele-do-mundo",
+      "titulo": "A Pele do Mundo",
+      "ano": "2023",
+      "local": "Futuros – Arte e Tecnologia, Rio de Janeiro",
+      "curadoria": "Michael Asbury",
+      "texto": "Individual em dois andares. Embaixo, Esquina e a série Esquinas: o som das máquinas e do trânsito. Em cima, Turbina, as Espreguiçadeiras e os Chuveiros Sonoros: o mar e a voz. Entre um andar e outro, natureza e máquina disputam o interstício. O título vem do instante em que o corpo mergulha na água e se sente no mundo.",
+      "catalogo": "Catálogo bilíngue, Refresco / Futuros, 2023, ISBN 978-65982255-0-6"
+    },
+    {
+      "id": "cidade-labirinto",
+      "titulo": "Cidade Labirinto",
+      "ano": "2021",
+      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro; exposição digital cidadelabirinto.art",
+      "curadoria": "",
+      "texto": "Instalação sonora em maio de 2021 e, em agosto, exposição digital reunindo Cidade Sensível, Muro de Som, Errância e Sonar."
+    },
+    {
+      "id": "poema-tornado",
+      "titulo": "Poema Tornado",
+      "ano": "2020",
+      "local": "Galeria Reserva Cultural, Niterói",
+      "curadoria": "",
+      "texto": ""
+    },
+    {
+      "id": "nuvem",
+      "titulo": "Nuvem",
+      "ano": "2018",
+      "local": "Centro Cultural Furnas, Rio de Janeiro",
+      "curadoria": "",
+      "texto": "Instalação sonora com guarda-chuvas."
+    },
+    {
+      "id": "muro-de-som",
+      "titulo": "Muro de Som",
+      "ano": "2016",
+      "local": "Parque das Ruínas, Rio de Janeiro",
+      "curadoria": "Guilherme Bueno",
+      "texto": "Uma casa sonora construída dentro das ruínas de Santa Teresa: cúpulas sonoras na escada, espreguiçadeiras no mirante, duas paredes de vento no centro do edifício e binóculos no ponto mais alto, cada um apontado para uma ruína."
+    },
+    {
+      "id": "errancia",
+      "titulo": "Errância",
+      "ano": "2016",
+      "local": "Centro Cultural Banco do Brasil, Rio de Janeiro",
+      "curadoria": "",
+      "texto": "Prêmio CCBB Contemporâneo. Fragmentos de falas ouvidas de passagem em bares, praias e ruas, gravados por um corpo microfonado em caminhada e editados como uma teia de histórias."
+    },
+    {
+      "id": "sonar",
+      "titulo": "Sonar",
+      "ano": "2013",
+      "local": "Casa de Cultura Laura Alvim, Rio de Janeiro",
+      "curadoria": "Glória Ferreira",
+      "texto": "Retrospectiva. Primeira exposição das obras em espaço fechado, de frente para o mar de Ipanema."
+    },
+    {
+      "id": "a-cidade-sonora",
+      "titulo": "A Cidade Sonora",
+      "ano": "2012",
+      "local": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro",
+      "curadoria": "",
+      "texto": "Prêmio Projéteis de Arte Contemporânea, Funarte."
+    }
+  ],
+  "coletivas": [
+    {
+      "ano": "2023",
+      "titulo": "Espaços do Ainda",
+      "local": "Centro Cultural São Paulo"
+    },
+    {
+      "ano": "2022",
+      "titulo": "Brasilidade Pós-Modernismo 1922–2022",
+      "local": "Centro Cultural Banco do Brasil, Rio de Janeiro"
+    },
+    {
+      "ano": "2022",
+      "titulo": "Espaços do Ainda",
+      "local": "Paço Imperial, Rio de Janeiro"
+    },
+    {
+      "ano": "2022",
+      "titulo": "Falante, performance",
+      "local": "Sesc Flamengo, Rio de Janeiro"
+    },
+    {
+      "ano": "2020",
+      "titulo": "Até onde a vista alcança",
+      "local": "Galeria Athena Contemporânea, Rio de Janeiro"
+    },
+    {
+      "ano": "2019",
+      "titulo": "O Rio dos Navegantes",
+      "local": "Museu de Arte do Rio"
+    },
+    {
+      "ano": "2019",
+      "titulo": "SomaRumor, Seminário Internacional de Arte Sonora",
+      "local": "Rio de Janeiro"
+    },
+    {
+      "ano": "2018",
+      "titulo": "Arte pra Sentir",
+      "local": "Caixa Cultural, São Paulo e Brasília"
+    },
+    {
+      "ano": "2018",
+      "titulo": "Corpo de Som, com Helen Cole — Mostra Panorama",
+      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro"
+    },
+    {
+      "ano": "2017",
+      "titulo": "Intervenções Bradesco ArtRio",
+      "local": "Museu de Arte Moderna do Rio de Janeiro"
+    },
+    {
+      "ano": "2017",
+      "titulo": "Contraponto, Coleção Sérgio Carvalho",
+      "local": "Museu Nacional de Brasília"
+    },
+    {
+      "ano": "2017",
+      "titulo": "4 Media Arts Festival ARAD",
+      "local": "Arad, Romênia"
+    },
+    {
+      "ano": "2015",
+      "titulo": "Trio Bienal — Forma e Matéria",
+      "local": "Centro Cultural Banco do Brasil, Rio de Janeiro"
+    },
+    {
+      "ano": "2015",
+      "titulo": "Happenings, performance com Máscara Sonora",
+      "local": "Casa França-Brasil, Rio de Janeiro"
+    },
+    {
+      "ano": "2012",
+      "titulo": "Alternative Orders, a Glimpse of Brazilian Art",
+      "local": "Akershus Kunstsenter, Lillestrøm, Noruega"
+    },
+    {
+      "ano": "2012",
+      "titulo": "Soundworks, poema sonoro",
+      "local": "Institute of Contemporary Arts, Londres"
+    },
+    {
+      "ano": "2012",
+      "titulo": "Nuestro Sitio",
+      "local": "Museo de Artes Visuales, Santiago do Chile"
+    },
+    {
+      "ano": "2011",
+      "titulo": "Panorama da Arte Brasileira, Sapatos Sonoros",
+      "local": "Museu de Arte Moderna de São Paulo"
+    },
+    {
+      "ano": "2011",
+      "titulo": "Vozes Diferenciais, Falante",
+      "local": "Centro Provincial de Diseño y Oficios, Havana, Cuba"
+    },
+    {
+      "ano": "2011",
+      "titulo": "Intrasom, quatro ações sonoras",
+      "local": "Museu de Arte Moderna do Rio de Janeiro"
+    },
+    {
+      "ano": "2010",
+      "titulo": "Esculturas Sonoras Urbanas, Circuito Interações Estéticas",
+      "local": "São Paulo, Recife e Belo Horizonte"
+    },
+    {
+      "ano": "2009",
+      "titulo": "7ª Bienal do Mercosul — Chuveiros Sonoros (Mostra Absurdo) e Radiovisual",
+      "local": "Porto Alegre"
+    },
+    {
+      "ano": "2009",
+      "titulo": "Chapéu Panorâmico",
+      "local": "Museu de Arte Contemporânea de Niterói"
+    },
+    {
+      "ano": "2007",
+      "titulo": "58º Salão de Abril, Falante — menção honrosa",
+      "local": "Fortaleza"
+    },
+    {
+      "ano": "2007",
+      "titulo": "Futuro do Presente",
+      "local": "Itaú Cultural, São Paulo"
+    },
+    {
+      "ano": "2006",
+      "titulo": "Paradoxos, Rumos Itaú Cultural",
+      "local": "Paço Imperial, Rio de Janeiro, e São Paulo"
+    },
+    {
+      "ano": "2006",
+      "titulo": "Conversations",
+      "local": "SKUC Gallery, Liubliana, Eslovênia"
+    },
+    {
+      "ano": "2005",
+      "titulo": "Verbo",
+      "local": "Galeria Vermelho, São Paulo"
+    },
+    {
+      "ano": "2005",
+      "titulo": "Abre-Alas",
+      "local": "A Gentil Carioca, Rio de Janeiro"
+    }
+  ],
+  "textos_sobre": [
+    {
+      "autor": "Michael Asbury",
+      "titulo": "Floriano Romano: Esquina e outras intersecções",
+      "fonte": "A Pele do Mundo, catálogo, Refresco / Futuros",
+      "ano": "2023",
+      "url": ""
+    },
+    {
+      "autor": "Guilherme Bueno",
+      "titulo": "Muro de Som",
+      "fonte": "catálogo, Centro Cultural Municipal Parque das Ruínas; reeditado em Cidade Labirinto (2021)",
+      "ano": "2016",
+      "url": ""
+    },
+    {
+      "autor": "João Paulo Quintella",
+      "titulo": "Corpo impulso",
+      "fonte": "Errância, Prêmio CCBB Contemporâneo; reeditado em Cidade Labirinto (2021)",
+      "ano": "2016",
+      "url": ""
+    },
+    {
+      "autor": "L. Duarte",
+      "titulo": "Desorientação afetiva pela noite",
+      "fonte": "O Globo",
+      "ano": "2016",
+      "url": ""
+    },
+    {
+      "autor": "Glória Ferreira",
+      "titulo": "Sonar",
+      "fonte": "catálogo, Casa de Cultura Laura Alvim; reeditado em Cidade Labirinto (2021)",
+      "ano": "2013",
+      "url": ""
+    },
+    {
+      "autor": "Luisa Duarte",
+      "titulo": "Em alto e bom som",
+      "fonte": "O Globo, 16 de dezembro",
+      "ano": "2013",
+      "url": ""
+    },
+    {
+      "autor": "Brandon LaBelle",
+      "titulo": "Acoustic Territories: Sound, Culture and Everyday Life",
+      "fonte": "Continuum, pp. 104–105 (sobre Falante)",
+      "ano": "2010",
+      "url": ""
+    },
+    {
+      "autor": "Guilherme Bueno",
+      "titulo": "O homem com um chapéu e quatro câmeras na cabeça",
+      "fonte": "Floriano Romano: Chapéu Panorâmico, MAC Niterói",
+      "ano": "2009",
+      "url": ""
+    }
+  ],
+  "textos_do_artista": [
+    {
+      "titulo": "Cidade Labirinto",
+      "fonte": "catálogo e exposição digital, Rio de Janeiro",
+      "ano": "2021",
+      "url": ""
+    },
+    {
+      "titulo": "Campos Autônomos",
+      "fonte": "Poiésis, Universidade Federal Fluminense",
+      "ano": "",
+      "url": "https://periodicos.uff.br/poiesis/article/download/24672/14321/87216"
+    },
+    {
+      "titulo": "On Air",
+      "fonte": "Sites of Sound #2: of architecture and the ear, Errant Bodies Press, pp. 241–243",
+      "ano": "2011",
+      "url": ""
+    },
+    {
+      "titulo": "Entrevista a Glória Ferreira",
+      "fonte": "Cidade Sonora, catálogo, Funarte",
+      "ano": "2013",
+      "url": ""
+    }
+  ]
+}

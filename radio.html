@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rádio — Floriano Romano</title>
+<meta name="description" content="Rádio-arte de Floriano Romano: micro-rádio, programas e radionovelas.">
+<meta property="og:title" content="Rádio — Floriano Romano">
+<meta property="og:description" content="Rádio-arte de Floriano Romano: micro-rádio, programas e radionovelas.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Jura:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="pg-radio noite">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <a class="marca" href="index.html">Floriano Romano</a>
+  <nav class="nav" aria-label="Principal"><a href="indice.html">Índice</a><a href="exposicoes.html">Exposições</a><a href="radio.html" aria-current="page">Rádio</a><a href="textos.html">Textos</a><a href="sobre.html">Sobre</a></nav>
+  <button class="som" type="button" aria-pressed="false" data-som><span class="som-ponto" aria-hidden="true"></span><span data-som-rotulo>Ligar som</span></button>
+</header>
+<main id="conteudo">
+
+<section class="radio">
+  <h1 class="oculto">Rádio</h1>
+  <div class="dial" data-dial tabindex="0" role="slider" aria-label="Dial: arraste ou use as setas para sintonizar"
+       aria-valuemin="2000" aria-valuemax="2027" aria-valuenow="2016" aria-valuetext="2016">
+    <div class="dial-ruido" aria-hidden="true"><canvas data-ruido></canvas></div>
+    <div class="dial-faixa" data-faixa aria-hidden="true"></div>
+    <div class="dial-agulha" aria-hidden="true"></div>
+  </div>
+  <div class="dial-leitura">
+    <span class="dado" data-freq>2016</span>
+    <span class="dado">arraste para sintonizar</span>
+  </div>
+  <div class="estacao" data-estacao aria-live="polite"></div>
+  <div class="radio-lista">
+    <h2 class="sub">Estações</h2>
+    <ul><li><a href="obras/cidade-sensivel.html"><span class="dado">2021</span> <span class="nome">Cidade Sensível</span></a></li><li><a href="obras/motoboy.html"><span class="dado">2016</span> <span class="nome">Motoboy</span></a></li><li><a href="obras/a-dama.html"><span class="dado">2016</span> <span class="nome">A Dama</span></a></li><li><a href="obras/radionovelas.html"><span class="dado">2013</span> <span class="nome">Radionovelas</span></a></li><li><a href="obras/radiomochilas.html"><span class="dado">2007</span> <span class="nome">RadioMochilas</span></a></li><li><a href="obras/o-inusitado.html"><span class="dado">2002–2004</span> <span class="nome">O Inusitado</span></a></li><li><a href="obras/cruz.html"><span class="dado">início dos anos 2000</span> <span class="nome">Cruz</span></a></li></ul>
+  </div>
+</section>
+<script>window.ESTACOES = [{"id": "cruz", "titulo": "Cruz", "ano": "início dos anos 2000", "freq": 2002, "texto": "Um micro-rádio instalado de improviso transmite uma trilha nas ruas do centro antigo. O alcance das ondas desenha uma cruz sobre o cruzamento das ruas Imperatriz Leopoldina e Luís de Camões, ao lado do Centro Hélio Oiticica.", "soundcloud": ""}, {"id": "o-inusitado", "titulo": "O Inusitado", "ano": "2002–2004", "freq": 2003.5, "texto": "Programa semanal na rádio comunitária Madame Satã, na Lapa. Artistas, músicos, poetas — quem tivesse algo a dizer — eram convidados para experiências poéticas, musicais e plásticas no ar.", "soundcloud": ""}, {"id": "radiomochilas", "titulo": "RadioMochilas", "ano": "2007", "freq": 2007.5, "texto": "", "soundcloud": ""}, {"id": "radionovelas", "titulo": "Radionovelas", "ano": "2013", "freq": 2013.5, "texto": "Aparelhos de rádio antigos transmitem curtas radionovelas escritas pelo artista: histórias com muitos sonhos e reflexões sobre o som.", "soundcloud": "https://soundcloud.com/floriano-romano/radionovela"}, {"id": "a-dama", "titulo": "A Dama", "ano": "2016", "freq": 2016.3, "texto": "", "soundcloud": "https://soundcloud.com/floriano-romano/a-dama"}, {"id": "motoboy", "titulo": "Motoboy", "ano": "2016", "freq": 2016.9, "texto": "", "soundcloud": "https://soundcloud.com/floriano-romano/motoboy"}, {"id": "cidade-sensivel", "titulo": "Cidade Sensível", "ano": "2021", "freq": 2021, "texto": "A cidade tem camadas sonoras, históricas, de experiência vivida. Em três caminhadas pelo centro do Rio durante a pandemia — Cinelândia, Pedra do Sal, Praça Mauá — o artista narra o que vê e escuta, sobre o som ambiente gravado em cada lugar.", "soundcloud": ""}];</script>
+</main>
+<footer class="rodape">
+  <span>© 2026 Floriano Romano</span>
+  <a href="indice.html">Todas as obras</a>
+</footer>
+<script src="assets/js/site.js" defer></script><script src="assets/js/dial.js" defer></script>
+</body>
+</html>
