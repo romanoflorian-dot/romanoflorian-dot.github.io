@@ -473,6 +473,8 @@ def main():
     if PENDENTES and (ROOT / "media-pendente").exists():
         shutil.copytree(ROOT / "media-pendente", OUT / "media-pendente")
     (OUT / ".nojekyll").write_text("")
+    if not PREVIA and not PENDENTES:
+        (OUT / "CNAME").write_text("florianoromano.art.br\n")  # domínio próprio no GitHub Pages
     (OUT / "index.html").write_text(build_index(), encoding="utf-8")
     (OUT / "indice.html").write_text(build_indice(), encoding="utf-8")
     (OUT / "radio.html").write_text(build_radio(), encoding="utf-8")
