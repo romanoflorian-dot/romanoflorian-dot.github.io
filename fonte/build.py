@@ -13,6 +13,12 @@ OUT = ROOT / ("revisao" if PENDENTES else ("previa" if PREVIA else "public"))
 DATA = json.loads((ROOT / "data" / "obras.json").read_text(encoding="utf-8"))
 OBRAS = DATA["obras"]
 BY_ID = {o["id"]: o for o in OBRAS}
+_IMGS = ROOT / "data" / "imagens.json"
+if _IMGS.exists():
+    for _id, _lista in json.loads(_IMGS.read_text(encoding="utf-8")).items():
+        if _id in BY_ID:
+            BY_ID[_id].setdefault("imagens", [])
+            BY_ID[_id]["imagens"] = _lista + [i for i in BY_ID[_id]["imagens"] if i not in _lista]
 EXPOS = {e["id"]: e for e in DATA["exposicoes"]}
 ANO_ATUAL = "2026"
 
@@ -188,26 +194,23 @@ def video_embed(v):
 def build_obra(o, prev, nxt):
     r = "../"
     tem_som = bool(o.get("audio") or o.get("soundcloud"))
-    if PREVIA and tem_som and not o.get("audio"):
-        tem_som = False
+    som_local = bool(o.get("audio"))
+    if o.get("soundcloud") and not som_local:
+        if PREVIA:
+            player = (f'<p class="sc-link"><a class="play" href="{e(o["soundcloud"])}" target="_blank" rel="noopener" '
+                      f'aria-label="Escutar {e(o["titulo"])} no SoundCloud"><span class="play-icone" aria-hidden="true"></span></a>'
+                      f'<span class="dado">Na prévia, o áudio abre no SoundCloud</span></p>')
+        else:
+            sc_src = ("https://w.soundcloud.com/player/?url=" + o["soundcloud"] +
+                      "&color=%23c8321e&auto_play=false&hide_related=true&show_comments=false"
+                      "&show_user=false&show_reposts=false&show_teaser=false&visual=false")
+            player = f'<iframe class="sc-visivel" title="Áudio de {e(o["titulo"])}" src="{sc_src}" allow="autoplay" loading="lazy"></iframe>'
         escuta = f"""
 <section class="escuta" aria-label="Escuta">
-  <div class="escuta-linha">
-    <a class="play" href="{e(o['soundcloud'])}" target="_blank" rel="noopener" aria-label="Escutar {e(o['titulo'])} no SoundCloud"><span class="play-icone" aria-hidden="true"></span></a>
-    <span class="onda onda-fixa" aria-hidden="true"></span>
-  </div>
-  <div class="escuta-rodape">
-    <span class="dado">Use fones de ouvido</span>
-    <span class="dado">Na prévia, o áudio abre no SoundCloud</span>
-  </div>
+  {player}
+  <div class="escuta-rodape escuta-rodape-sc"><span class="dado">Use fones de ouvido</span></div>
 </section>"""
-    elif tem_som:
-        sc = ""
-        if o.get("soundcloud") and not o.get("audio") and not PREVIA:
-            sc_src = ("https://w.soundcloud.com/player/?url=" + o["soundcloud"] +
-                      "&color=%23c8321e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false")
-            sc = f'<iframe class="sc" title="Áudio de {e(o["titulo"])}" src="{sc_src}" allow="autoplay" loading="lazy"></iframe>'
-        audio = f'<audio preload="metadata" src="{r}{o["audio"]}"></audio>' if o.get("audio") else ""
+    elif som_local:
         escuta = f"""
 <section class="escuta" data-escuta aria-label="Escuta">
   <div class="escuta-linha">
@@ -218,7 +221,7 @@ def build_obra(o, prev, nxt):
     <span class="dado">Use fones de ouvido</span>
     <span class="dado" data-tempo></span>
   </div>
-  {audio}{sc}
+  <audio preload="metadata" src="{r}{o["audio"]}"></audio>
 </section>"""
     elif o["tipo"] in ("desenho", "exposição"):
         escuta = ""
@@ -230,8 +233,8 @@ def build_obra(o, prev, nxt):
         figs = "".join(
             f'<figure><img src="{r}{e(i["src"])}" alt="{e(i.get("alt", o["titulo"]))}" loading="lazy">'
             f'<figcaption class="dado">{e(i.get("credito", ""))}</figcaption></figure>' for i in imgs)
-        imagens = f'<section class="imagens{" velado" if tem_som else ""}" data-imagens>{figs}</section>'
-        if tem_som:
+        imagens = f'<section class="imagens{" velado" if som_local else ""}" data-imagens>{figs}</section>'
+        if som_local:
             imagens += '<button class="mostrar" type="button" data-mostrar>Mostrar imagens agora</button>'
     else:
         imagens = '<div class="imagens-vazio" aria-hidden="true"><span class="dado">Imagens em preparação</span></div>'
@@ -283,9 +286,8 @@ def build_obra(o, prev, nxt):
   {nav_obras}
 </article>"""
     desc = (o.get("texto") or [f"{o['titulo']}, {o['ano']}. Obra de Floriano Romano."])[0][:155]
-    scripts = ("obra.js",) if tem_som else ()
-    if o.get("soundcloud") and not o.get("audio") and not PREVIA:
-        body +='\n<script src="https://w.soundcloud.com/player/api.js" defer></script>'
+    scripts = ("obra.js",) if som_local else ()
+
     return page(o["titulo"], body, r=r, desc=desc, scripts=scripts, body_class="pg-obra")
 
 

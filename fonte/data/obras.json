@@ -46,64 +46,64 @@
       "autoria_texto": "Texto do artista",
       "imagens": [
         {
-          "src": "media-pendente/esquinas/esquina-01.jpg",
+          "src": "media/obras/esquinas/esquina-01.jpg",
           "alt": "Esquina I, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina I · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-02.jpg",
+          "src": "media/obras/esquinas/esquina-02.jpg",
           "alt": "Esquina II, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina II · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-03.jpg",
+          "src": "media/obras/esquinas/esquina-03.jpg",
           "alt": "Esquina III, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina III · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-04.jpg",
+          "src": "media/obras/esquinas/esquina-04.jpg",
           "alt": "Esquina IV, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina IV · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-05.jpg",
+          "src": "media/obras/esquinas/esquina-05.jpg",
           "alt": "Esquina V, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina V · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-06.jpg",
+          "src": "media/obras/esquinas/esquina-06.jpg",
           "alt": "Esquina VI, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina VI · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-07.jpg",
+          "src": "media/obras/esquinas/esquina-07.jpg",
           "alt": "Esquina VII, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina VII · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-08.jpg",
+          "src": "media/obras/esquinas/esquina-08.jpg",
           "alt": "Esquina VIII, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina VIII · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-09.jpg",
+          "src": "media/obras/esquinas/esquina-09.jpg",
           "alt": "Esquina IX, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina IX · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         },
         {
-          "src": "media-pendente/esquinas/esquina-10.jpg",
+          "src": "media/obras/esquinas/esquina-10.jpg",
           "alt": "Esquina X, linhas pretas sobre quadrado branco, na parede da galeria",
           "credito": "Esquina X · Foto: Pedro Tressi",
-          "aprovar": true
+          "fotografo": "Pedro Tressi"
         }
       ]
     },

@@ -1,0 +1,348 @@
+{
+  "esquina": [
+    {
+      "src": "media/obras/esquina/esquina-01.jpg",
+      "alt": "Esquina, Futuros – Arte e Tecnologia, 2023",
+      "credito": "Esquina, Futuros – Arte e Tecnologia, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/esquina/esquina-02.jpg",
+      "alt": "Esquina, vista da instalação",
+      "credito": "Esquina, vista da instalação · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/esquina/esquina-03.jpg",
+      "alt": "Esquina e Esquinas I–X",
+      "credito": "Esquina e Esquinas I–X · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/esquina/esquina-04.jpg",
+      "alt": "Esquina, detalhe",
+      "credito": "Esquina, detalhe · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    }
+  ],
+  "esquinas": [
+    {
+      "src": "media/obras/esquinas/esquinas-01.jpg",
+      "alt": "Esquinas I–X, vista da exposição A Pele do Mundo",
+      "credito": "Esquinas I–X, vista da exposição A Pele do Mundo · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/esquinas/esquinas-02.jpg",
+      "alt": "Esquinas I–X e Esquina",
+      "credito": "Esquinas I–X e Esquina · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    }
+  ],
+  "turbina": [
+    {
+      "src": "media/obras/turbina/turbina-01.jpg",
+      "alt": "Turbina, Futuros – Arte e Tecnologia, 2023",
+      "credito": "Turbina, Futuros – Arte e Tecnologia, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/turbina/turbina-02.jpg",
+      "alt": "Turbina e Espreguiçadeiras Sonoras, 2023",
+      "credito": "Turbina e Espreguiçadeiras Sonoras, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/turbina/turbina-03.jpg",
+      "alt": "Turbina, Casa de Cultura Laura Alvim, 2013",
+      "credito": "Turbina, Casa de Cultura Laura Alvim, 2013 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/turbina/turbina-04.jpg",
+      "alt": "Turbina diante da praia de Ipanema, 2013",
+      "credito": "Turbina diante da praia de Ipanema, 2013 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    }
+  ],
+  "espreguicadeiras-sonoras": [
+    {
+      "src": "media/obras/espreguicadeiras-sonoras/espreguicadeiras-sonoras-01.jpg",
+      "alt": "Espreguiçadeiras Sonoras, Parque das Ruínas, 2016",
+      "credito": "Espreguiçadeiras Sonoras, Parque das Ruínas, 2016 · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/espreguicadeiras-sonoras/espreguicadeiras-sonoras-02.jpg",
+      "alt": "Espreguiçadeiras Sonoras no mirante do Parque das Ruínas",
+      "credito": "Espreguiçadeiras Sonoras no mirante do Parque das Ruínas · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/espreguicadeiras-sonoras/espreguicadeiras-sonoras-03.jpg",
+      "alt": "Espreguiçadeiras Sonoras, Futuros, 2023",
+      "credito": "Espreguiçadeiras Sonoras, Futuros, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/espreguicadeiras-sonoras/espreguicadeiras-sonoras-04.jpg",
+      "alt": "Espreguiçadeiras Sonoras, Futuros, 2023",
+      "credito": "Espreguiçadeiras Sonoras, Futuros, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    }
+  ],
+  "chuveiros-sonoros": [
+    {
+      "src": "media/obras/chuveiros-sonoros/chuveiros-sonoros-01.jpg",
+      "alt": "Chuveiros Sonoros",
+      "credito": "Chuveiros Sonoros · Foto: Vicente de Mello",
+      "fotografo": "Vicente de Mello"
+    },
+    {
+      "src": "media/obras/chuveiros-sonoros/chuveiros-sonoros-02.jpg",
+      "alt": "Chuveiros Sonoros",
+      "credito": "Chuveiros Sonoros · Foto: Vicente de Mello",
+      "fotografo": "Vicente de Mello"
+    },
+    {
+      "src": "media/obras/chuveiros-sonoros/chuveiros-sonoros-03.jpg",
+      "alt": "Chuveiros Sonoros, Futuros, 2023",
+      "credito": "Chuveiros Sonoros, Futuros, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    },
+    {
+      "src": "media/obras/chuveiros-sonoros/chuveiros-sonoros-04.jpg",
+      "alt": "Chuveiros Sonoros, detalhe",
+      "credito": "Chuveiros Sonoros, detalhe · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    }
+  ],
+  "mascara-sonora": [
+    {
+      "src": "media/obras/mascara-sonora/mascara-sonora-01.jpg",
+      "alt": "Máscara Sonora, videoperformance, Futuros, 2023",
+      "credito": "Máscara Sonora, videoperformance, Futuros, 2023 · Foto: Pedro Tressi",
+      "fotografo": "Pedro Tressi"
+    }
+  ],
+  "muro-de-som": [
+    {
+      "src": "media/obras/muro-de-som/muro-de-som-01.jpg",
+      "alt": "Muro de Som, Parque das Ruínas, 2016",
+      "credito": "Muro de Som, Parque das Ruínas, 2016 · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/muro-de-som/muro-de-som-02.jpg",
+      "alt": "Muro de Som, as duas paredes de alto-falantes",
+      "credito": "Muro de Som, as duas paredes de alto-falantes · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/muro-de-som/muro-de-som-03.jpg",
+      "alt": "Muro de Som, a escada diante da obra",
+      "credito": "Muro de Som, a escada diante da obra · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/muro-de-som/muro-de-som-04.jpg",
+      "alt": "Muro de Som",
+      "credito": "Muro de Som · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/muro-de-som/muro-de-som-05.jpg",
+      "alt": "Cúpulas Sonoras na escada de acesso",
+      "credito": "Cúpulas Sonoras na escada de acesso · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    }
+  ],
+  "binoculos-sonoros": [
+    {
+      "src": "media/obras/binoculos-sonoros/binoculos-sonoros-01.jpg",
+      "alt": "Binóculos Sonoros, Parque das Ruínas, 2016",
+      "credito": "Binóculos Sonoros, Parque das Ruínas, 2016 · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/binoculos-sonoros/binoculos-sonoros-02.jpg",
+      "alt": "Binóculos Sonoros",
+      "credito": "Binóculos Sonoros · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    },
+    {
+      "src": "media/obras/binoculos-sonoros/binoculos-sonoros-03.jpg",
+      "alt": "Binóculos Sonoros voltados para a Baía de Guanabara",
+      "credito": "Binóculos Sonoros voltados para a Baía de Guanabara · Foto: Wilton Montenegro",
+      "fotografo": "Wilton Montenegro"
+    }
+  ],
+  "errancia": [
+    {
+      "src": "media/obras/errancia/errancia-01.jpg",
+      "alt": "Errância, Centro Cultural Banco do Brasil, 2016",
+      "credito": "Errância, Centro Cultural Banco do Brasil, 2016 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/errancia/errancia-02.jpg",
+      "alt": "Errância",
+      "credito": "Errância · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/errancia/errancia-03.jpg",
+      "alt": "Errância",
+      "credito": "Errância · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    }
+  ],
+  "falante": [
+    {
+      "src": "media/obras/falante/falante-01.jpg",
+      "alt": "Falante, São Paulo, 2007",
+      "credito": "Falante, São Paulo, 2007 · Foto: Edouard Fraipont",
+      "fotografo": "Edouard Fraipont"
+    },
+    {
+      "src": "media/obras/falante/falante-02.jpg",
+      "alt": "Falante, São Paulo, 2007",
+      "credito": "Falante, São Paulo, 2007 · Foto: Edouard Fraipont",
+      "fotografo": "Edouard Fraipont"
+    },
+    {
+      "src": "media/obras/falante/falante-03.jpg",
+      "alt": "Falante",
+      "credito": "Falante · Foto: Edouard Fraipont",
+      "fotografo": "Edouard Fraipont"
+    }
+  ],
+  "sonar": [
+    {
+      "src": "media/obras/sonar/sonar-01.jpg",
+      "alt": "Sonar, Casa de Cultura Laura Alvim, 2013",
+      "credito": "Sonar, Casa de Cultura Laura Alvim, 2013 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/sonar/sonar-02.jpg",
+      "alt": "O estrangeiro, 2013",
+      "credito": "O estrangeiro, 2013 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/sonar/sonar-03.jpg",
+      "alt": "Kafka, 2012",
+      "credito": "Kafka, 2012 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/sonar/sonar-04.jpg",
+      "alt": "Desenhos com fita isolante na exposição Sonar",
+      "credito": "Desenhos com fita isolante na exposição Sonar · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    }
+  ],
+  "radionovelas": [
+    {
+      "src": "media/obras/radionovelas/radionovelas-01.jpg",
+      "alt": "Radionovelas, Casa de Cultura Laura Alvim, 2013",
+      "credito": "Radionovelas, Casa de Cultura Laura Alvim, 2013 · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    },
+    {
+      "src": "media/obras/radionovelas/radionovelas-02.jpg",
+      "alt": "Radionovelas, detalhe",
+      "credito": "Radionovelas, detalhe · Foto: Mario Grisolli",
+      "fotografo": "Mario Grisolli"
+    }
+  ],
+  "cidades-sonoras": [
+    {
+      "src": "media/obras/cidades-sonoras/cidades-sonoras-01.jpg",
+      "alt": "A Cidade Sonora, Palácio Gustavo Capanema, 2012",
+      "credito": "A Cidade Sonora, Palácio Gustavo Capanema, 2012 · Foto: Gisele Camargo",
+      "fotografo": "Gisele Camargo"
+    },
+    {
+      "src": "media/obras/cidades-sonoras/cidades-sonoras-02.jpg",
+      "alt": "A Cidade Sonora",
+      "credito": "A Cidade Sonora · Foto: Gisele Camargo",
+      "fotografo": "Gisele Camargo"
+    }
+  ],
+  "sapatos-sonoros": [
+    {
+      "src": "media/obras/sapatos-sonoros/sapatos-sonoros-01.jpg",
+      "alt": "Sapatos Sonoros, sapatos pandeiro",
+      "credito": "Sapatos Sonoros, sapatos pandeiro · Arquivo do artista",
+      "fotografo": "Arquivo do artista"
+    },
+    {
+      "src": "media/obras/sapatos-sonoros/sapatos-sonoros-02.jpg",
+      "alt": "Sapatos Sonoros, sapatos com conchas",
+      "credito": "Sapatos Sonoros, sapatos com conchas · Arquivo do artista",
+      "fotografo": "Arquivo do artista"
+    },
+    {
+      "src": "media/obras/sapatos-sonoros/sapatos-sonoros-03.jpg",
+      "alt": "Sapatos Sonoros, Panorama da Arte Brasileira, MAM São Paulo, 2011",
+      "credito": "Sapatos Sonoros, Panorama da Arte Brasileira, MAM São Paulo, 2011 · Foto: Gisele Camargo",
+      "fotografo": "Gisele Camargo"
+    },
+    {
+      "src": "media/obras/sapatos-sonoros/sapatos-sonoros-04.jpg",
+      "alt": "Sapatos Sonoros, Panorama da Arte Brasileira",
+      "credito": "Sapatos Sonoros, Panorama da Arte Brasileira · Foto: Gisele Camargo",
+      "fotografo": "Gisele Camargo"
+    }
+  ],
+  "historias-anonimas": [
+    {
+      "src": "media/obras/historias-anonimas/historias-anonimas-01.jpg",
+      "alt": "Histórias Anônimas, 2022",
+      "credito": "Histórias Anônimas, 2022 · Arquivo do artista",
+      "fotografo": "Arquivo do artista"
+    },
+    {
+      "src": "media/obras/historias-anonimas/historias-anonimas-02.jpg",
+      "alt": "Histórias Anônimas, com o artista",
+      "credito": "Histórias Anônimas, com o artista · Arquivo do artista",
+      "fotografo": "Arquivo do artista"
+    }
+  ],
+  "cidade-labirinto": [
+    {
+      "src": "media/obras/cidade-labirinto/cidade-labirinto-01.jpg",
+      "alt": "Cidade Labirinto, Centro Municipal de Arte Hélio Oiticica, 2021",
+      "credito": "Cidade Labirinto, Centro Municipal de Arte Hélio Oiticica, 2021 · Foto: Floriano Romano e Tiago Baldissara",
+      "fotografo": "Floriano Romano e Tiago Baldissara"
+    },
+    {
+      "src": "media/obras/cidade-labirinto/cidade-labirinto-02.jpg",
+      "alt": "Cidade Labirinto",
+      "credito": "Cidade Labirinto · Foto: Floriano Romano e Tiago Baldissara",
+      "fotografo": "Floriano Romano e Tiago Baldissara"
+    },
+    {
+      "src": "media/obras/cidade-labirinto/cidade-labirinto-03.jpg",
+      "alt": "Cidade Labirinto",
+      "credito": "Cidade Labirinto · Foto: Floriano Romano e Tiago Baldissara",
+      "fotografo": "Floriano Romano e Tiago Baldissara"
+    }
+  ],
+  "cidade-sensivel": [
+    {
+      "src": "media/obras/cidade-sensivel/cidade-sensivel-01.jpg",
+      "alt": "Cidade Sensível: Pedra do Sal",
+      "credito": "Cidade Sensível: Pedra do Sal · Foto: Floriano Romano e Tiago Baldissara",
+      "fotografo": "Floriano Romano e Tiago Baldissara"
+    },
+    {
+      "src": "media/obras/cidade-sensivel/cidade-sensivel-02.jpg",
+      "alt": "Cidade Sensível: Praça Mauá",
+      "credito": "Cidade Sensível: Praça Mauá · Foto: Floriano Romano e Tiago Baldissara",
+      "fotografo": "Floriano Romano e Tiago Baldissara"
+    }
+  ]
+}
