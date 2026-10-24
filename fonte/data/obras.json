@@ -147,7 +147,9 @@
    ],
    "materiais_en": "Wood, acrylic paint, PVC, recording of the sea",
    "dimensoes_en": "261 × 263 cm (2013); 410 × 285 × 30 cm (2023)",
-   "local_en": "Casa de Cultura Laura Alvim (2013); Futuros – Arte e Tecnologia (2023)"
+   "local_en": "Casa de Cultura Laura Alvim (2013); Futuros – Arte e Tecnologia (2023)",
+   "colecao": "Coleção Sérgio Carvalho",
+   "colecao_en": "Sérgio Carvalho Collection"
   },
   {
    "id": "historias-anonimas",
@@ -395,7 +397,9 @@
    "premio": "Prêmio Interações Estéticas, Funarte, 2009",
    "premio_en": "Interações Estéticas Award, Funarte, 2009",
    "premio_curto": "Prêmio Interações Estéticas",
-   "premio_curto_en": "Interações Estéticas Award"
+   "premio_curto_en": "Interações Estéticas Award",
+   "colecao": "Coleção Augusto Rodrigues",
+   "colecao_en": "Augusto Rodrigues Collection"
   },
   {
    "id": "guarda-chuva-sonoro",
@@ -425,7 +429,7 @@
    "materiais": "Chuveiros de aço inoxidável, amplificador, alto-falante e gravações caseiras",
    "dimensoes": "249 × 70 × 70 cm",
    "local": "7ª Bienal do Mercosul, Mostra Absurdo, Porto Alegre (2009); Casa de Cultura Laura Alvim (2013)",
-   "colecao": "Museu de Arte Contemporânea de Niterói (aquisição pelo prêmio)",
+   "colecao": "Museu de Arte Contemporânea de Niterói (aquisição pelo prêmio); Coleção Sérgio Carvalho",
    "texto": [
     "Objeto sonoro com chuveiros de aço inoxidável, amplificador e alto-falante, que reproduzem gravações caseiras de cantores anônimos. Prêmio Marcantonio Vilaça, Funarte, 2012; coleção do Museu de Arte Contemporânea de Niterói."
    ],
@@ -439,7 +443,7 @@
    ],
    "materiais_en": "Stainless steel showers, amplifier, loudspeaker and home recordings",
    "local_en": "7th Mercosul Biennial, Mostra Absurdo, Porto Alegre (2009); Casa de Cultura Laura Alvim (2013)",
-   "colecao_en": "Museu de Arte Contemporânea de Niterói (acquired through the award)",
+   "colecao_en": "Museu de Arte Contemporânea de Niterói (acquired through the award); Sérgio Carvalho Collection",
    "premio": "Prêmio Marcantonio Vilaça, Funarte, 2012",
    "premio_en": "Marcantonio Vilaça Award, Funarte, 2012",
    "premio_curto": "Prêmio Marcantonio Vilaça",
@@ -597,7 +601,9 @@
     "Old radios playing fictional recordings. Shown in the exhibition Sonar, Casa de Cultura Laura Alvim, 2013."
    ],
    "materiais_en": "Vintage radios and fictional recordings",
-   "local_en": "Casa de Cultura Laura Alvim, in the exhibition Sonar"
+   "local_en": "Casa de Cultura Laura Alvim, in the exhibition Sonar",
+   "colecao": "Coleção Sérgio Carvalho",
+   "colecao_en": "Sérgio Carvalho Collection"
   },
   {
    "id": "a-dama",

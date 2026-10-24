@@ -514,8 +514,8 @@ COLECOES = [
  ("Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico", "Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico"),
  ("Museo de Artes Visuales, Santiago do Chile — Falante (vídeo)", "Museo de Artes Visuales, Santiago, Chile — Falante (video)"),
  ("Centro Provincial de Diseño y Oficios, Havana — mochila de Falante", "Centro Provincial de Diseño y Oficios, Havana — Falante backpack"),
- ("Coleção Sérgio Carvalho", "Sérgio Carvalho Collection"),
- ("Coleção Augusto Rodrigues", "Augusto Rodrigues Collection"),
+ ("Coleção Sérgio Carvalho — Turbina, Chuveiros Sonoros, Radionovelas", "Sérgio Carvalho Collection — Turbina, Chuveiros Sonoros, Radionovelas"),
+ ("Coleção Augusto Rodrigues — Sapatos Sonoros", "Augusto Rodrigues Collection — Sapatos Sonoros"),
 ]
 
 
