@@ -749,10 +749,19 @@
       "tipo": "instalação",
       "materiais": "Instalação sonora comissionada",
       "dimensoes": "",
-      "local": "Museu de Arte do Rio",
+      "local": "Museu de Arte do Rio — exposição O Rio dos Navegantes, curadoria de Evandro Salles, 2019–2020",
       "colecao": "Museu de Arte do Rio",
-      "texto": [],
-      "pendente": "texto e registros"
+      "texto": [
+        "Instalação sonora comissionada para O Rio dos Navegantes, a principal exposição de 2019 do Museu de Arte do Rio, que contou a história do Rio como cidade portuária a partir dos povos, navegantes e imigrantes que chegaram a ela desde o século XVI. A obra passou a integrar o acervo do museu."
+      ],
+      "pendente": "texto do artista sobre a obra",
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "YyU4-x5BTgg",
+          "titulo": "Vinheta da exposição O Rio dos Navegantes, Museu de Arte do Rio, 2019"
+        }
+      ]
     },
     {
       "id": "nuvem",
