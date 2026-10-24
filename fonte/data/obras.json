@@ -1475,14 +1475,16 @@
    "titulo": "Poema Tornado",
    "fonte": "texto curatorial, Galeria Reserva Cultural, Niterói",
    "ano": "2020",
-   "url": "https://www.eixoarte.com/floriano-romano"
+   "url": "https://www.eixoarte.com/floriano-romano",
+   "destaque": true
   },
   {
    "autor": "Guilherme Bueno",
    "titulo": "Muro de Som",
    "fonte": "catálogo, Centro Cultural Municipal Parque das Ruínas; reeditado em Cidade Labirinto (2021)",
    "ano": "2016",
-   "url": ""
+   "url": "",
+   "destaque": true
   },
   {
    "autor": "João Paulo Quintella",
@@ -1519,7 +1521,8 @@
    "titulo": "Sonar",
    "fonte": "catálogo, Casa de Cultura Laura Alvim; reeditado em Cidade Labirinto (2021)",
    "ano": "2013",
-   "url": "https://www.academia.edu/40573060/Catalogo_da_Exposicao_SONAR_curadoria_Gloria_Ferreira"
+   "url": "https://www.academia.edu/40573060/Catalogo_da_Exposicao_SONAR_curadoria_Gloria_Ferreira",
+   "destaque": true
   },
   {
    "autor": "Luisa Duarte",
@@ -1565,7 +1568,7 @@
    "url": ""
   },
   {
-   "autor": "7ª Bienal do Mercosul",
+   "autor": "7ª Bienal do Mercosul (curadoria geral: Victoria Noorthoorn)",
    "titulo": "Grito e Escuta",
    "fonte": "catálogo",
    "ano": "2009",

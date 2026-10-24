@@ -477,11 +477,19 @@ def item_texto(x, com_autor=True):
 
 def build_textos(c):
     t = c.t
-    ordem_d = ["Floriano Romano: Esquina", "Making Oneself Heard", "Acoustic Territories", "Brasilidade", "Corpo impulso", "Desorientação"]
+    ordem_d = ["Floriano Romano: Esquina", "Making Oneself Heard", "Acoustic Territories", "Sonar", "Desorientação",
+               "Poema Tornado", "Muro de Som", "Brasilidade", "Corpo impulso"]
+    # depois dos destaques: Luísa Duarte, Marisa Flórido e Guilherme Bueno primeiro; PIPA, Bolsa de Arte, Neide e Espinho por último
+    def prio(x):
+        a, ti = x["autor"], x["titulo"]
+        if a.startswith(("Luisa Duarte", "Marisa Flórido", "Guilherme Bueno")): return 0
+        if a.startswith(("Prêmio PIPA", "Bolsa de Arte", "Neide", "Jorge Emanuel")): return 2
+        return 1
     dest = sorted((x for x in DATA["textos_sobre"] if x.get("destaque")),
                   key=lambda x: next((i for i, k in enumerate(ordem_d) if x["titulo"].startswith(k)), 99))
     destaques = "".join(item_texto(x) for x in dest)
-    sobre = "".join(item_texto(x) for x in DATA["textos_sobre"] if not x.get("destaque"))
+    resto = sorted((x for x in DATA["textos_sobre"] if not x.get("destaque")), key=prio)  # estável: mantém a ordem por ano
+    sobre = "".join(item_texto(x) for x in resto)
     dele = "".join(item_texto(x, False) for x in DATA["textos_do_artista"])
     ents = DATA.get("entrevistas", [])
     entrevistas = (f'<h2 class="sub">{t["entrevistas"]}</h2>' + "".join(
