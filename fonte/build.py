@@ -47,7 +47,7 @@ def page(title, body, r="", desc="", body_class="", scripts=(), active="", fragm
 </main>
 <footer class="rodape">
   <span>© {ANO_ATUAL} Floriano Romano</span>
-  <span class="rodape-links"><a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
+  <span class="rodape-links"><a href="https://www.instagram.com/florianoromano/" rel="noopener">Instagram</a> <a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
 </footer>
 {js}"""
     fontes = '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Jura:wght@500&display=swap" rel="stylesheet">'
@@ -87,7 +87,7 @@ def page(title, body, r="", desc="", body_class="", scripts=(), active="", fragm
 </main>
 <footer class="rodape">
   <span>© {ANO_ATUAL} Floriano Romano</span>
-  <span class="rodape-links"><a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
+  <span class="rodape-links"><a href="https://www.instagram.com/florianoromano/" rel="noopener">Instagram</a> <a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
 </footer>
 {js}
 </body>
@@ -490,6 +490,8 @@ def build_sobre():
       <h2 class="sub">Vídeos</h2>
       <p><a href="https://www.youtube.com/@openradio" rel="noopener">Canal no YouTube — @openradio</a><br>
       <a href="https://vimeo.com/user12897613" rel="noopener">Vimeo</a></p>
+      <h2 class="sub">Instagram</h2>
+      <p><a href="https://www.instagram.com/florianoromano/" rel="noopener">@florianoromano</a></p>
       <h2 class="sub">Contato</h2>
       <p class="dado" data-contato>e-mail a definir</p>
     </div>
