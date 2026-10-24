@@ -944,6 +944,27 @@
         }
       ],
       "pendente": "quais obras foram apresentadas"
+    },
+    {
+      "id": "paqueta-experimenta",
+      "titulo": "Paquetá Experimenta",
+      "ano": "2016",
+      "ano_num": 2016,
+      "tipo": "exposição",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "Casa de Artes de Paquetá, Ilha de Paquetá, Rio de Janeiro — 21 de maio a 25 de junho de 2016. Curadoria de Ivair Reinaldim",
+      "texto": [
+        "Exposição coletiva na Casa de Artes de Paquetá. O curador Ivair Reinaldim convidou cinco artistas a criar obras a partir de uma imersão na ilha, pensando natureza, cidade, ruído e silêncio."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "ydrchMI48-E",
+          "titulo": "Paquetá Experimenta Arte Contemporânea, 2016"
+        }
+      ],
+      "pendente": "qual obra foi apresentada"
     }
   ],
   "mapa_pares": [
@@ -1155,6 +1176,11 @@
       "ano": "2017",
       "titulo": "4 Media Arts Festival ARAD",
       "local": "Arad, Romênia"
+    },
+    {
+      "ano": "2016",
+      "titulo": "Paquetá Experimenta",
+      "local": "Casa de Artes de Paquetá, Rio de Janeiro"
     },
     {
       "ano": "2015",
