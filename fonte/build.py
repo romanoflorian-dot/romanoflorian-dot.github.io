@@ -448,6 +448,7 @@ def build_sobre():
         <li><span class="dado">2012</span> Prêmio Projéteis de Arte Contemporânea, Funarte — A Cidade Sonora</li>
         <li><span class="dado">2011</span> Intrasom, ações sonoras no MAM Rio — Secretaria de Estado de Cultura</li>
         <li><span class="dado">2010</span> Prêmio Interações Estéticas, Funarte — Esculturas Sonoras Urbanas</li>
+        <li><span class="dado">2010</span> Artista indicado ao Prêmio PIPA</li>
         <li><span class="dado">2008</span> Bolsa de Apoio às Artes Visuais, Funarte — Chapéu Panorâmico</li>
         <li><span class="dado">2007</span> Prêmio Projéteis de Arte Contemporânea, Funarte — Sample Way of Life</li>
         <li><span class="dado">2007</span> Menção honrosa, 58º Salão de Abril, Fortaleza — Falante</li>
