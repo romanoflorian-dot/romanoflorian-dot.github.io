@@ -384,6 +384,9 @@
           "id": "127425686",
           "titulo": "Sapatos Sonoros"
         }
+      ],
+      "exposicoes_coletivas": [
+        "aparicao"
       ]
     },
     {
@@ -1192,6 +1195,18 @@
       "ano": "2015",
       "titulo": "Happenings, performance com Máscara Sonora",
       "local": "Casa França-Brasil, Rio de Janeiro"
+    },
+    {
+      "ano": "2015",
+      "titulo": "Aparição",
+      "local": "Caixa Cultural Rio de Janeiro. Curadoria de Fernanda Lopes. Performance com Sapatos Sonoros na abertura",
+      "id": "aparicao",
+      "texto": "Coletiva com dezessete artistas que propõe repensar a escultura na arte brasileira recente. O título lembra Michelangelo, para quem esculpir era retirar o excesso de material que escondia uma forma já vista.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "tuRi-Cn6Kv0",
+        "titulo": "Aparição, Caixa Cultural Rio, Canal-Arte, 2015"
+      }
     },
     {
       "ano": "2012",
