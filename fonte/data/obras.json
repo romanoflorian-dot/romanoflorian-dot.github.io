@@ -1188,8 +1188,15 @@
     },
     {
       "ano": "2015",
-      "titulo": "Trio Bienal — Forma e Matéria",
-      "local": "Centro Cultural Banco do Brasil, Rio de Janeiro"
+      "titulo": "TRIO Bienal — Forma e Matéria: Limites do Tridimensional em Campos Expandidos",
+      "local": "Centro Cultural Banco do Brasil, Rio de Janeiro. Curadoria de Marcus de Lontra",
+      "id": "trio-bienal",
+      "texto": "Primeira bienal do Rio dedicada ao tridimensional, com obras de vários países espalhadas pela cidade: escultura, instalação e objetos, além de pintura, fotografia, desenho e vídeo.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "lZtNcNBo3hE",
+        "titulo": "TRIO Bienal, CCBB Rio, Canal-Arte, 2015"
+      }
     },
     {
       "ano": "2015",
