@@ -828,6 +828,39 @@
           "titulo": "Rádio Lugar — sapatos sonoros na barca"
         }
       ]
+    },
+    {
+      "id": "o-estrangeiro",
+      "titulo": "O estrangeiro",
+      "ano": "2013",
+      "ano_num": 2013,
+      "tipo": "objeto sonoro",
+      "materiais": "Móvel, alto-falantes, gravações caseiras",
+      "dimensoes": "141 × 82 × 60 cm",
+      "local": "Casa de Cultura Laura Alvim, Rio de Janeiro",
+      "exposicao": "sonar",
+      "texto": [
+        "Um móvel antigo com vinte gavetas, a princípio silencioso, emite um som novo a cada gaveta aberta: sons captados nas viagens do artista, uma espécie de arquivo."
+      ],
+      "imagens": [
+        {
+          "src": "media/obras/o-estrangeiro/o-estrangeiro-01.jpg",
+          "alt": "Móvel antigo com gavetas abertas, na exposição Sonar",
+          "credito": "O estrangeiro, Casa de Cultura Laura Alvim, 2013 · Foto: Mario Grisolli"
+        },
+        {
+          "src": "media/obras/o-estrangeiro/o-estrangeiro-02.jpg",
+          "alt": "Móvel antigo com gavetas abertas, na exposição Sonar",
+          "credito": "O estrangeiro, Casa de Cultura Laura Alvim, 2013 · Foto: Mario Grisolli"
+        }
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "Ldq8fDLDMY4",
+          "titulo": "O estrangeiro, exposição Sonar"
+        }
+      ]
     }
   ],
   "mapa_pares": [
