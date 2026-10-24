@@ -518,7 +518,14 @@
       "radio": {
         "freq": 2002
       },
-      "ano_mapa": "anos 2000"
+      "ano_mapa": "anos 2000",
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "fdtlYVg-iHE",
+          "titulo": "Cruz"
+        }
+      ]
     },
     {
       "id": "o-inusitado",
