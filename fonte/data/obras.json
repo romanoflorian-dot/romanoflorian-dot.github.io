@@ -910,6 +910,27 @@
         }
       ],
       "pendente": "qual obra foi apresentada"
+    },
+    {
+      "id": "corpo-de-som",
+      "titulo": "Corpo de Som",
+      "ano": "2018",
+      "ano_num": 2018,
+      "tipo": "exposição",
+      "materiais": "Objetos sonoros e instalações",
+      "dimensoes": "",
+      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro — Festival Panorama, 3 a 24 de novembro de 2018",
+      "texto": [
+        "Exposição do Festival Panorama com a dupla britânica Helen Cole e Alex Bradley, que recriou com artistas do Rio de Janeiro e de Teresina a instalação sonora Breathe, feita da respiração de bailarinos. A mostra reuniu também obras de Floriano Romano: objetos sonoros e instalações que investigam o corpo ausente e os rastros que ele deixa no som."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "Nm4-9ng06YE",
+          "titulo": "Panorama 2018 — Corpo de Som: Helen Cole e Floriano Romano"
+        }
+      ],
+      "pendente": "quais obras foram apresentadas"
     }
   ],
   "mapa_pares": [
