@@ -772,6 +772,30 @@
           "titulo": "Duas Mulheres"
         }
       ]
+    },
+    {
+      "id": "microradio",
+      "titulo": "Microrádio",
+      "ano": "2006",
+      "ano_num": 2006,
+      "tipo": "rádio",
+      "materiais": "Vídeo; transmissores caseiros",
+      "dimensoes": "",
+      "local": "",
+      "texto": [
+        "Um guia faça-você-mesmo para montar uma rádio comunitária de baixa potência com transmissores construídos em casa."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "jOrTbBCmiDQ",
+          "titulo": "Microrádio"
+        }
+      ],
+      "radio": {
+        "freq": 2006.0
+      },
+      "pendente": "ficha técnica e texto"
     }
   ],
   "mapa_pares": [
