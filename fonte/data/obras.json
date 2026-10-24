@@ -1329,9 +1329,15 @@
   },
   {
    "ano": "2012",
-   "titulo": "Soundworks, poema sonoro",
-   "local": "Institute of Contemporary Arts, Londres",
-   "local_en": "Institute of Contemporary Arts, London"
+   "titulo": "SOUNDWORKS",
+   "local": "Institute of Contemporary Arts (ICA), Londres, 19 de junho a 16 de setembro de 2012",
+   "local_en": "Institute of Contemporary Arts (ICA), London, 19 June to 16 September 2012",
+   "id": "soundworks-ica",
+   "destaque": true,
+   "titulo_en": "SOUNDWORKS",
+   "texto": "Projeto do ICA apresentado junto à exposição Days, de Bruce Nauman: mais de cem artistas internacionais, convidados pelo ICA e por instituições de vários países, criaram obras sonoras a partir de Days, reunidas num site e nas galerias. Floriano Romano participou com um poema sonoro.",
+   "texto_en": "ICA project presented alongside Bruce Nauman's exhibition Days: more than one hundred international artists, invited by the ICA and by institutions in several countries, made sound works in response to Days, gathered on a website and in the galleries. Floriano Romano took part with a sound poem.",
+   "url": "https://www.e-flux.com/announcements/34042/bruce-nauman-s-days-and-soundworks"
   },
   {
    "ano": "2012",
