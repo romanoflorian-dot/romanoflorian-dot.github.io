@@ -234,7 +234,11 @@
    ],
    "materiais_en": "Two walls with 32 loudspeakers each, sound of wind",
    "dimensoes_en": "2 walls, 330 × 170 cm",
-   "local_en": "Parque das Ruínas, Rio de Janeiro"
+   "local_en": "Parque das Ruínas, Rio de Janeiro",
+   "premio": "Parque das Ruínas, Prefeitura do Rio de Janeiro, 2016",
+   "premio_en": "Parque das Ruínas, City of Rio de Janeiro, 2016",
+   "premio_curto": "Prefeitura do Rio",
+   "premio_curto_en": "City of Rio de Janeiro"
   },
   {
    "id": "binoculos-sonoros",
@@ -458,8 +462,10 @@
    ],
    "materiais_en": "Hats with surveillance cameras, multichannel video",
    "local_en": "Beach, Rio de Janeiro; MAC Niterói (2009)",
-   "fomento": "Bolsa de Estímulo à Criação Artística, Funarte, 2008",
-   "fomento_en": "Artistic Creation Grant, Funarte, 2008"
+   "premio": "Bolsa de Estímulo à Criação Artística, Funarte, 2008",
+   "premio_en": "Artistic Creation Grant, Funarte, 2008",
+   "premio_curto": "Bolsa Funarte",
+   "premio_curto_en": "Funarte Grant"
   },
   {
    "id": "falante",
@@ -716,7 +722,11 @@
     "The city is a labyrinth to be deciphered by listening. In Tablado número 30 [Stage 30], the artist's body enters the sound of the streets and moves through it."
    ],
    "materiais_en": "Tablado número 30: painted wooden platform, loudspeakers, street recordings, gas mask with loudspeaker; digital exhibition and podcast",
-   "local_en": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro (May 2021); cidadelabirinto.art (August 2021)"
+   "local_en": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro (May 2021); cidadelabirinto.art (August 2021)",
+   "premio": "Centro Municipal de Arte Hélio Oiticica, Prefeitura do Rio de Janeiro, 2021",
+   "premio_en": "Centro Municipal de Arte Hélio Oiticica, City of Rio de Janeiro, 2021",
+   "premio_curto": "Centro Hélio Oiticica",
+   "premio_curto_en": "Centro Hélio Oiticica"
   },
   {
    "id": "cidade-sensivel",
@@ -885,7 +895,7 @@
    "tipo": "intervenção urbana",
    "materiais": "MP3 players e alto-falantes costurados sobre sapatos comuns",
    "dimensoes": "Dimensões variáveis",
-   "local": "Barca Rio–Niterói e Praça XV, Rio de Janeiro — Projeto EME>> Conexão Artes Visuais, Funarte",
+   "local": "Barca Rio–Niterói e Praça XV, Rio de Janeiro",
    "texto": [
     "Sapatos com alto-falantes na travessia da barca. Bailarinos fazem do percurso uma apresentação, e do passageiro, público."
    ],
@@ -913,9 +923,11 @@
    ],
    "materiais_en": "MP3 players and loudspeakers sewn onto ordinary shoes",
    "dimensoes_en": "Variable dimensions",
-   "local_en": "Rio–Niterói ferry and Praça XV, Rio de Janeiro — Projeto EME>> Conexão Artes Visuais, Funarte",
-   "fomento": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010",
-   "fomento_en": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010"
+   "local_en": "Rio–Niterói ferry and Praça XV, Rio de Janeiro",
+   "premio": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010",
+   "premio_en": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010",
+   "premio_curto": "Conexão Artes Visuais",
+   "premio_curto_en": "Conexão Artes Visuais"
   },
   {
    "id": "o-estrangeiro",
@@ -963,7 +975,7 @@
    "tipo": "intervenção urbana",
    "materiais": "Quatro ações sonoras no vão livre do museu",
    "dimensoes": "",
-   "local": "Museu de Arte Moderna do Rio de Janeiro — apoio da Secretaria de Estado de Cultura do Rio de Janeiro",
+   "local": "Museu de Arte Moderna do Rio de Janeiro",
    "texto": [
     "Quatro ações sonoras no vão livre do MAM Rio."
    ],
@@ -979,9 +991,11 @@
     "Four sound actions in the open ground floor of MAM Rio."
    ],
    "materiais_en": "Four sound actions in the museum's open ground floor",
-   "local_en": "Museu de Arte Moderna do Rio de Janeiro — supported by the Rio de Janeiro State Secretariat of Culture",
-   "fomento": "Apoio a Projeto Artístico, Secretaria de Estado de Cultura do Rio de Janeiro, 2010",
-   "fomento_en": "Artistic Project Support, Rio de Janeiro State Secretariat of Culture, 2010"
+   "local_en": "Museu de Arte Moderna do Rio de Janeiro",
+   "premio": "Apoio a Projeto Artístico, Secretaria de Estado de Cultura do Rio de Janeiro, 2010",
+   "premio_en": "Artistic Project Support, Rio de Janeiro State Secretariat of Culture, 2010",
+   "premio_curto": "Secretaria de Cultura RJ",
+   "premio_curto_en": "RJ Secretariat of Culture"
   },
   {
    "id": "radio-invisivel",

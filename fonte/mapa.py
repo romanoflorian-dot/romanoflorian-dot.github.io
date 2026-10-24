@@ -42,6 +42,8 @@ NOS = {
     "cidade-labirinto":  dict(p=(700, 470), t=2, lado="d"),
     "muro-de-som":       dict(p=(206, 128), t=2, lado="e"),
     "chapeu-panoramico": dict(p=(848, 98),  t=2, lado="d"),
+    "intrasom":          dict(p=(652, 284), t=2, lado="d"),
+    "radio-lugar":       dict(p=(286, 524), t=2, lado="d"),
     # nível 1
     "turbina":           dict(p=(726, 62),  t=1, lado="d"),
     "mascara-sonora":    dict(p=(934, 222), t=1, lado="e"),
@@ -59,6 +61,8 @@ PV = {
     "errancia":          (346, 586, "d"),
     "sapatos-sonoros":   (286, 744, "d"),
     "historias-anonimas": (150, 500, "d"),
+    "intrasom":          (262, 452, "d"),
+    "radio-lugar":       (520, 664, "e"),
 }
 
 # Sistemas de linhas: cada um é um ponto de vista. Âncora = obra (nome) ou ponto livre (x, y).
@@ -67,13 +71,13 @@ SISTEMAS = {
     "B": [("sonar", 1, (0, .97)), ("muro-de-som", .6, (0, .9)), ("cidade-sonora", 3.4, (0, .99)),
           ("esquina", 2.2, (0, .98)), ((0, 252), 1.4, (0, .96)), ((0, 270), .6, (0, .99)), ("mascara-sonora", .6, (.5, 1))],
     "C": [("falante", 2.2, (0, .78)), ("errancia", 3.4, (0, .86)), ("sapatos-sonoros", 1, (0, 1)),
-          ("mar-sobre-mar", 1.4, (0, .7)), ("historias-anonimas", .6, (0, 1)), ((300, 0), .6, (0, .55)), ((650, 0), 1, (0, .62))],
+          ("mar-sobre-mar", 1.4, (0, .7)), ("historias-anonimas", .6, (0, 1)), ((300, 0), .6, (0, .55)), ((650, 0), 1, (0, .62)), ("radio-lugar", .6, (0, .4))],
     "A": [("chuveiros-sonoros", 1.4, (.1, 1)), ("cruz", .6, (0, 1)), ("esquinas", 1, (.2, 1)),
-          ("turbina", .6, (0, .8)), ("desenhos", .6, (.3, 1))],
+          ("turbina", .6, (0, .8)), ("desenhos", .6, (.3, 1)), ("intrasom", 1, (.15, .9))],
     "F": [("chapeu-panoramico", 1.4, (.15, 1)), ("cidade-labirinto", 2.2, (.25, 1)), ("sonar", 1, (.2, 1)),
-          ("mascara-sonora", 1, (.4, 1)), ("chuveiros-sonoros", 4.4, (0, .62))],
+          ("mascara-sonora", 1, (.4, 1)), ("chuveiros-sonoros", 4.4, (0, .62)), ("radio-lugar", 1, (0, .7))],
     "D": [("muro-de-som", .6, (0, .7)), ("turbina", 1, (0, .5)), ("desenhos", .6, (.25, 1)), ("cruz", 1, (.3, 1)),
-          ("historias-anonimas", .6, (0, .45)), ((410, 0), .6, (.4, 1)), ((880, 0), 1.4, (.1, .66))],
+          ("historias-anonimas", .6, (0, .45)), ((410, 0), .6, (.4, 1)), ((880, 0), 1.4, (.1, .66)), ("intrasom", .6, (.1, .55))],
     # leque denso que nasce na Esquina e desce para a direita, como o vértice dos desenhos de fita
     "E": [((694, 560), 3.4, (0, 1)), ((706, 560), 1, (0, 1)), ((717, 560), .6, (0, 1)), ((731, 560), 2.2, (0, 1)),
           ((748, 560), .6, (0, 1)), ((772, 560), 1, (0, 1)), ("cidade-labirinto", 1.4, (0, 1)), ("esquinas", 1, (0, 1)),

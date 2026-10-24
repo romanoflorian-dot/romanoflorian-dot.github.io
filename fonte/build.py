@@ -491,26 +491,25 @@ BIO = {
         "For him, noise is the expression of the world: undetermined, it speaks directly to the senses. Every speaking body opens a sound field of its own within the landscape; walking, broadcasting and listening are his gestures, and the city is his material.",
         "He created the radio programme O Inusitado (2002–2004) on Rádio Madame Satã and took part in the 7th Mercosul Biennial (2009). He holds a PhD in Visual Arts and teaches at the School of Fine Arts of the Federal University of Rio de Janeiro (UFRJ) and in its Graduate Programme in Visual Languages."],
 }
-# (ano, prêmio pt, prêmio en, obra pt/en, id da página da obra ou "")
+# Prêmios — inclui os financiamentos e residências por edital, que o artista conta como premiações.
+# (ano, prêmio pt, prêmio en, obra, id da página da obra ou "")
 PREMIOS = [
- ("2015", "Prêmio CCBB Contemporâneo, Centro Cultural Banco do Brasil", "CCBB Contemporary Award, Centro Cultural Banco do Brasil", "Errância", "errancia"),
- ("2012", "Prêmio Marcantonio Vilaça, Funarte — aquisição para o MAC Niterói", "Marcantonio Vilaça Award, Funarte — acquired by MAC Niterói", "Chuveiros Sonoros", "chuveiros-sonoros"),
- ("2012", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "A Cidade Sonora", "cidade-sonora"),
- ("2009", "Prêmio Interações Estéticas, Funarte", "Interações Estéticas Award, Funarte", "Sapatos Sonoros", "sapatos-sonoros"),
- ("2007", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "Sample Way of Life", ""),
- ("2007", "Menção honrosa, 58º Salão de Abril, Fortaleza", "Honourable mention, 58th Salão de Abril, Fortaleza", "Falante", "falante"),
- ("1992", "Menção honrosa, Prêmio Philips, Museu Nacional de Belas Artes", "Honourable mention, Philips Award, Museu Nacional de Belas Artes", "", ""),
-]
-INDICACOES = [("2010", "Prêmio PIPA", "PIPA Prize")]
-FINANCIAMENTOS = [
  ("2021", "Centro Municipal de Arte Hélio Oiticica, Prefeitura do Rio de Janeiro", "Centro Municipal de Arte Hélio Oiticica, City of Rio de Janeiro", "Cidade Labirinto", "cidade-labirinto"),
  ("2016", "Parque das Ruínas, Prefeitura do Rio de Janeiro", "Parque das Ruínas, City of Rio de Janeiro", "Muro de Som", "muro-de-som"),
  ("2016", "Residência artística HOBRA, Brasil–Holanda", "HOBRA artist residency, Brazil–Netherlands", "", ""),
+ ("2015", "Prêmio CCBB Contemporâneo, Centro Cultural Banco do Brasil", "CCBB Contemporary Award, Centro Cultural Banco do Brasil", "Errância", "errancia"),
+ ("2012", "Prêmio Marcantonio Vilaça, Funarte — aquisição para o MAC Niterói", "Marcantonio Vilaça Award, Funarte — acquired by MAC Niterói", "Chuveiros Sonoros", "chuveiros-sonoros"),
+ ("2012", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "A Cidade Sonora", "cidade-sonora"),
  ("2010", "Apoio a Projeto Artístico, Secretaria de Estado de Cultura do Rio de Janeiro", "Artistic Project Support, Rio de Janeiro State Secretariat of Culture", "Intrasom", "intrasom"),
  ("2010", "Conexão Artes Visuais, Funarte — Projeto EME>>", "Conexão Artes Visuais, Funarte — Projeto EME>>", "Rádio Lugar", "radio-lugar"),
+ ("2009", "Prêmio Interações Estéticas, Funarte", "Interações Estéticas Award, Funarte", "Sapatos Sonoros", "sapatos-sonoros"),
  ("2008", "Bolsa de Estímulo à Criação Artística, Funarte", "Artistic Creation Grant, Funarte", "Chapéu Panorâmico", "chapeu-panoramico"),
+ ("2007", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "Sample Way of Life", ""),
+ ("2007", "Menção honrosa, 58º Salão de Abril, Fortaleza", "Honourable mention, 58th Salão de Abril, Fortaleza", "Falante", "falante"),
  ("2000", "Bolsa de residência, Câmara Municipal do Porto — Ateliers da Lada", "Residency grant, Porto City Council — Ateliers da Lada", "Do Deslocamento", ""),
+ ("1992", "Menção honrosa, Prêmio Philips, Museu Nacional de Belas Artes", "Honourable mention, Philips Award, Museu Nacional de Belas Artes", "", ""),
 ]
+INDICACOES = [("2010", "Prêmio PIPA", "PIPA Prize")]
 COLECOES = [
  ("Museu de Arte do Rio — O Rio dos Navegantes", "Museu de Arte do Rio — O Rio dos Navegantes"),
  ("Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico", "Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico"),
@@ -527,11 +526,10 @@ def build_sobre(c):
         if not nome:
             return ""
         return f'<a class="nome" href="obras/{oid}.html">{e(nome)}</a>' if oid else f'<span class="nome">{e(nome)}</span>'
-    premios = "".join(f'<li><span class="dado sinal">{p[0]}</span><div>{obra_link(p[3], p[4])}<span class="premio-nome">{e(p[1 + i])}</span></div></li>'
+    premios = "".join(f'<li><span class="dado sinal">{p[0]}</span><div>{obra_link(p[3], p[4])}<span class="premio-nome{" so-premio" if not p[3] else ""}">{e(p[1 + i])}</span></div></li>'
                       for p in PREMIOS)
     premios += "".join(f'<li class="indicacao"><span class="dado">{p[0]}</span><div><span class="premio-nome">{t["indicacao"]} — {e(p[1 + i])}</span></div></li>'
                        for p in INDICACOES)
-    fins = "".join(f'<li><span class="dado">{p[0]}</span><span>{e(p[1 + i])}{" — " + obra_link(p[3], p[4]) if p[3] else ""}</span></li>' for p in FINANCIAMENTOS)
     cols = "".join(f"<li>{e(x[i])}</li>" for x in COLECOES)
     body = f"""
 <section class="sobre">
@@ -544,8 +542,6 @@ def build_sobre(c):
       <ul class="lista-premios">{premios}</ul>
     </div>
     <div class="sobre-dados">
-      <h2 class="sub">{t['financiamentos']}</h2>
-      <ul class="lista-simples">{fins}</ul>
       <h2 class="sub">{t['colecoes']}</h2>
       <ul class="lista-simples">{cols}</ul>
       <h2 class="sub">{t['videos']}</h2>

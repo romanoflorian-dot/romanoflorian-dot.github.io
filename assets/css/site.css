@@ -369,3 +369,4 @@ a.play { text-decoration: none; }
 .lista-premios .premio-nome { display: block; font-size: 0.9375rem; color: var(--text-2); margin-top: 2px; }
 .lista-premios .indicacao .premio-nome { margin-top: 0; }
 .lista-simples a.nome { font-family: var(--f-name); font-style: italic; color: inherit; }
+.lista-premios .premio-nome.so-premio { margin-top: 0; font-size: 1.0625rem; color: var(--text); }
