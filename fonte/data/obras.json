@@ -1270,5 +1270,17 @@
       "ano": "2013",
       "url": ""
     }
+  ],
+  "entrevistas": [
+    {
+      "titulo": "Entrevista com Floriano Romano",
+      "fonte": "EBA MediaLab, Escola de Belas Artes da UFRJ",
+      "ano": "2016",
+      "video": {
+        "plataforma": "youtube",
+        "id": "7s7CWT4EBCk",
+        "titulo": "Entrevista com Floriano Romano, EBA MediaLab, 2016"
+      }
+    }
   ]
 }

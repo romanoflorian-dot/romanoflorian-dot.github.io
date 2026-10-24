@@ -327,3 +327,6 @@ a.play { text-decoration: none; }
 .imagens figure:first-child { column-span: all; }
 .imagens figure:first-child img { width: 100%; max-height: 80vh; object-fit: contain; object-position: left center; }
 .rodape-links { display: inline-flex; gap: var(--s6); }
+.entrevista { max-width: 52rem; }
+.entrevista p { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); align-items: baseline; margin: 0 0 var(--s3); }
+.entrevista .nome { font-size: 1.5rem; }

@@ -409,6 +409,10 @@ def item_texto(t, com_autor=True):
 def build_textos():
     sobre = "".join(item_texto(t) for t in DATA["textos_sobre"])
     dele = "".join(item_texto(t, False) for t in DATA["textos_do_artista"])
+    ents = DATA.get("entrevistas", [])
+    entrevistas = ('<h2 class="sub">Entrevistas</h2>' + "".join(
+        f'<div class="entrevista"><p><span class="dado">{e(x["ano"])}</span> <span class="nome">{e(x["titulo"])}</span> '
+        f'<span class="dado fonte">{e(x["fonte"])}</span></p>{video_embed(x["video"])}</div>' for x in ents)) if ents else ""
     body = f"""
 <section class="textos">
   <h1 class="titulo-pagina">Textos</h1>
@@ -416,6 +420,7 @@ def build_textos():
   <ul class="lista-textos">{sobre}</ul>
   <h2 class="sub">Do artista</h2>
   <ul class="lista-textos">{dele}</ul>
+  {entrevistas}
 </section>"""
     return page("Textos", body, active="textos.html",
                 desc="Textos críticos sobre a obra de Floriano Romano e textos do artista.")
