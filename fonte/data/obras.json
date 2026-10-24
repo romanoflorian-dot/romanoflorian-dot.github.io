@@ -868,6 +868,27 @@
           "titulo": "O estrangeiro, exposição Sonar"
         }
       ]
+    },
+    {
+      "id": "intrasom",
+      "titulo": "Intrasom",
+      "ano": "2011",
+      "ano_num": 2011,
+      "tipo": "intervenção urbana",
+      "materiais": "Quatro ações sonoras no vão livre do museu",
+      "dimensoes": "",
+      "local": "Museu de Arte Moderna do Rio de Janeiro — apoio da Secretaria de Estado de Cultura do Rio de Janeiro",
+      "texto": [
+        "Quatro ações sonoras realizadas no vão livre do Museu de Arte Moderna do Rio de Janeiro."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "zk_5Lc-LXT4",
+          "titulo": "Intrasom, MAM Rio"
+        }
+      ],
+      "pendente": "texto"
     }
   ],
   "mapa_pares": [
