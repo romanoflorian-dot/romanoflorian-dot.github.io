@@ -1327,6 +1327,16 @@
   ],
   "entrevistas": [
     {
+      "titulo": "Floriano Romano | Arte e Precariedade",
+      "fonte": "Arte e Precariedade",
+      "ano": "2022",
+      "video": {
+        "plataforma": "youtube",
+        "id": "BxbVhyRKplk",
+        "titulo": "Floriano Romano, Arte e Precariedade, 2022"
+      }
+    },
+    {
       "titulo": "Entrevista com Floriano Romano",
       "fonte": "EBA MediaLab, Escola de Belas Artes da UFRJ",
       "ano": "2016",
