@@ -447,7 +447,7 @@
       "tipo": "performance",
       "materiais": "Mochila com alto-falante, poema sonoro “Não preste atenção”",
       "dimensoes": "",
-      "local": "São Paulo e Fortaleza",
+      "local": "Fortaleza (58º Salão de Abril, menção honrosa) e São Paulo (Futuro do Presente, Itaú Cultural), 2007",
       "colecao": "Museu de Artes Visuais de Santiago do Chile",
       "texto": [
         "Com um alto-falante adaptado numa mochila, o artista atravessa mercados e praças, somando-se aos camelôs e às pechinchas de quiosque. A voz amplificada repete: não preste atenção.",
@@ -455,14 +455,14 @@
       ],
       "video": [
         {
-          "plataforma": "vimeo",
-          "id": "117441311",
-          "titulo": "Falante, São Paulo"
+          "plataforma": "youtube",
+          "id": "iyMszlJkMLk",
+          "titulo": "Falante, Fortaleza, 2007 — menção honrosa, 58º Salão de Abril"
         },
         {
           "plataforma": "vimeo",
-          "id": "136529229",
-          "titulo": "Falante, Fortaleza"
+          "id": "117441311",
+          "titulo": "Falante, São Paulo, 2007"
         }
       ],
       "mapa": {
