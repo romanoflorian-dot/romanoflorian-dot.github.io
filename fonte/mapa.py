@@ -35,14 +35,14 @@ NOS = {
     "cidade-sonora":     dict(p=(249, 233), t=3, lado="d"),
     "chuveiros-sonoros": dict(p=(71, 365),  t=3, lado="d"),
     "errancia":          dict(p=(437, 348), t=3, lado="d"),
-    "a-pele-do-mundo":   dict(p=(808, 321), t=3, lado="e", expo=True),   # exposição (Esquina, Esquinas I–X)
+    "a-pele-do-mundo":   dict(p=(679, 130), t=3, lado="e", expo=True),   # exposição; no grande triângulo branco entre Muro de Som e Chapéu Panorâmico
     "falante":           dict(p=(466, 528), t=2, lado="d"),
     "sapatos-sonoros":   dict(p=(207, 289), t=2, lado="d"),
     "cidade-labirinto":  dict(p=(675, 397), t=2, lado="d"),
     "muro-de-som":       dict(p=(461, 142), t=2, lado="e"),
     "chapeu-panoramico": dict(p=(784, 173), t=2, lado="d"),
     "radio-lugar":       dict(p=(341, 397), t=2, lado="d"),
-    "historias-anonimas": dict(p=(471, 299), t=1, lado="e"),
+    "historias-anonimas": dict(p=(808, 321), t=1, lado="e"),
     "mar-sobre-mar":     dict(p=(567, 428), t=1, lado="e"),
     "cruz":              dict(p=(301, 365), t=1, lado="d"),
 }
@@ -51,15 +51,14 @@ NOS = {
 # Celular (tela de pé, 560 × 1000): cruzamento e lado do rótulo escolhidos para essa composição.
 PV = {
     "muro-de-som":       (256, 297, "d"),
+    "a-pele-do-mundo":   (406.1, 215, "e"),
     "sonar":             (187, 372, "d"),
     "chapeu-panoramico": (462, 413, "e"),
     "cidade-sonora":     (125, 431, "d"),
-    "historias-anonimas": (337, 486, "e"),
     "sapatos-sonoros":   (99, 513, "d"),
     "errancia":          (276, 554, "e"),
     "cruz":              (157, 626, "e"),
     "radio-lugar":       (267, 639, "d"),
-    "a-pele-do-mundo":   (387, 671, "d"),
     "chuveiros-sonoros": (182, 673, "d"),
     "cidade-labirinto":  (329, 729, "d"),
     "mar-sobre-mar":     (362, 769, "d"),
