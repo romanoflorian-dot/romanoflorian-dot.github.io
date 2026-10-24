@@ -974,6 +974,28 @@
         }
       ],
       "pendente": "qual obra foi apresentada"
+    },
+    {
+      "id": "radio-invisivel",
+      "titulo": "Rádio Invisível",
+      "ano": "",
+      "ano_num": 2010,
+      "tipo": "rádio",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "Z0gp8X4dxow",
+          "titulo": "Rádio Invisível"
+        }
+      ],
+      "pendente": "ano, ficha técnica e texto",
+      "radio": {
+        "freq": 2009.5
+      }
     }
   ],
   "mapa_pares": [
