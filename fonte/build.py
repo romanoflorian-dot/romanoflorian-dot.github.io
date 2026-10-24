@@ -258,9 +258,7 @@ def build_obra(o, prev, nxt, c):
     if imgs:
         figs = "".join(f'<figure><img src="{b}{e(i["src"])}" alt="{e(legenda(i.get("alt", o["titulo"]), lang))}" loading="lazy">'
                        f'<figcaption class="dado">{e(legenda(i.get("credito", ""), lang))}</figcaption></figure>' for i in imgs)
-        imagens = f'<section class="imagens{" velado" if som_local else ""}" data-imagens>{figs}</section>'
-        if som_local:
-            imagens += f'<button class="mostrar" type="button" data-mostrar>{t["mostrar"]}</button>'
+        imagens = f'<section class="imagens" data-imagens>{figs}</section>'
     elif o.get("video"):
         imagens = ""
     else:

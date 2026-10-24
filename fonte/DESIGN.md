@@ -80,7 +80,7 @@ Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400p
 
 - **Cabeçalho**: assinatura à esquerda, navegação à direita, botão de som. Sem fundo.
 - **Mapa Esquina**: SVG; cada nó é um link com rótulo acessível; ao passar, as linhas que o atravessam ficam em evidência e um som curto escapa (se o som estiver ligado).
-- **Escuta**: botão circular vermelho, forma de onda em linha fina; imagens surgem conforme se ouve; botão para mostrar as imagens imediatamente.
+- **Escuta**: botão circular vermelho, forma de onda em linha fina. As imagens ficam sempre visíveis (o véu que as revelava durante a escuta foi retirado a pedido do artista).
 - **Dial**: faixa graduada horizontal; agulha vermelha; ruído entre estações.
 - **Índice**: tabela filtrável por tipo.
 

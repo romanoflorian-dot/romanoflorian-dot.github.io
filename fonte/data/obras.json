@@ -159,18 +159,23 @@
    "tipo": "instalação",
    "materiais": "Caixa de som amplificada com tripé, gravações ficcionais e gravações de campo",
    "dimensoes": "3 × 2 × 1,80 m; 3 min 45 s. Versão em coluna de caixas de som artesanais em madeira: 160 × 20 cm",
-   "local": "",
+   "local": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)",
    "texto": [
-    "Instalação sonora com caixa de som amplificada sobre tripé, gravações ficcionais e gravações de campo, dedicada aos trabalhadores anônimos que construíram a cidade. 2022."
+    "Instalação sonora com caixa de som amplificada sobre tripé, gravações ficcionais e gravações de campo, dedicada aos trabalhadores anônimos que construíram a cidade. Apresentada na exposição coletiva Espaços do Ainda, com curadoria de Luiz Cláudio da Costa, no Paço Imperial, Rio de Janeiro (2022), e no Centro Cultural São Paulo (2023)."
    ],
    "audio": "media/historias-anonimas/historias-anonimas.mp3",
    "citacao": "E se a rua do Ouvidor se chamasse Maria das Dores / E se a rua do Senado se chamasse João da Silva / E se a Presidente Vargas se chamasse João Cândido / E se as ruas fossem todas dos Silvas e dos Santos / E se a cidade lembrasse dos seus corpos / O que ela diria",
    "texto_en": [
-    "Sound installation with an amplified speaker on a tripod, fictional recordings and field recordings, dedicated to the anonymous workers who built the city. 2022."
+    "Sound installation with an amplified speaker on a tripod, fictional recordings and field recordings, dedicated to the anonymous workers who built the city. Shown in the group exhibition Espaços do Ainda, curated by Luiz Cláudio da Costa, at the Paço Imperial, Rio de Janeiro (2022), and at the Centro Cultural São Paulo (2023)."
    ],
    "materiais_en": "Amplified loudspeakers on a stand, fictional recordings and field recordings",
    "dimensoes_en": "3 × 2 × 1.80 m; 3 min 45 s. Version as a column of handmade wooden speaker boxes: 160 × 20 cm",
-   "citacao_en": "What if Rua do Ouvidor were called Maria das Dores / What if Rua do Senado were called João da Silva / What if Presidente Vargas were called João Cândido / What if every street belonged to the Silvas and the Santos / What if the city remembered its bodies / What would it say"
+   "citacao_en": "What if Rua do Ouvidor were called Maria das Dores / What if Rua do Senado were called João da Silva / What if Presidente Vargas were called João Cândido / What if every street belonged to the Silvas and the Santos / What if the city remembered its bodies / What would it say",
+   "local_en": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)",
+   "exposicoes_coletivas": [
+    "espacos-do-ainda-2022",
+    "espacos-do-ainda-2023"
+   ]
   },
   {
    "id": "mar-sobre-mar",
@@ -765,10 +770,14 @@
    "materiais": "Instalação e objeto sonoro, poema sonoro",
    "dimensoes": "",
    "local": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)",
-   "texto": [],
-   "pendente": "texto e registros",
+   "texto": [
+    "Exposição coletiva com curadoria de Luiz Cláudio da Costa, com Ana Emerich, Christus Nóbrega, Cristiana Miranda, Leila Danziger, Livia Flores, Patricia Franca-Huchet, Floriano Romano e Rosana Paulino. Paço Imperial, Rio de Janeiro (5 de abril a 26 de junho de 2022), e Centro Cultural São Paulo (2023). Floriano Romano apresentou Histórias Anônimas."
+   ],
    "materiais_en": "Installation and sound object, sound poem",
-   "local_en": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)"
+   "local_en": "Paço Imperial, Rio de Janeiro (2022); Centro Cultural São Paulo (2023)",
+   "texto_en": [
+    "Group exhibition curated by Luiz Cláudio da Costa, with Ana Emerich, Christus Nóbrega, Cristiana Miranda, Leila Danziger, Livia Flores, Patricia Franca-Huchet, Floriano Romano and Rosana Paulino. Paço Imperial, Rio de Janeiro (5 April to 26 June 2022), and Centro Cultural São Paulo (2023). Floriano Romano showed Histórias Anônimas."
+   ]
   },
   {
    "id": "poema-tornado",
@@ -1122,8 +1131,9 @@
   {
    "ano": "2023",
    "titulo": "Espaços do Ainda",
-   "local": "Centro Cultural São Paulo",
-   "local_en": "Centro Cultural São Paulo"
+   "local": "Centro Cultural São Paulo — curadoria de Luiz Cláudio da Costa",
+   "local_en": "Centro Cultural São Paulo — curated by Luiz Cláudio da Costa",
+   "id": "espacos-do-ainda-2023"
   },
   {
    "ano": "2022",
@@ -1134,8 +1144,9 @@
   {
    "ano": "2022",
    "titulo": "Espaços do Ainda",
-   "local": "Paço Imperial, Rio de Janeiro",
-   "local_en": "Paço Imperial, Rio de Janeiro"
+   "local": "Paço Imperial, Rio de Janeiro — curadoria de Luiz Cláudio da Costa",
+   "local_en": "Paço Imperial, Rio de Janeiro — curated by Luiz Cláudio da Costa",
+   "id": "espacos-do-ainda-2022"
   },
   {
    "ano": "2022",
