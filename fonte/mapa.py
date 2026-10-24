@@ -26,28 +26,25 @@ ESP = 0.42                   # espessura medida (px da imagem) → unidades do q
 PROF = 230                   # profundidade máxima das camadas de linha (±), para o giro
 FRENTE = 99                  # na tela pintada as linhas se cruzam sem interrupção (sem contorno de papel)
 
+# Na entrada ficam só as obras principais; Esquina, Esquinas I–X, Desenhos, Máscara Sonora, Turbina e Intrasom
+# continuam com página própria, mas não aparecem aqui. "expo=True" aponta para a página de exposições.
 # Obras: cruzamento do desenho escolhido para cada uma (coordenadas aproximadas do quadro; o código
 # encaixa no cruzamento exato mais próximo), nível e lado do rótulo.
 NOS = {
-    "esquina":           dict(p=(550, 188), t=3, lado="d"),
     "sonar":             dict(p=(365, 197), t=3, lado="d"),
     "cidade-sonora":     dict(p=(249, 233), t=3, lado="d"),
     "chuveiros-sonoros": dict(p=(71, 365),  t=3, lado="d"),
     "errancia":          dict(p=(437, 348), t=3, lado="d"),
-    "esquinas":          dict(p=(808, 321), t=2, lado="e"),
+    "a-pele-do-mundo":   dict(p=(808, 321), t=3, lado="e", expo=True),   # exposição (Esquina, Esquinas I–X)
     "falante":           dict(p=(466, 528), t=2, lado="d"),
     "sapatos-sonoros":   dict(p=(207, 289), t=2, lado="d"),
     "cidade-labirinto":  dict(p=(675, 397), t=2, lado="d"),
     "muro-de-som":       dict(p=(461, 142), t=2, lado="e"),
     "chapeu-panoramico": dict(p=(784, 173), t=2, lado="d"),
-    "intrasom":          dict(p=(704, 281), t=2, lado="e"),
     "radio-lugar":       dict(p=(341, 397), t=2, lado="d"),
-    "turbina":           dict(p=(722, 204), t=1, lado="d"),
-    "mascara-sonora":    dict(p=(797, 221), t=1, lado="d"),
     "historias-anonimas": dict(p=(471, 299), t=1, lado="e"),
     "mar-sobre-mar":     dict(p=(567, 428), t=1, lado="e"),
     "cruz":              dict(p=(301, 365), t=1, lado="d"),
-    "desenhos":          dict(p=(851, 418), t=1, lado="d"),
 }
 
 
@@ -55,20 +52,15 @@ NOS = {
 PV = {
     "muro-de-som":       (256, 297, "d"),
     "sonar":             (187, 372, "d"),
-    "esquina":           (311, 364, "d"),
     "chapeu-panoramico": (462, 413, "e"),
-    "turbina":           (373, 442, "d"),
     "cidade-sonora":     (125, 431, "d"),
     "historias-anonimas": (337, 486, "e"),
-    "intrasom":          (405, 501, "d"),
     "sapatos-sonoros":   (99, 513, "d"),
     "errancia":          (276, 554, "e"),
-    "mascara-sonora":    (470, 561, "e"),
     "cruz":              (157, 626, "e"),
     "radio-lugar":       (267, 639, "d"),
-    "esquinas":          (387, 671, "d"),
+    "a-pele-do-mundo":   (387, 671, "d"),
     "chuveiros-sonoros": (182, 673, "d"),
-    "desenhos":          (496, 704, "e"),
     "cidade-labirinto":  (329, 729, "d"),
     "mar-sobre-mar":     (362, 769, "d"),
     "falante":           (259, 866, "d"),
@@ -155,6 +147,9 @@ def _dist_seg(p, a, b):
     return math.hypot(px - (ax + t * dx), py - (ay + t * dy))
 
 
+EXPOS = {}      # preenchido pelo build.py (exposições individuais)
+
+
 def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
     """SVG do mapa. vertical=True: a tela de pé, para o celular."""
     w, h = (H, W) if vertical else (W, H)
@@ -182,7 +177,9 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
     for k, nd in NOS.items():
         if k not in pos:
             continue
-        o = by_id[k]
+        o = EXPOS[k] if nd.get("expo") else by_id[k]
+        href = f'exposicoes.html#{k}' if nd.get("expo") else f'obras/{k}.html'
+        ano_num = int(str(o["ano"])[:4]) if nd.get("expo") else o["ano_num"]
         x, y = T(pos[k])
         t = nd["t"]
         idx = linhas_de.get(k) or []
@@ -195,19 +192,19 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
         dx = -13 if esq else 13
         anchor = "end" if esq else "start"
         r = {3: 5, 2: 4, 1: 3.2}[t]
-        premiada = bool(o.get("premio"))
+        premiada = bool(o.get("premio")) and not nd.get("expo")
         circ = f'<circle class="m-pt{"" if t >= 2 else " m-vazado"}" cx="{x:.1f}" cy="{y:.1f}" r="{r}"/>'
         if premiada:
             circ = f'<circle class="m-selo" cx="{x:.1f}" cy="{y:.1f}" r="{r + 2.6}"/>' + circ
         ny = y - 5 if t == 3 else y - 4
-        rot_ano = o.get("ano_mapa") or o["ano"].split(" /")[-1].strip()
+        rot_ano = o.get("ano_mapa") or str(o["ano"]).split(" /")[-1].strip()
         if c.lang == "en":
             rot_ano = ano_en.get(rot_ano, rot_ano)
         txt = (f'<text class="m-nome" x="{x + dx:.1f}" y="{ny:.1f}" text-anchor="{anchor}">{esc(o["titulo"])}</text>'
                f'<text class="m-ano" x="{x + dx:.1f}" y="{ny + (14 if t == 3 else 12):.1f}" text-anchor="{anchor}">{esc(rot_ano)}</text>')
         nos.append(
-            f'<a class="m-no t{t}{" premiada" if premiada else ""}" href="obras/{k}.html" data-id="{k}" data-ano="{o["ano_num"]}" '
-            f'data-x="{x:.1f}" data-y="{y:.1f}" data-p="{x - cx:.1f},{y - cy:.1f},{z:.0f}" data-lado="{"e" if esq else "d"}" aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}">'
+            f'<a class="m-no t{t}{" premiada" if premiada else ""}" href="{href}" data-id="{k}" data-ano="{ano_num}" '
+            f'data-x="{x:.1f}" data-y="{y:.1f}" data-p="{x - cx:.1f},{y - cy:.1f},{z:.0f}" data-lado="{"e" if esq else "d"}" aria-label="{esc(o["titulo"])}, {esc(rot_ano)}">'
             f'<circle class="m-alvo" cx="{x:.1f}" cy="{y:.1f}" r="22"/>{circ}{txt}</a>')
 
     return (f'<svg class="mapa {"mapa-v" if vertical else "mapa-h"}" viewBox="0 0 {w} {h}" role="group" '

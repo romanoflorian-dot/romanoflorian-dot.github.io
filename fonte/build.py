@@ -184,6 +184,7 @@ def page(c, title, body, desc="", body_class="", scripts=(), active=""):
 
 # ----------------------------------------------------------------- mapa
 import mapa as MAPA
+MAPA.EXPOS = EXPOS
 
 
 def svg_mapa(c, vertical=False):
