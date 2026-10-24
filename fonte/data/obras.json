@@ -510,7 +510,13 @@
    "premio": "Menção honrosa, 58º Salão de Abril, Fortaleza, 2007",
    "premio_en": "Honourable mention, 58th Salão de Abril, Fortaleza, 2007",
    "premio_curto": "Menção honrosa, Salão de Abril",
-   "premio_curto_en": "Honourable mention, Salão de Abril"
+   "premio_curto_en": "Honourable mention, Salão de Abril",
+   "links": [
+    {
+     "titulo": "Rui Chaves, em Making It Heard (Bloomsbury, 2019), pp. 49–51",
+     "url": "https://www.bloomsbury.com/us/making-it-heard-9781501344435/"
+    }
+   ]
   },
   {
    "id": "radiomochilas",
@@ -1400,9 +1406,9 @@
    "url": "https://ualresearchonline.arts.ac.uk/id/eprint/21817/1/Asbury%2C%20M%20Floriano%20Romano%20-%20A%20Pele%20do%20Mundo.pdf"
   },
   {
-   "autor": "Rui Chaves e Fernando Iazzetta (org.)",
-   "titulo": "Making It Heard: A History of Brazilian Sound Art",
-   "fonte": "Bloomsbury Academic, Nova York / Londres",
+   "autor": "Rui Chaves",
+   "titulo": "Making Oneself Heard in Public, through Art and in Sound-Based Scholarship",
+   "fonte": "Em Rui Chaves e Fernando Iazzetta (org.), Making It Heard: A History of Brazilian Sound Art. Nova York: Bloomsbury Academic, 2019, cap. 2, pp. 43–68 (sobre Falante, pp. 49–51)",
    "ano": "2019",
    "url": "https://www.bloomsbury.com/us/making-it-heard-9781501344435/"
   },
