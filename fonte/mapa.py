@@ -74,17 +74,17 @@ SISTEMAS = {
 
 # Planos fechados que se sobrepõem, como no desenho a lápis de 2026; "dupla" = traço passado duas vezes.
 PLANOS = [
-    dict(nos=["cidade-sonora", "turbina", "esquina"], larg=1.4, dupla=True),                      # triângulo alto
     dict(nos=["sapatos-sonoros", "esquinas", "cidade-labirinto", "radio-lugar"], larg=1.4),        # quadrilátero central
-    dict(nos=["chapeu-panoramico", "mascara-sonora", "desenhos", "esquinas"], larg=1, dupla=True), # caixa à direita
+    dict(nos=["mascara-sonora", "desenhos", "esquinas"], larg=1),                                 # à direita
     dict(nos=["errancia", "falante", "chuveiros-sonoros"], larg=4.0),                              # triângulo da frente
     dict(nos=["muro-de-som", "sonar", "cidade-sonora"], larg=1),
     dict(nos=["cruz", "chuveiros-sonoros", "radio-lugar"], larg=1.4),
 ]
+# A parte de cima (Turbina, Chapéu Panorâmico, Histórias Anônimas, em torno da Esquina) fica em branco:
+# o vazio no alto dá profundidade.
 
 # Vértice: várias linhas partem da Esquina e terminam em outras obras.
-VERTICE = dict(no="esquina", alvos=[("sonar", 1.4), ("intrasom", 1), ("mar-sobre-mar", 1.4), ("errancia", 2.2),
-                                     ("historias-anonimas", 1)])
+VERTICE = dict(no="esquina", alvos=[("intrasom", 1.4), ("mar-sobre-mar", 1.4), ("errancia", 2.2)])
 
 # Ponta longa e fina que escapa para baixo, à direita (duas linhas que se encontram fora das obras).
 PONTA = dict(apice=(990, 556, 40), de=[("falante", 1), ("mar-sobre-mar", 1.4)])
