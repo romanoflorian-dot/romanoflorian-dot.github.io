@@ -331,3 +331,6 @@ a.play { text-decoration: none; }
 .entrevista p { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); align-items: baseline; margin: 0 0 var(--s3); }
 .entrevista .nome { font-size: 1.5rem; }
 .links-obra { margin: 0 0 var(--s8); font-family: var(--f-data); font-size: 0.875rem; }
+.expo-coletiva .expo-titulo { font-size: 1.875rem; }
+.expo-coletiva .video { margin-top: var(--s4); }
+.exposicoes .lista-simples { margin: var(--s4) 0; max-width: 46rem; }

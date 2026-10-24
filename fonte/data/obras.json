@@ -913,69 +913,6 @@
       "pendente": "texto"
     },
     {
-      "id": "permanencias-e-destruicoes",
-      "titulo": "Permanências e Destruições",
-      "ano": "2015",
-      "ano_num": 2015,
-      "tipo": "exposição",
-      "materiais": "",
-      "dimensoes": "",
-      "local": "Antigo Hotel Balneário Sete de Setembro, hoje Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro — 17 a 30 de janeiro de 2015",
-      "texto": [
-        "Projeto coletivo no antigo Hotel Balneário Sete de Setembro, construído em 1922 para o centenário da Independência e depois hospital, internato e Casa do Estudante, até se tornar o Colégio Brasileiro de Altos Estudos da UFRJ. Os trabalhos exploram a sobreposição das camadas de tempo deixadas pelos diferentes usos do edifício."
-      ],
-      "video": [
-        {
-          "plataforma": "youtube",
-          "id": "RxDZoHMGIUg",
-          "titulo": "Permanências e Destruições — Hotel Sete de Setembro, Canal-Arte, 2015"
-        }
-      ],
-      "pendente": "qual obra foi apresentada"
-    },
-    {
-      "id": "corpo-de-som",
-      "titulo": "Corpo de Som",
-      "ano": "2018",
-      "ano_num": 2018,
-      "tipo": "exposição",
-      "materiais": "Objetos sonoros e instalações",
-      "dimensoes": "",
-      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro — Festival Panorama, 3 a 24 de novembro de 2018",
-      "texto": [
-        "Exposição do Festival Panorama com a dupla britânica Helen Cole e Alex Bradley, que recriou com artistas do Rio de Janeiro e de Teresina a instalação sonora Breathe, feita da respiração de bailarinos. A mostra reuniu também obras de Floriano Romano: objetos sonoros e instalações que investigam o corpo ausente e os rastros que ele deixa no som."
-      ],
-      "video": [
-        {
-          "plataforma": "youtube",
-          "id": "Nm4-9ng06YE",
-          "titulo": "Panorama 2018 — Corpo de Som: Helen Cole e Floriano Romano"
-        }
-      ],
-      "pendente": "quais obras foram apresentadas"
-    },
-    {
-      "id": "paqueta-experimenta",
-      "titulo": "Paquetá Experimenta",
-      "ano": "2016",
-      "ano_num": 2016,
-      "tipo": "exposição",
-      "materiais": "",
-      "dimensoes": "",
-      "local": "Casa de Artes de Paquetá, Ilha de Paquetá, Rio de Janeiro — 21 de maio a 25 de junho de 2016. Curadoria de Ivair Reinaldim",
-      "texto": [
-        "Exposição coletiva na Casa de Artes de Paquetá. O curador Ivair Reinaldim convidou cinco artistas a criar obras a partir de uma imersão na ilha, pensando natureza, cidade, ruído e silêncio."
-      ],
-      "video": [
-        {
-          "plataforma": "youtube",
-          "id": "ydrchMI48-E",
-          "titulo": "Paquetá Experimenta Arte Contemporânea, 2016"
-        }
-      ],
-      "pendente": "qual obra foi apresentada"
-    },
-    {
       "id": "radio-invisivel",
       "titulo": "Rádio Invisível",
       "ano": "",
@@ -996,27 +933,6 @@
       "radio": {
         "freq": 2009.5
       }
-    },
-    {
-      "id": "arte-pra-sentir",
-      "titulo": "Arte pra Sentir",
-      "ano": "2018",
-      "ano_num": 2018,
-      "tipo": "exposição",
-      "materiais": "",
-      "dimensoes": "",
-      "local": "Caixa Cultural Brasília (16 de outubro a 23 de dezembro de 2018) e Caixa Cultural São Paulo. Curadoria de Isabel Portella",
-      "texto": [
-        "Exposição coletiva com Carolina Ponte, Ernesto Neto, Flávio Cerqueira, Floriano Romano, Opavivará e Pedro Varela: obras que estimulam outros sentidos do visitante, além da visão."
-      ],
-      "video": [
-        {
-          "plataforma": "youtube",
-          "id": "07QevmSq3zs",
-          "titulo": "Exposição Arte pra Sentir, Caixa Cultural Brasília, 2018"
-        }
-      ],
-      "pendente": "qual obra foi apresentada"
     }
   ],
   "mapa_pares": [
@@ -1207,12 +1123,26 @@
     {
       "ano": "2018",
       "titulo": "Arte pra Sentir",
-      "local": "Caixa Cultural, São Paulo e Brasília"
+      "local": "Caixa Cultural Brasília (16 de outubro a 23 de dezembro de 2018) e Caixa Cultural São Paulo. Curadoria de Isabel Portella",
+      "id": "arte-pra-sentir",
+      "texto": "Exposição coletiva com Carolina Ponte, Ernesto Neto, Flávio Cerqueira, Floriano Romano, Opavivará e Pedro Varela: obras que estimulam outros sentidos do visitante, além da visão.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "07QevmSq3zs",
+        "titulo": "Exposição Arte pra Sentir, Caixa Cultural Brasília, 2018"
+      }
     },
     {
       "ano": "2018",
-      "titulo": "Corpo de Som, com Helen Cole — Mostra Panorama",
-      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro"
+      "titulo": "Corpo de Som, com Helen Cole e Alex Bradley — Festival Panorama",
+      "local": "Centro Municipal de Arte Hélio Oiticica, Rio de Janeiro — Festival Panorama, 3 a 24 de novembro de 2018",
+      "id": "corpo-de-som",
+      "texto": "Exposição do Festival Panorama com a dupla britânica Helen Cole e Alex Bradley, que recriou com artistas do Rio de Janeiro e de Teresina a instalação sonora Breathe, feita da respiração de bailarinos. A mostra reuniu também obras de Floriano Romano: objetos sonoros e instalações que investigam o corpo ausente e os rastros que ele deixa no som.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "Nm4-9ng06YE",
+        "titulo": "Panorama 2018 — Corpo de Som: Helen Cole e Floriano Romano"
+      }
     },
     {
       "ano": "2017",
@@ -1232,12 +1162,26 @@
     {
       "ano": "2016",
       "titulo": "Paquetá Experimenta",
-      "local": "Casa de Artes de Paquetá, Rio de Janeiro"
+      "local": "Casa de Artes de Paquetá, Ilha de Paquetá, Rio de Janeiro — 21 de maio a 25 de junho de 2016. Curadoria de Ivair Reinaldim",
+      "id": "paqueta-experimenta",
+      "texto": "Exposição coletiva na Casa de Artes de Paquetá. O curador Ivair Reinaldim convidou cinco artistas a criar obras a partir de uma imersão na ilha, pensando natureza, cidade, ruído e silêncio.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "ydrchMI48-E",
+        "titulo": "Paquetá Experimenta Arte Contemporânea, 2016"
+      }
     },
     {
       "ano": "2015",
       "titulo": "Permanências e Destruições",
-      "local": "Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro"
+      "local": "Antigo Hotel Balneário Sete de Setembro, hoje Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro — 17 a 30 de janeiro de 2015",
+      "id": "permanencias-e-destruicoes",
+      "texto": "Projeto coletivo no antigo Hotel Balneário Sete de Setembro, construído em 1922 para o centenário da Independência e depois hospital, internato e Casa do Estudante, até se tornar o Colégio Brasileiro de Altos Estudos da UFRJ. Os trabalhos exploram a sobreposição das camadas de tempo deixadas pelos diferentes usos do edifício.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "RxDZoHMGIUg",
+        "titulo": "Permanências e Destruições — Hotel Sete de Setembro, Canal-Arte, 2015"
+      }
     },
     {
       "ano": "2015",

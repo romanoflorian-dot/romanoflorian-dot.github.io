@@ -385,15 +385,34 @@ def build_exposicoes():
   {f'<p class="expo-obras"><span class="dado">Obras:</span> {obras_html}</p>' if obras_html else ''}
   {cat}
 </section>""")
-    col = "".join(f'<li><span class="dado">{c["ano"]}</span> {e(c["titulo"])}, {e(c["local"])}</li>'
-                  for c in DATA["coletivas"])
+    partes, simples = [], []
+    def fecha():
+        if simples:
+            partes.append('<ul class="lista-simples">' + "".join(simples) + "</ul>")
+            simples.clear()
+    for c in DATA["coletivas"]:
+        if c.get("video") or c.get("texto"):
+            fecha()
+            vid = video_embed(c["video"]) if c.get("video") else ""
+            partes.append(f"""
+<section class="expo expo-coletiva" id="{e(c.get('id',''))}">
+  <p class="dado sinal">{e(c['ano'])}</p>
+  <h3 class="expo-titulo">{e(c['titulo'])}</h3>
+  <p class="dado">{e(c['local'])}</p>
+  {f'<p class="expo-texto">{e(c["texto"])}</p>' if c.get('texto') else ''}
+  {vid}
+</section>""")
+        else:
+            simples.append(f'<li><span class="dado">{c["ano"]}</span> {e(c["titulo"])}, {e(c["local"])}</li>')
+    fecha()
+    col = "".join(partes)
     body = f"""
 <section class="exposicoes">
   <h1 class="titulo-pagina">Exposições</h1>
   <h2 class="sub">Individuais</h2>
   {''.join(blocos)}
   <h2 class="sub">Coletivas (seleção)</h2>
-  <ul class="lista-simples">{col}</ul>
+  {col}
 </section>"""
     return page("Exposições", body, active="exposicoes.html",
                 desc="Exposições individuais e coletivas de Floriano Romano.")
