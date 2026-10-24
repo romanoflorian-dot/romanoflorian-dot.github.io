@@ -149,7 +149,7 @@ def page(c, title, body, desc="", body_class="", scripts=(), active=""):
 </main>
 <footer class="rodape">
   <span>© {ANO_ATUAL} Floriano Romano</span>
-  <span class="rodape-links"><a href="https://www.instagram.com/florianoromano/" rel="noopener">Instagram</a> <a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{c.lbase}indice.html">{t['todas']}</a></span>
+  <span class="rodape-links"><a href="https://www.instagram.com/florianoromano/" rel="noopener">Instagram</a> <a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a></span>
 </footer>
 {js}"""
     fontes = ('<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Instrument+Sans:wght@400;500'
