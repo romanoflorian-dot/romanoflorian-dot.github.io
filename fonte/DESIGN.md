@@ -65,20 +65,14 @@ Títulos de obra: 2.5–5rem itálico. Fichas: 0.75–0.875rem mono. Linhas de t
 Base 4px: `space.1=4 · 2=8 · 3=12 · 4=16 · 6=24 · 8=32 · 12=48 · 16=64 · 24=96 · 32=128`.
 Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400px.
 
-## 4. Mapa Esquina — múltiplos pontos de vista
+## 4. Mapa Esquina — sobre o desenho Esquina VI
 
-O mapa usa os recursos de troca de plano dos desenhos do artista (fita isolante, 2007– ; Esquinas I–X, 2023). Código em `mapa.py` (geometria) e `assets/js/mapa.js` (movimento).
-
-- **Pontos de fuga**: cinco sistemas de linhas (A, B, C, D, F), cada um um ponto de vista; vários ficam fora do quadro. O feixe B converge logo além da borda direita; o leque C sobe de baixo; D dá verticais de elevação.
-- **Vértice interno**: um leque denso nasce na obra Esquina (sistema E) e passa um pouco do ponto, como a fita.
-- **Espessura por plano**: `0.6–1` fundo · `1.4–2.2` meio · `≥ 3` frente. A linha da frente interrompe a de trás (contorno cor de papel).
-- **Planos dobrados**: triângulos e quadriláteros com vértices nas obras; as arestas passam do vértice.
-- **Linhas que começam ou terminam dentro do quadro** (frações do trecho visível).
-- **Esfera**: o desenho existe em 3D dentro de um elipsoide do tamanho do quadro. Cada obra é um ponto (profundidade `z` em `mapa.py`); cada linha é uma corda (passa por uma obra e por um ponto de fuga no espaço) ou aresta de plano. O cursor gira a esfera em torno do eixo vertical — 220° de uma borda à outra —; sem cursor, uma volta a cada 100 s. O que está atrás fica mais claro e os nomes de trás se apagam; parado sobre uma obra. Um meridiano prateado (círculo de compasso) gira junto. Sem movimento com `prefers-reduced-motion`.
-- **Densidade e traço**: referência no desenho a lápis de 2026 — poucos traços soltos, planos fechados que se sobrepõem, traço duplo em alguns lados, a Esquina como vértice de onde partem linhas, uma ponta longa e fina. Cerca de 24 linhas. A parte de cima (Turbina, Chapéu Panorâmico, Histórias Anônimas, em torno da Esquina) fica em branco para dar profundidade; não acrescentar linhas ali nem linhas finas em geral.
-- **Rótulos na página inicial**: só nome e ano; os prêmios ficam nas páginas de obra, no Índice e em Sobre.
-- **Hierarquia**: nível 3 (disco vermelho grande) = obras premiadas e centrais (Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância); nível 2 = disco vermelho menor; nível 1 = círculo vazado em tinta. Obra premiada recebe anel vermelho.
-- **Celular**: composição girada (560 × 1000), com posições próprias em `PV` onde os rótulos colidiriam.
+- **Base**: as linhas da tela Esquina VI (série Esquinas I–X, 2023), vetorizadas da fotografia por `tools/vetoriza_esquina.py` e guardadas em `data/esquina-06.json` (30 linhas, com espessura). Mesmos vértices, feixes de três paralelas, planos dobrados e a ponta da base.
+- **Formato**: no computador o desenho é alargado (1,12 × 0,80) e recortado pela moldura; no celular a tela fica de pé (0,69 × 1,18). As linhas se cruzam sem interrupção, como na pintura.
+- **Obras**: cada uma ocupa um cruzamento real do desenho, escolhido à mão para a leitura dos nomes (`NOS` para o computador, `PV` para o celular, em `mapa.py`).
+- **Rótulos**: só nome e ano. Tamanhos: nível 3 = 19 px, nível 2 = 15 px, nível 1 = 12,5 px (celular: 21 / 17 / 15 no quadro de 560).
+- **Hierarquia**: nível 3 (disco vermelho maior) = Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância; nível 2 = disco vermelho menor; nível 1 = círculo vazado. Obra premiada recebe anel vermelho.
+- **Movimento**: leve e bidimensional — o plano do desenho se inclina um pouco em perspectiva conforme o cursor (transformação projetiva: linhas retas, vértices unidos, obras nos cruzamentos). Sem cursor, deriva lenta. Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
 
 ## 5. Componentes
 
