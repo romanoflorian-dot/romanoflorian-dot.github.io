@@ -10,6 +10,7 @@ import json, shutil, html, hashlib, sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT))
 PREVIA = "--previa" in sys.argv
 OUT = ROOT / ("previa" if PREVIA else "public")
 DATA = json.loads((ROOT / "data" / "obras.json").read_text(encoding="utf-8"))
@@ -39,14 +40,14 @@ T = {
    escutar="Escutar", sc_previa="Na prévia, o áudio abre no SoundCloud", assistir="assistir no",
    sem_som="Registro sonoro em preparação.", sem_img="Imagens em preparação", mostrar="Mostrar imagens agora",
    preparo="Página em preparação.", video="Vídeo", anterior="Anterior", seguinte="Seguinte", outras="Outras obras",
-   materiais="Materiais", dimensoes="Dimensões", local="Local", colecao="Coleção", expo="Exposição", expo_col="Exposição coletiva",
+   premio="Prêmio", fomento="Financiamento", materiais="Materiais", dimensoes="Dimensões", local="Local", colecao="Coleção", expo="Exposição", expo_col="Exposição coletiva",
    indice="Índice", filtrar="Filtrar por tipo", todas_f="Todas", ano="Ano", obra="Obra", tipo="Tipo", midia="Mídia",
    m_som="som", m_video="vídeo", m_img="imagem",
    radio="Rádio", dial_aria="Dial: arraste ou use as setas para sintonizar", sintonizar="arraste para sintonizar", estacoes="Estações",
    exposicoes="Exposições", individuais="Individuais", coletivas="Coletivas (seleção)", curadoria="Curadoria",
    textos="Textos", sobre_obra="Sobre a obra", do_artista="Do artista", entrevistas="Entrevistas",
    academia="Mais textos e catálogos no Academia.edu ↗",
-   sobre="Sobre", premios="Prêmios e bolsas", colecoes="Coleções", videos="Vídeos", contato="Contato", contato_txt="e-mail a definir",
+   sobre="Sobre", premios="Prêmios", financiamentos="Financiamentos e residências", indicacao="Indicação", colecoes="Coleções", videos="Vídeos", contato="Contato", contato_txt="e-mail a definir",
    d_indice="Todas as obras de Floriano Romano, da mais recente à mais antiga.",
    d_radio="Rádio-arte de Floriano Romano: micro-rádio, programas e radionovelas.",
    d_expos="Exposições individuais e coletivas de Floriano Romano.",
@@ -63,14 +64,14 @@ T = {
    escutar="Listen to", sc_previa="In the preview, audio opens on SoundCloud", assistir="watch on",
    sem_som="Sound recording in preparation.", sem_img="Images in preparation", mostrar="Show images now",
    preparo="Page in preparation.", video="Video", anterior="Previous", seguinte="Next", outras="Other works",
-   materiais="Materials", dimensoes="Dimensions", local="Venue", colecao="Collection", expo="Exhibition", expo_col="Group exhibition",
+   premio="Award", fomento="Funding", materiais="Materials", dimensoes="Dimensions", local="Venue", colecao="Collection", expo="Exhibition", expo_col="Group exhibition",
    indice="Index", filtrar="Filter by type", todas_f="All", ano="Year", obra="Work", tipo="Type", midia="Media",
    m_som="sound", m_video="video", m_img="image",
    radio="Radio", dial_aria="Dial: drag or use the arrow keys to tune", sintonizar="drag to tune", estacoes="Stations",
    exposicoes="Exhibitions", individuais="Solo", coletivas="Group (selection)", curadoria="Curated by",
    textos="Texts", sobre_obra="On the work", do_artista="By the artist", entrevistas="Interviews",
    academia="More texts and catalogues on Academia.edu ↗",
-   sobre="About", premios="Awards and grants", colecoes="Collections", videos="Videos", contato="Contact", contato_txt="email to be confirmed",
+   sobre="About", premios="Awards", financiamentos="Funding and residencies", indicacao="Nomination", colecoes="Collections", videos="Videos", contato="Contact", contato_txt="email to be confirmed",
    d_indice="All works by Floriano Romano, from the most recent to the earliest.",
    d_radio="Radio art by Floriano Romano: micro-radio, programmes and radio plays.",
    d_expos="Solo and group exhibitions by Floriano Romano.",
@@ -182,53 +183,11 @@ def page(c, title, body, desc="", body_class="", scripts=(), active=""):
 
 
 # ----------------------------------------------------------------- mapa
-def clip(p, q, W, H):
-    (x1, y1), (x2, y2) = p, q
-    dx, dy = x2 - x1, y2 - y1
-    ts = ([(0 - x1) / dx, (W - x1) / dx] if dx else []) + ([(0 - y1) / dy, (H - y1) / dy] if dy else [])
-    good = sorted(t for t in ts if -0.01 <= x1 + t * dx <= W + 0.01 and -0.01 <= y1 + t * dy <= H + 0.01)
-    a, b = good[0], good[-1]
-    return (x1 + a * dx, y1 + a * dy), (x1 + b * dx, y1 + b * dy)
-
-
-ESPESSURAS = [0.6, 1, 1.4, 1.4, 2.2, 3.4]
+import mapa as MAPA
 
 
 def svg_mapa(c, vertical=False):
-    W, H = (560, 1000) if vertical else (1000, 560)
-    def pos(o):
-        x, y = o["mapa"]["x"], o["mapa"]["y"]
-        return (y, 1000 - x) if vertical else (x, y)
-    linhas = []
-    for a, b in DATA["mapa_pares"]:
-        (sx, sy), (ex, ey) = clip(pos(BY_ID[a]), pos(BY_ID[b]), W, H)
-        w = ESPESSURAS[int(hashlib.md5(f"{a}{b}".encode()).hexdigest(), 16) % len(ESPESSURAS)]
-        linhas.append(f'<line x1="{sx:.1f}" y1="{sy:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke-width="{w}" data-n="{a} {b}"/>')
-    nos = []
-    for o in OBRAS:
-        if "mapa" not in o:
-            continue
-        x, y = pos(o)
-        m = o["mapa"]; t = m["tier"]; lx, ly = m["lx"], m["ly"]
-        esq = m.get("lado") == "esquerda"
-        if vertical:
-            esq = x > 360
-            lx = -abs(lx) if esq else abs(lx)
-        anchor = "end" if esq else "start"
-        r = {3: 9, 2: 7, 1: 5}[t]
-        circ = f'<circle class="m-pt{"" if t >= 2 else " m-vazado"}" cx="{x}" cy="{y}" r="{r}"/>'
-        nome_y = y + ly + (16 if t == 3 else 12)
-        rot_ano = o.get("ano_mapa") or o["ano"].split(" /")[-1].strip()
-        if c.lang == "en":
-            rot_ano = ANO_EN.get(rot_ano, rot_ano)
-        nos.append(
-            f'<a class="m-no t{t}" href="obras/{o["id"]}.html" data-id="{o["id"]}" data-ano="{o["ano_num"]}" '
-            f'aria-label="{e(o["titulo"])}, {e(ano(o, c.lang))}">'
-            f'<circle class="m-alvo" cx="{x}" cy="{y}" r="22"/>{circ}'
-            f'<text class="m-nome" x="{x + lx}" y="{nome_y}" text-anchor="{anchor}">{e(o["titulo"])}</text>'
-            f'<text class="m-ano" x="{x + lx}" y="{nome_y + (17 if t == 3 else 14)}" text-anchor="{anchor}">{e(rot_ano)}</text></a>')
-    return (f'<svg class="mapa {"mapa-v" if vertical else "mapa-h"}" viewBox="0 0 {W} {H}" role="group" aria-label="{c.t["mapa_aria"]}">'
-            f'<g class="m-linhas" aria-hidden="true">{"".join(linhas)}</g><g class="m-nos">{"".join(nos)}</g></svg>')
+    return MAPA.svg(c, BY_ID, e, ano, ANO_EN, vertical)
 
 
 def build_index(c):
@@ -308,6 +267,10 @@ def build_obra(o, prev, nxt, c):
         imagens = f'<div class="imagens-vazio" aria-hidden="true"><span class="dado">{t["sem_img"]}</span></div>'
 
     ficha = []
+    if o.get("premio"):
+        ficha.append(f'<dt class="sinal">{t["premio"]}</dt><dd class="ficha-premio">{e(tr(o, "premio", lang))}</dd>')
+    if o.get("fomento"):
+        ficha.append(f'<dt>{t["fomento"]}</dt><dd>{e(tr(o, "fomento", lang))}</dd>')
     for rot, k in [("materiais", "materiais"), ("dimensoes", "dimensoes"), ("local", "local"), ("colecao", "colecao")]:
         v = tr(o, k, lang)
         if v:
@@ -347,6 +310,7 @@ def build_obra(o, prev, nxt, c):
   <header class="obra-cabeca">
     <h1 class="obra-titulo">{e(o['titulo'])}</h1>
     <p class="dado obra-meta"><span class="sinal">{e(ano(o, lang))}</span>{' · ' + e(tipo(o, lang)) if o['tipo'] else ''}</p>
+    {f'<p class="obra-premio">{e(tr(o, "premio", lang))}</p>' if o.get("premio") else ''}
   </header>
   {escuta}
   <div class="obra-corpo">
@@ -373,7 +337,8 @@ def build_indice(c):
         midia = ([t["m_som"]] if o.get("audio") or o.get("soundcloud") else []) + ([t["m_video"]] if o.get("video") else []) + \
                 ([t["m_img"]] if o.get("imagens") else [])
         linhas.append(f'<tr data-tipo="{e(o["tipo"])}"><td class="dado">{e(ano(o, lang))}</td>'
-                      f'<td><a class="nome" href="obras/{o["id"]}.html">{e(o["titulo"])}</a></td>'
+                      f'<td><a class="nome" href="obras/{o["id"]}.html">{e(o["titulo"])}</a>'
+                      + (f' <span class="dado sinal indice-premio">{e(tr(o, "premio_curto", lang))}</span>' if o.get("premio") else "") + '</td>'
                       f'<td>{e(tipo(o, lang))}</td><td class="dado">{" · ".join(midia)}</td></tr>')
     body = f"""
 <section class="indice">
@@ -526,20 +491,25 @@ BIO = {
         "For him, noise is the expression of the world: undetermined, it speaks directly to the senses. Every speaking body opens a sound field of its own within the landscape; walking, broadcasting and listening are his gestures, and the city is his material.",
         "He created the radio programme O Inusitado (2002–2004) on Rádio Madame Satã and took part in the 7th Mercosul Biennial (2009). He holds a PhD in Visual Arts and teaches at the School of Fine Arts of the Federal University of Rio de Janeiro (UFRJ) and in its Graduate Programme in Visual Languages."],
 }
+# (ano, prêmio pt, prêmio en, obra pt/en, id da página da obra ou "")
 PREMIOS = [
- ("2021", "Cidade Labirinto, instalação sonora e podcast — Centro Municipal de Arte Hélio Oiticica", "Cidade Labirinto, sound installation and podcast — Centro Municipal de Arte Hélio Oiticica"),
- ("2017", "HOBRA, residência artística Brasil–Holanda", "HOBRA, Brazil–Netherlands artist residency"),
- ("2016", "Muro de Som, exposição individual — Parque das Ruínas, Prefeitura do Rio de Janeiro", "Muro de Som, solo exhibition — Parque das Ruínas, City of Rio de Janeiro"),
- ("2016", "Prêmio CCBB Contemporâneo — Errância", "CCBB Contemporary Award — Errância"),
- ("2012", "Prêmio Marcantonio Vilaça, Funarte — Chuveiros Sonoros", "Marcantonio Vilaça Award, Funarte — Chuveiros Sonoros"),
- ("2012", "Prêmio Projéteis de Arte Contemporânea, Funarte — A Cidade Sonora", "Projéteis Contemporary Art Award, Funarte — A Cidade Sonora"),
- ("2011", "Intrasom, ações sonoras no MAM Rio — Secretaria de Estado de Cultura", "Intrasom, sound actions at MAM Rio — Rio de Janeiro State Secretariat of Culture"),
- ("2010", "Prêmio Interações Estéticas, Funarte — Esculturas Sonoras Urbanas", "Interações Estéticas Award, Funarte — Urban Sound Sculptures"),
- ("2010", "Artista indicado ao Prêmio PIPA", "Nominated for the PIPA Prize"),
- ("2008", "Bolsa de Apoio às Artes Visuais, Funarte — Chapéu Panorâmico", "Visual Arts Grant, Funarte — Chapéu Panorâmico"),
- ("2007", "Prêmio Projéteis de Arte Contemporânea, Funarte — Sample Way of Life", "Projéteis Contemporary Art Award, Funarte — Sample Way of Life"),
- ("2007", "Menção honrosa, 58º Salão de Abril, Fortaleza — Falante", "Honourable mention, 58th Salão de Abril, Fortaleza — Falante"),
- ("2000", "Residência nos Ateliers da Lada, Porto, Portugal — Do Deslocamento", "Residency at Ateliers da Lada, Porto, Portugal — Do Deslocamento"),
+ ("2015", "Prêmio CCBB Contemporâneo, Centro Cultural Banco do Brasil", "CCBB Contemporary Award, Centro Cultural Banco do Brasil", "Errância", "errancia"),
+ ("2012", "Prêmio Marcantonio Vilaça, Funarte — aquisição para o MAC Niterói", "Marcantonio Vilaça Award, Funarte — acquired by MAC Niterói", "Chuveiros Sonoros", "chuveiros-sonoros"),
+ ("2012", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "A Cidade Sonora", "cidade-sonora"),
+ ("2009", "Prêmio Interações Estéticas, Funarte", "Interações Estéticas Award, Funarte", "Sapatos Sonoros", "sapatos-sonoros"),
+ ("2007", "Prêmio Projéteis de Arte Contemporânea, Funarte", "Projéteis Contemporary Art Award, Funarte", "Sample Way of Life", ""),
+ ("2007", "Menção honrosa, 58º Salão de Abril, Fortaleza", "Honourable mention, 58th Salão de Abril, Fortaleza", "Falante", "falante"),
+ ("1992", "Menção honrosa, Prêmio Philips, Museu Nacional de Belas Artes", "Honourable mention, Philips Award, Museu Nacional de Belas Artes", "", ""),
+]
+INDICACOES = [("2010", "Prêmio PIPA", "PIPA Prize")]
+FINANCIAMENTOS = [
+ ("2021", "Centro Municipal de Arte Hélio Oiticica, Prefeitura do Rio de Janeiro", "Centro Municipal de Arte Hélio Oiticica, City of Rio de Janeiro", "Cidade Labirinto", "cidade-labirinto"),
+ ("2016", "Parque das Ruínas, Prefeitura do Rio de Janeiro", "Parque das Ruínas, City of Rio de Janeiro", "Muro de Som", "muro-de-som"),
+ ("2016", "Residência artística HOBRA, Brasil–Holanda", "HOBRA artist residency, Brazil–Netherlands", "", ""),
+ ("2010", "Apoio a Projeto Artístico, Secretaria de Estado de Cultura do Rio de Janeiro", "Artistic Project Support, Rio de Janeiro State Secretariat of Culture", "Intrasom", "intrasom"),
+ ("2010", "Conexão Artes Visuais, Funarte — Projeto EME>>", "Conexão Artes Visuais, Funarte — Projeto EME>>", "Rádio Lugar", "radio-lugar"),
+ ("2008", "Bolsa de Estímulo à Criação Artística, Funarte", "Artistic Creation Grant, Funarte", "Chapéu Panorâmico", "chapeu-panoramico"),
+ ("2000", "Bolsa de residência, Câmara Municipal do Porto — Ateliers da Lada", "Residency grant, Porto City Council — Ateliers da Lada", "Do Deslocamento", ""),
 ]
 COLECOES = [
  ("Museu de Arte do Rio — O Rio dos Navegantes", "Museu de Arte do Rio — O Rio dos Navegantes"),
@@ -553,7 +523,15 @@ def build_sobre(c):
     t, lang = c.t, c.lang
     i = 1 if lang == "en" else 0
     bio = BIO[lang]
-    premios = "".join(f'<li><span class="dado">{p[0]}</span> {e(p[1 + i])}</li>' for p in PREMIOS)
+    def obra_link(nome, oid):
+        if not nome:
+            return ""
+        return f'<a class="nome" href="obras/{oid}.html">{e(nome)}</a>' if oid else f'<span class="nome">{e(nome)}</span>'
+    premios = "".join(f'<li><span class="dado sinal">{p[0]}</span><div>{obra_link(p[3], p[4])}<span class="premio-nome">{e(p[1 + i])}</span></div></li>'
+                      for p in PREMIOS)
+    premios += "".join(f'<li class="indicacao"><span class="dado">{p[0]}</span><div><span class="premio-nome">{t["indicacao"]} — {e(p[1 + i])}</span></div></li>'
+                       for p in INDICACOES)
+    fins = "".join(f'<li><span class="dado">{p[0]}</span><span>{e(p[1 + i])}{" — " + obra_link(p[3], p[4]) if p[3] else ""}</span></li>' for p in FINANCIAMENTOS)
     cols = "".join(f"<li>{e(x[i])}</li>" for x in COLECOES)
     body = f"""
 <section class="sobre">
@@ -562,10 +540,12 @@ def build_sobre(c):
     <div class="sobre-texto">
       <p class="abertura">{e(bio[0])}</p>
       {''.join(f'<p>{e(p)}</p>' for p in bio[1:])}
+      <h2 class="sub sub-premios">{t['premios']}</h2>
+      <ul class="lista-premios">{premios}</ul>
     </div>
     <div class="sobre-dados">
-      <h2 class="sub">{t['premios']}</h2>
-      <ul class="lista-simples">{premios}</ul>
+      <h2 class="sub">{t['financiamentos']}</h2>
+      <ul class="lista-simples">{fins}</ul>
       <h2 class="sub">{t['colecoes']}</h2>
       <ul class="lista-simples">{cols}</ul>
       <h2 class="sub">{t['videos']}</h2>

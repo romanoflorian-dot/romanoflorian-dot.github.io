@@ -60,7 +60,7 @@ OBRAS = {
    pt="Pela primeira vez dentro de uma casa: uma exposição inteira feita de ruído, em que cada obra soa quando a outra se cala.",
    en="For the first time inside a house: a whole exhibition made of noise, where each work sounds as another falls silent.",
    local_en="Casa de Cultura Laura Alvim, Rio de Janeiro"),
- "cidades-sonoras": dict(
+ "cidade-sonora": dict(
    pt="Orelhões caídos guardam o som de quinze cidades. Basta se aproximar para estar em outro lugar.",
    en="Fallen public phone booths hold the sound of fifteen cities. Coming closer is enough to be somewhere else.",
    materiais_en="Public phone booths, soundscapes of 15 cities", dimensoes_en="Variable dimensions",

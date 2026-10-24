@@ -57,7 +57,7 @@ PLANO = {
             (L, "i-015-020.jpg", "Desenhos com fita isolante na exposição Sonar", G)],
   "radionovelas": [(S, "GRI_4666_fused.webp", "Radionovelas, Casa de Cultura Laura Alvim, 2013", G),
                    (L, "i-005-003.jpg", "Radionovelas, detalhe", G)],
-  "cidades-sonoras": [(D, "i-020-020.jpg", "A Cidade Sonora, Palácio Gustavo Capanema, 2012", C),
+  "cidade-sonora": [(D, "i-020-020.jpg", "A Cidade Sonora, Palácio Gustavo Capanema, 2012", C),
                       (D, "i-021-021.jpg", "A Cidade Sonora", C)],
   "sapatos-sonoros": [(S, "DSC_0058-7.webp", "Sapatos Sonoros, sapatos pandeiro", A),
                       (S, "DSC_0091-6.webp", "Sapatos Sonoros, sapatos com conchas", A),

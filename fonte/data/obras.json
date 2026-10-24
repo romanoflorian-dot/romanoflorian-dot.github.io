@@ -13,13 +13,6 @@
    "texto": [
     "A esquina é onde os caminhos se cruzam e o som muda de direção. Sensores acionam motores e trânsito: quem caminha compõe a cidade que escuta."
    ],
-   "mapa": {
-    "x": 641,
-    "y": 216,
-    "tier": 3,
-    "lx": 14,
-    "ly": -30
-   },
    "texto_en": [
     "A corner is where paths cross and sound changes direction. Sensors set off engines and traffic: whoever walks composes the city they hear."
    ],
@@ -40,13 +33,6 @@
    "texto": [
     "Desenhos em preto e branco feitos de linhas que se cruzam. Nenhum ponto de vista é o único: cada linha que fecha um plano abre outro."
    ],
-   "mapa": {
-    "x": 778,
-    "y": 369,
-    "tier": 3,
-    "lx": 14,
-    "ly": 10
-   },
    "imagens": [
     {
      "src": "media/obras/esquinas/esquina-01.jpg",
@@ -136,13 +122,6 @@
      "titulo": "Máscara Sonora"
     }
    ],
-   "mapa": {
-    "x": 830,
-    "y": 116,
-    "tier": 3,
-    "lx": 14,
-    "ly": 10
-   },
    "texto_en": [
     "A gas mask that does not filter: it breathes. The body becomes a loudspeaker for the air the city makes unbreathable."
    ],
@@ -163,14 +142,6 @@
     "Uma parede de tubos devolve o mar à praia onde foi gravado. O som traduz a paisagem em outra matéria."
    ],
    "soundcloud": "https://soundcloud.com/floriano-romano/mar-frado-varios-falantes-441khz",
-   "mapa": {
-    "x": 524,
-    "y": 385,
-    "tier": 3,
-    "lx": -14,
-    "ly": 12,
-    "lado": "esquerda"
-   },
    "texto_en": [
     "A wall of tubes returns the sea to the beach where it was recorded. Sound translates landscape into another matter."
    ],
@@ -190,13 +161,6 @@
    "texto": [
     "E se as ruas tivessem o nome de quem as construiu? Uma coluna de caixas de som dá voz aos anônimos que a grande narrativa esqueceu."
    ],
-   "mapa": {
-    "x": 425,
-    "y": 142,
-    "tier": 2,
-    "lx": 12,
-    "ly": -24
-   },
    "audio": "media/historias-anonimas/historias-anonimas.mp3",
    "citacao": "E se a rua do Ouvidor se chamasse Maria das Dores / E se a rua do Senado se chamasse João da Silva / E se a Presidente Vargas se chamasse João Cândido / E se as ruas fossem todas dos Silvas e dos Santos / E se a cidade lembrasse dos seus corpos / O que ela diria",
    "texto_en": [
@@ -216,14 +180,7 @@
    "dimensoes": "",
    "local": "",
    "texto": [],
-   "pendente": "ficha técnica, texto e registros",
-   "mapa": {
-    "x": 302,
-    "y": 453,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   }
+   "pendente": "ficha técnica, texto e registros"
   },
   {
    "id": "espreguicadeiras-sonoras",
@@ -272,13 +229,6 @@
     }
    ],
    "soundcloud": "https://soundcloud.com/floriano-romano/muro",
-   "mapa": {
-    "x": 255,
-    "y": 258,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   },
    "texto_en": [
     "Two walls of loudspeakers blow a wind made of the artist's own breath. In the ruins, the wall does not divide: it opens a way through."
    ],
@@ -313,7 +263,7 @@
    "tipo": "instalação",
    "materiais": "Alto-falantes, gravações feitas com um sistema de captação montado no corpo de um passante",
    "dimensoes": "Dimensões variáveis",
-   "local": "Sala A Contemporânea, Centro Cultural Banco do Brasil, Rio de Janeiro — Prêmio CCBB Contemporâneo",
+   "local": "Sala A Contemporânea, Centro Cultural Banco do Brasil, Rio de Janeiro",
    "exposicao": "errancia",
    "texto": [
     "Frases ouvidas de passagem nos bares da cidade, gravadas por um corpo à deriva. Sem origem, os fragmentos fazem da fala um ruído comum."
@@ -325,19 +275,16 @@
      "titulo": "Errância, Canal-Arte, 2016"
     }
    ],
-   "mapa": {
-    "x": 137,
-    "y": 401,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   },
    "texto_en": [
     "Phrases overheard in the city's bars, recorded by a drifting body. Without an origin, the fragments turn speech into common noise."
    ],
    "materiais_en": "Loudspeakers; recordings made with a capture system worn by a passer-by",
    "dimensoes_en": "Variable dimensions",
-   "local_en": "Sala A Contemporânea, Centro Cultural Banco do Brasil, Rio de Janeiro — CCBB Contemporary Award"
+   "local_en": "Sala A Contemporânea, Centro Cultural Banco do Brasil, Rio de Janeiro",
+   "premio": "Prêmio CCBB Contemporâneo, 2015",
+   "premio_en": "CCBB Contemporary Award, 2015",
+   "premio_curto": "Prêmio CCBB Contemporâneo",
+   "premio_curto_en": "CCBB Contemporary Award"
   },
   {
    "id": "praca-sonora",
@@ -371,21 +318,14 @@
      "titulo": "Sonar"
     }
    ],
-   "mapa": {
-    "x": 292,
-    "y": 69,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   },
    "texto_en": [
     "For the first time inside a house: a whole exhibition made of noise, where each work sounds as another falls silent."
    ],
    "local_en": "Casa de Cultura Laura Alvim, Rio de Janeiro"
   },
   {
-   "id": "cidades-sonoras",
-   "titulo": "Cidades Sonoras",
+   "id": "cidade-sonora",
+   "titulo": "A Cidade Sonora",
    "ano": "2012",
    "ano_num": 2012,
    "tipo": "instalação",
@@ -396,13 +336,6 @@
    "texto": [
     "Orelhões caídos guardam o som de quinze cidades. Basta se aproximar para estar em outro lugar."
    ],
-   "mapa": {
-    "x": 113,
-    "y": 121,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   },
    "video": [
     {
      "plataforma": "youtube",
@@ -421,7 +354,11 @@
      "titulo": "Umbigo Magazine, 2012",
      "url": "https://umbigomagazine.com/um/2012-09-25/a-cidade-sonora-de-floriano-romano-babilonia-afectiva-segredo-utopia.html"
     }
-   ]
+   ],
+   "premio": "Prêmio Projéteis de Arte Contemporânea, Funarte, 2012",
+   "premio_en": "Projéteis Contemporary Art Award, Funarte, 2012",
+   "premio_curto": "Prêmio Projéteis",
+   "premio_curto_en": "Projéteis Award"
   },
   {
    "id": "sapatos-sonoros",
@@ -450,7 +387,11 @@
    ],
    "materiais_en": "Tambourine shoes, bell shoes, rattle and shell shoes; mixed materials",
    "dimensoes_en": "Variable dimensions",
-   "local_en": "Panorama da Arte Brasileira, MAM São Paulo (2011); performances at exhibition openings (2011, 2013, 2015)"
+   "local_en": "Panorama da Arte Brasileira, MAM São Paulo (2011); performances at exhibition openings (2011, 2013, 2015)",
+   "premio": "Prêmio Interações Estéticas, Funarte, 2009",
+   "premio_en": "Interações Estéticas Award, Funarte, 2009",
+   "premio_curto": "Prêmio Interações Estéticas",
+   "premio_curto_en": "Interações Estéticas Award"
   },
   {
    "id": "guarda-chuva-sonoro",
@@ -480,7 +421,7 @@
    "materiais": "Chuveiros de aço inoxidável, amplificador, alto-falante e gravações caseiras",
    "dimensoes": "249 × 70 × 70 cm",
    "local": "7ª Bienal do Mercosul, Mostra Absurdo, Porto Alegre (2009); Casa de Cultura Laura Alvim (2013)",
-   "colecao": "Museu de Arte Contemporânea de Niterói — adquirida pelo Prêmio Marcantonio Vilaça, Funarte, 2012",
+   "colecao": "Museu de Arte Contemporânea de Niterói (aquisição pelo prêmio)",
    "texto": [
     "O registro abre a voz, não a água. Quem sobe no chuveiro empresta o corpo a um cantor anônimo."
    ],
@@ -489,19 +430,16 @@
     "sonar",
     "a-pele-do-mundo"
    ],
-   "mapa": {
-    "x": 75,
-    "y": 512,
-    "tier": 1,
-    "lx": 10,
-    "ly": -20
-   },
    "texto_en": [
     "The tap opens a voice, not water. Whoever steps in lends their body to an anonymous singer."
    ],
    "materiais_en": "Stainless steel showers, amplifier, loudspeaker and home recordings",
    "local_en": "7th Mercosul Biennial, Mostra Absurdo, Porto Alegre (2009); Casa de Cultura Laura Alvim (2013)",
-   "colecao_en": "Museu de Arte Contemporânea de Niterói — acquired through the Marcantonio Vilaça Award, Funarte, 2012"
+   "colecao_en": "Museu de Arte Contemporânea de Niterói (acquired through the award)",
+   "premio": "Prêmio Marcantonio Vilaça, Funarte, 2012",
+   "premio_en": "Marcantonio Vilaça Award, Funarte, 2012",
+   "premio_curto": "Prêmio Marcantonio Vilaça",
+   "premio_curto_en": "Marcantonio Vilaça Award"
   },
   {
    "id": "chapeu-panoramico",
@@ -519,7 +457,9 @@
     "Cameras on the capoeira masters' hats: the game seen from inside the circle. The artist leaves the centre so that the other may enter."
    ],
    "materiais_en": "Hats with surveillance cameras, multichannel video",
-   "local_en": "Beach, Rio de Janeiro; MAC Niterói (2009)"
+   "local_en": "Beach, Rio de Janeiro; MAC Niterói (2009)",
+   "fomento": "Bolsa de Estímulo à Criação Artística, Funarte, 2008",
+   "fomento_en": "Artistic Creation Grant, Funarte, 2008"
   },
   {
    "id": "falante",
@@ -546,19 +486,16 @@
      "titulo": "Falante, São Paulo, 2007"
     }
    ],
-   "mapa": {
-    "x": 415,
-    "y": 517,
-    "tier": 1,
-    "lx": 10,
-    "ly": -20
-   },
    "texto_en": [
     "A loudspeaker on the back keeps saying: do not pay attention. Whoever turns to listen has already disobeyed."
    ],
    "materiais_en": "Backpack with loudspeaker, sound poem “Não preste atenção” [Do not pay attention]",
    "local_en": "Fortaleza (58th Salão de Abril, honourable mention) and São Paulo (Futuro do Presente, Itaú Cultural), 2007",
-   "colecao_en": "Museo de Artes Visuales, Santiago, Chile"
+   "colecao_en": "Museo de Artes Visuales, Santiago, Chile",
+   "premio": "Menção honrosa, 58º Salão de Abril, Fortaleza, 2007",
+   "premio_en": "Honourable mention, 58th Salão de Abril, Fortaleza, 2007",
+   "premio_curto": "Menção honrosa, Salão de Abril",
+   "premio_curto_en": "Honourable mention, Salão de Abril"
   },
   {
    "id": "radiomochilas",
@@ -594,13 +531,6 @@
    "texto": [
     "Um micro-rádio desenha uma cruz sobre o cruzamento. Fora do seu alcance, a transmissão desaparece."
    ],
-   "mapa": {
-    "x": 47,
-    "y": 264,
-    "tier": 1,
-    "lx": 10,
-    "ly": 6
-   },
    "radio": {
     "freq": 2002
    },
@@ -749,14 +679,6 @@
      "credito": "Arquivo do artista"
     }
    ],
-   "mapa": {
-    "x": 930,
-    "y": 505,
-    "tier": 1,
-    "lx": -12,
-    "ly": 6,
-    "lado": "esquerda"
-   },
    "texto_en": [
     "Electrical tape on paper: routes, crossings, possible encounters. This is where the Esquinas began."
    ],
@@ -783,13 +705,6 @@
      "titulo": "Tablado número 30 — Stage 30, Centro Municipal de Arte Hélio Oiticica, 2021"
     }
    ],
-   "mapa": {
-    "x": 700,
-    "y": 505,
-    "tier": 2,
-    "lx": 12,
-    "ly": 6
-   },
    "exposicao": "cidade-labirinto",
    "links": [
     {
@@ -998,7 +913,9 @@
    ],
    "materiais_en": "MP3 players and loudspeakers sewn onto ordinary shoes",
    "dimensoes_en": "Variable dimensions",
-   "local_en": "Rio–Niterói ferry and Praça XV, Rio de Janeiro — Projeto EME>> Conexão Artes Visuais, Funarte"
+   "local_en": "Rio–Niterói ferry and Praça XV, Rio de Janeiro — Projeto EME>> Conexão Artes Visuais, Funarte",
+   "fomento": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010",
+   "fomento_en": "Conexão Artes Visuais, Funarte — Projeto EME>>, 2010"
   },
   {
    "id": "o-estrangeiro",
@@ -1062,7 +979,9 @@
     "Four sound actions in the open ground floor of MAM Rio."
    ],
    "materiais_en": "Four sound actions in the museum's open ground floor",
-   "local_en": "Museu de Arte Moderna do Rio de Janeiro — supported by the Rio de Janeiro State Secretariat of Culture"
+   "local_en": "Museu de Arte Moderna do Rio de Janeiro — supported by the Rio de Janeiro State Secretariat of Culture",
+   "fomento": "Apoio a Projeto Artístico, Secretaria de Estado de Cultura do Rio de Janeiro, 2010",
+   "fomento_en": "Artistic Project Support, Rio de Janeiro State Secretariat of Culture, 2010"
   },
   {
    "id": "radio-invisivel",
@@ -1086,88 +1005,6 @@
     "freq": 2009.5
    }
   }
- ],
- "mapa_pares": [
-  [
-   "esquina",
-   "cruz"
-  ],
-  [
-   "esquina",
-   "mar-sobre-mar"
-  ],
-  [
-   "esquina",
-   "mascara-sonora"
-  ],
-  [
-   "esquina",
-   "sonar"
-  ],
-  [
-   "esquinas",
-   "historias-anonimas"
-  ],
-  [
-   "esquinas",
-   "errancia"
-  ],
-  [
-   "turbina",
-   "mascara-sonora"
-  ],
-  [
-   "turbina",
-   "cidades-sonoras"
-  ],
-  [
-   "turbina",
-   "falante"
-  ],
-  [
-   "muro-de-som",
-   "historias-anonimas"
-  ],
-  [
-   "muro-de-som",
-   "chuveiros-sonoros"
-  ],
-  [
-   "sonar",
-   "errancia"
-  ],
-  [
-   "esquinas",
-   "chuveiros-sonoros"
-  ],
-  [
-   "cruz",
-   "cidades-sonoras"
-  ],
-  [
-   "mar-sobre-mar",
-   "mascara-sonora"
-  ],
-  [
-   "falante",
-   "historias-anonimas"
-  ],
-  [
-   "cidade-labirinto",
-   "historias-anonimas"
-  ],
-  [
-   "cidade-labirinto",
-   "muro-de-som"
-  ],
-  [
-   "desenhos",
-   "esquina"
-  ],
-  [
-   "desenhos",
-   "sonar"
-  ]
  ],
  "exposicoes": [
   {
@@ -1226,7 +1063,7 @@
    "id": "errancia",
    "titulo": "Errância",
    "ano": "2016",
-   "local": "Centro Cultural Banco do Brasil, Rio de Janeiro",
+   "local": "Centro Cultural Banco do Brasil, Rio de Janeiro — Prêmio CCBB Contemporâneo",
    "curadoria": "",
    "texto": "A noite da cidade entra no cubo branco. Ao sair, o mundo lá fora soa como silêncio.",
    "texto_en": "The city's night enters the white cube. On leaving, the world outside sounds like silence.",
@@ -1246,11 +1083,11 @@
    "id": "a-cidade-sonora",
    "titulo": "A Cidade Sonora",
    "ano": "2012",
-   "local": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro",
+   "local": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro — Prêmio Projéteis, Funarte",
    "curadoria": "",
    "texto": "Quinze cidades caídas no chão de um palácio moderno.",
    "texto_en": "Fifteen cities fallen on the floor of a modernist palace.",
-   "local_en": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro"
+   "local_en": "Galeria Funarte, Palácio Gustavo Capanema, Rio de Janeiro — Projéteis Award, Funarte"
   }
  ],
  "coletivas": [

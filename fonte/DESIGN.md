@@ -65,17 +65,18 @@ Títulos de obra: 2.5–5rem itálico. Fichas: 0.75–0.875rem mono. Linhas de t
 Base 4px: `space.1=4 · 2=8 · 3=12 · 4=16 · 6=24 · 8=32 · 12=48 · 16=64 · 24=96 · 32=128`.
 Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400px.
 
-## 4. Linhas do mapa (Esquina)
+## 4. Mapa Esquina — múltiplos pontos de vista
 
-| Token | Espessura (unidades do SVG) |
-|---|---|
-| `line.hair` | 0.6 |
-| `line.thin` | 1 |
-| `line.regular` | 1.4 |
-| `line.medium` | 2.2 |
-| `line.heavy` | 3.4 |
+O mapa usa os recursos de troca de plano dos desenhos do artista (fita isolante, 2007– ; Esquinas I–X, 2023). Código em `mapa.py` (geometria) e `assets/js/mapa.js` (movimento).
 
-Pontos: obra recente = disco vermelho, maior; demais = círculo vazado em tinta. Linhas em preto; bordas laterais em prata.
+- **Pontos de fuga**: cinco sistemas de linhas (A, B, C, D, F), cada um um ponto de vista; vários ficam fora do quadro. O feixe B converge logo além da borda direita; o leque C sobe de baixo; D dá verticais de elevação.
+- **Vértice interno**: um leque denso nasce na obra Esquina (sistema E) e passa um pouco do ponto, como a fita.
+- **Espessura por plano**: `0.6–1` fundo · `1.4–2.2` meio · `≥ 3` frente. A linha da frente interrompe a de trás (contorno cor de papel).
+- **Planos dobrados**: triângulos e quadriláteros com vértices nas obras; as arestas passam do vértice.
+- **Linhas que começam ou terminam dentro do quadro** (frações do trecho visível).
+- **Movimento**: o cursor desloca os pontos de fuga e as linhas giram em torno das obras; as obras não se movem. Sem cursor, deriva lenta. Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Hierarquia**: nível 3 (disco vermelho grande) = obras premiadas e centrais (Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância); nível 2 = disco vermelho menor; nível 1 = círculo vazado em tinta. Obra premiada recebe anel vermelho e o nome do prêmio sob o ano.
+- **Celular**: composição girada (560 × 1000), com posições próprias em `PV` onde os rótulos colidiriam.
 
 ## 5. Componentes
 

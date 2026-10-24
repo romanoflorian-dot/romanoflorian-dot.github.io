@@ -126,29 +126,31 @@ img { max-width: 100%; display: block; }
   .mapa-h { display: none; }
   .mapa-v { display: block; }
 }
-.m-linhas line { stroke: var(--ink-900); stroke-linecap: butt; transition: opacity var(--t), stroke var(--t); }
-.mapa.foco .m-linhas line { opacity: 0.16; }
-.mapa.foco .m-linhas line.on { opacity: 1; stroke: var(--ink-900); }
+.m-linhas line { stroke: var(--ink-900); stroke-linecap: butt; transition: opacity var(--t); }
+.m-linhas .m-halo { stroke: var(--paper-100); }
+.mapa.foco .m-linhas line:not(.m-halo) { opacity: 0.14; }
+.mapa.foco .m-linhas line.on { opacity: 1; }
 .m-no { cursor: pointer; text-decoration: none; }
 .m-no:focus { outline: none; }
 .m-alvo { fill: transparent; }
-.m-pt { fill: var(--red-600); transition: r var(--t); }
+.m-pt { fill: var(--red-600); stroke: var(--paper-100); stroke-width: 2; paint-order: stroke; }
 .m-vazado { fill: var(--paper-100); stroke: var(--ink-900); stroke-width: 1.4; }
-.m-nome, .m-ano {
-  paint-order: stroke; stroke: var(--paper-100); stroke-width: 6px; stroke-linejoin: round;
+.m-selo { fill: var(--paper-100); stroke: var(--red-600); stroke-width: 1.2; }
+.m-nome, .m-ano, .m-premio {
+  paint-order: stroke; stroke: var(--paper-100); stroke-width: 5px; stroke-linejoin: round;
 }
 .m-nome { font-family: var(--f-name); font-style: italic; fill: var(--ink-700); }
 .m-ano { font-family: var(--f-data); fill: var(--ink-500); letter-spacing: 0.08em; }
+.m-premio { font-family: var(--f-data); fill: var(--red-700); letter-spacing: 0.06em; }
 .t3 .m-nome, .t2 .m-nome { fill: var(--ink-900); }
 .t3 .m-ano, .t2 .m-ano { fill: var(--red-700); }
-.mapa-h .t3 .m-nome { font-size: 24px; } .mapa-h .t2 .m-nome { font-size: 18px; } .mapa-h .t1 .m-nome { font-size: 15px; }
-.mapa-h .m-ano { font-size: 9.5px; }
-.mapa-v .t3 .m-nome { font-size: 25px; } .mapa-v .t2 .m-nome { font-size: 21px; } .mapa-v .t1 .m-nome { font-size: 19px; }
-.mapa-v .m-ano { font-size: 12px; }
+.mapa-h .t3 .m-nome { font-size: 25px; } .mapa-h .t2 .m-nome { font-size: 17px; } .mapa-h .t1 .m-nome { font-size: 13.5px; }
+.mapa-h .m-ano { font-size: 9.5px; } .mapa-h .t1 .m-ano { font-size: 8.5px; } .mapa-h .m-premio { font-size: 9.5px; }
+.mapa-v .t3 .m-nome { font-size: 26px; } .mapa-v .t2 .m-nome { font-size: 20px; } .mapa-v .t1 .m-nome { font-size: 16px; }
+.mapa-v .m-ano, .mapa-v .m-premio { font-size: 12px; }
 .m-no:hover .m-nome, .m-no:focus-visible .m-nome { fill: var(--red-700); }
 .m-no:hover .m-vazado, .m-no:focus-visible .m-vazado { fill: var(--red-600); stroke: var(--red-600); }
 .m-no:focus-visible .m-alvo { stroke: var(--red-600); stroke-width: 1.5; }
-
 .inicio-pe { display: flex; justify-content: space-between; gap: var(--s8); flex-wrap: wrap; margin-top: var(--s6); }
 .dica { font-family: var(--f-data); font-size: 0.8125rem; color: var(--text-2); margin: 0; }
 .dica-toque { display: none; }
@@ -351,3 +353,19 @@ a.play { text-decoration: none; }
 .expo-coletiva .expo-titulo { font-size: 1.875rem; }
 .expo-coletiva .video { margin-top: var(--s4); }
 .exposicoes .lista-simples { margin: var(--s4) 0; max-width: 46rem; }
+
+/* ---------- prêmios */
+.obra-premio { margin: var(--s3) 0 0 4px; font-family: var(--f-data); font-size: 0.8125rem; letter-spacing: 0.04em; color: var(--signal-text);
+  display: inline-flex; align-items: center; gap: var(--s2); }
+.obra-premio::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--signal); }
+.ficha dt.sinal { color: var(--signal-text); }
+.ficha-premio { font-family: var(--f-name); font-style: italic; font-size: 1.0625rem !important; }
+.indice-premio { font-size: 0.6875rem; margin-left: var(--s2); white-space: nowrap; }
+.lista-premios { list-style: none; padding: 0; margin: 0 0 var(--s8); }
+.lista-premios li { display: flex; gap: var(--s4); padding: var(--s3) 0; border-bottom: 1px solid var(--rule); }
+.lista-premios li > .dado { flex: none; width: 3.5rem; padding-top: 6px; }
+.lista-premios .nome { display: block; font-family: var(--f-name); font-style: italic; font-size: 1.5rem; line-height: 1.15; color: var(--text); text-decoration: none; }
+.lista-premios a.nome:hover { color: var(--signal-text); }
+.lista-premios .premio-nome { display: block; font-size: 0.9375rem; color: var(--text-2); margin-top: 2px; }
+.lista-premios .indicacao .premio-nome { margin-top: 0; }
+.lista-simples a.nome { font-family: var(--f-name); font-style: italic; color: inherit; }
