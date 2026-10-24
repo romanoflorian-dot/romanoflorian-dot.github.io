@@ -477,7 +477,7 @@ def item_texto(x, com_autor=True):
 
 def build_textos(c):
     t = c.t
-    ordem_d = ["Making Oneself Heard", "Floriano Romano: Esquina", "Acoustic Territories", "Brasilidade", "Corpo impulso", "Desorientação"]
+    ordem_d = ["Floriano Romano: Esquina", "Making Oneself Heard", "Acoustic Territories", "Brasilidade", "Corpo impulso", "Desorientação"]
     dest = sorted((x for x in DATA["textos_sobre"] if x.get("destaque")),
                   key=lambda x: next((i for i, k in enumerate(ordem_d) if x["titulo"].startswith(k)), 99))
     destaques = "".join(item_texto(x) for x in dest)
