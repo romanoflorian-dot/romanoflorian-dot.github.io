@@ -47,7 +47,7 @@ def page(title, body, r="", desc="", body_class="", scripts=(), active="", fragm
 </main>
 <footer class="rodape">
   <span>© {ANO_ATUAL} Floriano Romano</span>
-  <a href="{r}indice.html">Todas as obras</a>
+  <span class="rodape-links"><a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
 </footer>
 {js}"""
     fontes = '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Jura:wght@500&display=swap" rel="stylesheet">'
@@ -87,7 +87,7 @@ def page(title, body, r="", desc="", body_class="", scripts=(), active="", fragm
 </main>
 <footer class="rodape">
   <span>© {ANO_ATUAL} Floriano Romano</span>
-  <a href="{r}indice.html">Todas as obras</a>
+  <span class="rodape-links"><a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="{r}indice.html">Todas as obras</a></span>
 </footer>
 {js}
 </body>
@@ -455,6 +455,8 @@ def build_sobre():
         <li>Museo de Artes Visuales, Santiago do Chile — Falante (vídeo)</li>
         <li>Centro Provincial de Diseño y Oficios, Havana — mochila de Falante</li>
       </ul>
+      <h2 class="sub">Vídeos</h2>
+      <p><a href="https://www.youtube.com/@openradio" rel="noopener">Canal no YouTube — @openradio</a></p>
       <h2 class="sub">Contato</h2>
       <p class="dado" data-contato>e-mail a definir</p>
     </div>
