@@ -691,7 +691,13 @@
         "lx": 12,
         "ly": 6
       },
-      "exposicao": "cidade-labirinto"
+      "exposicao": "cidade-labirinto",
+      "links": [
+        {
+          "url": "https://www.youtube.com/@cidadelabirintoporfloriano1816",
+          "titulo": "Canal Cidade Labirinto no YouTube"
+        }
+      ]
     },
     {
       "id": "cidade-sensivel",

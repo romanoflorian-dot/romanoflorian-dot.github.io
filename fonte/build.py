@@ -259,6 +259,9 @@ def build_obra(o, prev, nxt):
         texto += f'<p class="pendente dado">Página em preparação.</p>'
     videos = "".join(video_embed(v) for v in o.get("video", []))
     videos = f'<section class="videos"><h2 class="sub">Vídeo</h2>{videos}</section>' if videos else ""
+    if o.get("links"):
+        videos += '<p class="links-obra">' + " ".join(
+            f'<a href="{e(l["url"])}" rel="noopener">{e(l["titulo"])} ↗</a>' for l in o["links"]) + '</p>'
 
     nav_obras = '<nav class="vizinhas" aria-label="Outras obras">'
     if prev:
