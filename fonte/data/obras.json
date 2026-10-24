@@ -753,6 +753,25 @@
       "texto": [],
       "pendente": "texto e registros",
       "exposicao": "nuvem"
+    },
+    {
+      "id": "duas-mulheres",
+      "titulo": "Duas Mulheres",
+      "ano": "2000",
+      "ano_num": 2000,
+      "tipo": "vídeo",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "",
+      "texto": [],
+      "pendente": "ficha técnica e texto",
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "xnqE0wEUTnw",
+          "titulo": "Duas Mulheres"
+        }
+      ]
     }
   ],
   "mapa_pares": [
