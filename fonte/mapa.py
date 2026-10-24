@@ -1,57 +1,55 @@
 """Mapa Esquina da página inicial, desenhado com os recursos dos desenhos de Floriano Romano.
 
 Recursos tirados dos desenhos (fita isolante, 2007– ; Esquinas I–X, 2023):
-  - feixes de linhas quase paralelas que convergem para pontos de fuga diferentes, alguns fora do quadro;
-  - um vértice dentro do quadro de onde se abre um leque denso (aqui: a obra Esquina);
+  - feixes de linhas que convergem para pontos de fuga diferentes, alguns fora do quadro;
+  - um vértice de onde se abre um leque denso (aqui: a obra Esquina);
   - espessura conforme o plano: a linha grossa vem para a frente, a fina recua;
-  - planos fechados (triângulos, quadriláteros) que se dobram uns sobre os outros, com a fita passando além do vértice;
+  - planos fechados (triângulos, quadriláteros) que se dobram, com a fita passando além do vértice;
   - linhas que começam ou terminam dentro do quadro;
-  - verticais de elevação misturadas com diagonais de perspectiva;
   - a linha da frente interrompe a de trás (o papel aparece no cruzamento).
 
-Cada obra é o cruzamento de linhas que vêm de pontos de vista diferentes. Quando o visitante move o cursor,
-os pontos de fuga se deslocam e as linhas giram em torno das obras (assets/js/mapa.js): as obras ficam no lugar,
-o ponto de vista muda.
+O desenho existe em três dimensões, dentro de uma esfera. Cada obra é um ponto no espaço; cada linha é uma corda
+da esfera que passa pela obra e por um ponto de fuga (também no espaço). assets/js/mapa.js gira a esfera em torno
+do eixo vertical — com o cursor, mais de 180 graus; sem cursor, gira devagar sozinha — e projeta tudo em perspectiva.
 """
 import hashlib, json, math
 
 W, H = 1000, 560
+FOCO = 2200        # distância do olho para a perspectiva (mesmo valor em mapa.js)
 
-# Pontos de fuga. "E" é a própria obra Esquina (vértice interno, acompanha a obra).
+# Pontos de fuga no espaço (x, y no desenho; z = profundidade). "E" é a própria obra Esquina.
 VP = {
-    "A": (-520, -640),    # diagonais finas que descem para a direita (fundo)
-    "B": (1270, 300),     # feixe que converge logo além da borda direita (teto)
-    "C": (520, 830),      # leque que sobe de baixo (chão)
-    "D": (700, -3200),    # quase verticais: elevação (fundo)
-    "F": (-420, 780),     # diagonais que sobem para a direita
+    "A": (-520, -640, 520),    # diagonais que descem para a direita, vindas da frente
+    "B": (1270, 300, -380),    # feixe que converge à direita, lá atrás
+    "C": (520, 830, 260),      # leque que sobe de baixo
+    "D": (700, -3200, 0),      # quase verticais
+    "F": (-420, 780, -460),    # diagonais que sobem para a direita, vindas de trás
 }
-MOVE = {"A": 1.0, "B": 0.7, "C": 1.1, "D": 0.5, "F": 0.9, "E": 0}   # quanto cada ponto de vista se desloca
 
-# Obras no mapa: posição, nível (3 = premiadas e centrais), lado do rótulo, profundidade z (positivo = mais perto).
-# A profundidade faz o mapa girar no espaço: as obras da frente se deslocam mais que as do fundo.
+# Obras: posição no desenho, nível (3 = premiadas e centrais), lado inicial do rótulo, profundidade z.
 NOS = {
     # nível 3 — prêmios e obras centrais
-    "esquina":           dict(p=(612, 196), t=3, lado="d", z=60),
-    "sonar":             dict(p=(318, 96),  t=3, lado="d", z=-90),
-    "cidade-sonora":     dict(p=(92, 210),  t=3, lado="d", z=-130),
-    "chuveiros-sonoros": dict(p=(122, 462), t=3, lado="d", z=110),
-    "errancia":          dict(p=(420, 352), t=3, lado="d", z=70),
+    "esquina":           dict(p=(612, 196), t=3, lado="d", z=90),
+    "sonar":             dict(p=(318, 96),  t=3, lado="d", z=-160),
+    "cidade-sonora":     dict(p=(92, 210),  t=3, lado="d", z=-120),
+    "chuveiros-sonoros": dict(p=(122, 462), t=3, lado="d", z=170),
+    "errancia":          dict(p=(420, 352), t=3, lado="d", z=120),
     # nível 2
-    "esquinas":          dict(p=(818, 318), t=2, lado="d", z=-40),
-    "falante":           dict(p=(470, 512), t=2, lado="d", z=90),
-    "sapatos-sonoros":   dict(p=(262, 292), t=2, lado="d", z=-10),
-    "cidade-labirinto":  dict(p=(700, 470), t=2, lado="d", z=20),
-    "muro-de-som":       dict(p=(206, 128), t=2, lado="e", z=-120),
-    "chapeu-panoramico": dict(p=(848, 98),  t=2, lado="d", z=-150),
-    "intrasom":          dict(p=(652, 284), t=2, lado="e", z=30),
-    "radio-lugar":       dict(p=(286, 524), t=2, lado="d", z=60),
+    "esquinas":          dict(p=(818, 318), t=2, lado="d", z=-90),
+    "falante":           dict(p=(470, 512), t=2, lado="d", z=220),
+    "sapatos-sonoros":   dict(p=(262, 292), t=2, lado="d", z=-30),
+    "cidade-labirinto":  dict(p=(700, 470), t=2, lado="d", z=40),
+    "muro-de-som":       dict(p=(206, 128), t=2, lado="e", z=-240),
+    "chapeu-panoramico": dict(p=(848, 98),  t=2, lado="d", z=-220),
+    "intrasom":          dict(p=(652, 284), t=2, lado="e", z=-10),
+    "radio-lugar":       dict(p=(286, 524), t=2, lado="d", z=150),
     # nível 1
-    "turbina":           dict(p=(726, 62),  t=1, lado="d", z=-180),
+    "turbina":           dict(p=(726, 62),  t=1, lado="d", z=-300),
     "mascara-sonora":    dict(p=(934, 222), t=1, lado="e", z=-60),
-    "historias-anonimas": dict(p=(492, 150), t=1, lado="e", z=-100),
-    "mar-sobre-mar":     dict(p=(566, 408), t=1, lado="d", z=0),
-    "cruz":              dict(p=(36, 336),  t=1, lado="d", z=40),
-    "desenhos":          dict(p=(944, 486), t=1, lado="e", z=-20),
+    "historias-anonimas": dict(p=(492, 150), t=1, lado="e", z=-200),
+    "mar-sobre-mar":     dict(p=(566, 408), t=1, lado="d", z=260),
+    "cruz":              dict(p=(36, 336),  t=1, lado="d", z=60),
+    "desenhos":          dict(p=(944, 486), t=1, lado="e", z=-40),
 }
 
 # Celular (composição vertical, 560 × 1000): posições próprias onde a rotação simples faria rótulos colidirem.
@@ -66,111 +64,106 @@ PV = {
     "radio-lugar":       (520, 664, "e"),
 }
 
-# Sistemas de linhas: cada um é um ponto de vista. Âncora = obra (nome) ou ponto livre (x, y).
-# (âncora, espessura, frações do trecho visível)
+# Poucas cordas que atravessam a esfera: cada uma passa por uma obra e por um ponto de fuga no espaço.
+# (âncora, espessura, frações do trecho visível da corda)
 SISTEMAS = {
-    "B": [("sonar", 1, (0, .97)), ("cidade-sonora", 3.4, (0, .99)), ("esquina", 2.2, (0, .98)),
-          ("mascara-sonora", .6, (.5, 1))],
-    "C": [("falante", 2.2, (0, .78)), ("errancia", 3.4, (0, .86)), ("sapatos-sonoros", 1, (0, 1)),
-          ("mar-sobre-mar", 1, (0, .7)), ("radio-lugar", .6, (0, .4))],
-    "A": [("chuveiros-sonoros", 1.4, (.1, 1)), ("cruz", .6, (0, 1)), ("esquinas", 1, (.2, 1)), ("intrasom", 1, (.15, .9))],
-    "F": [("chapeu-panoramico", 1.4, (.15, 1)), ("cidade-labirinto", 2.2, (.25, 1)), ("mascara-sonora", 1, (.4, 1)),
-          ("chuveiros-sonoros", 4.4, (0, .62)), ("radio-lugar", 1, (0, .7))],
-    "D": [("muro-de-som", .6, (0, .7)), ("turbina", .6, (0, .5)), ("desenhos", .6, (.25, 1)), ("cruz", .6, (.3, 1)),
-          ("historias-anonimas", .6, (0, .45)), ("intrasom", .6, (.1, .55))],
-    # leque denso que nasce na Esquina e desce para a direita, como o vértice dos desenhos de fita
-    "E": [((694, 560), 3.4, (0, 1)), ((731, 560), 2.2, (0, 1)), ((772, 560), 1, (0, 1)),
-          ("cidade-labirinto", 1.4, (0, 1)), ("esquinas", 1, (0, 1))],
+    "B": [("cidade-sonora", 3.4, (0, .96))],
+    "C": [("errancia", 2.2, (0, .9))],
+    "F": [("chuveiros-sonoros", 4.4, (0, .66))],
 }
 
-# Planos fechados que se dobram: vértices em obras; a fita passa um pouco além do vértice.
+# Planos fechados que se sobrepõem, como no desenho a lápis de 2026; "dupla" = traço passado duas vezes.
 PLANOS = [
-    dict(nos=["cidade-sonora", "muro-de-som", "sonar", "sapatos-sonoros"], larg=1.4),
-    dict(nos=["errancia", "falante", "chuveiros-sonoros"], larg=4.0),
-    dict(nos=["esquinas", "desenhos", "cidade-labirinto", "mar-sobre-mar"], larg=1),
-    dict(nos=["historias-anonimas", "turbina", "chapeu-panoramico", "esquina"], larg=0.6),
+    dict(nos=["cidade-sonora", "turbina", "esquina"], larg=1.4, dupla=True),                      # triângulo alto
+    dict(nos=["sapatos-sonoros", "esquinas", "cidade-labirinto", "radio-lugar"], larg=1.4),        # quadrilátero central
+    dict(nos=["chapeu-panoramico", "mascara-sonora", "desenhos", "esquinas"], larg=1, dupla=True), # caixa à direita
+    dict(nos=["errancia", "falante", "chuveiros-sonoros"], larg=4.0),                              # triângulo da frente
+    dict(nos=["muro-de-som", "sonar", "cidade-sonora"], larg=1),
+    dict(nos=["cruz", "chuveiros-sonoros", "radio-lugar"], larg=1.4),
 ]
 
+# Vértice: várias linhas partem da Esquina e terminam em outras obras.
+VERTICE = dict(no="esquina", alvos=[("sonar", 1.4), ("intrasom", 1), ("mar-sobre-mar", 1.4), ("errancia", 2.2),
+                                     ("historias-anonimas", 1)])
+
+# Ponta longa e fina que escapa para baixo, à direita (duas linhas que se encontram fora das obras).
+PONTA = dict(apice=(990, 556, 40), de=[("falante", 1), ("mar-sobre-mar", 1.4)])
+
 FRENTE = 3.0      # a partir desta espessura a linha interrompe as que passam atrás
-PASSA = 0.035     # no vértice interno (Esquina) as linhas passam um pouco do ponto, como a fita
+PASSA = 0.04      # no vértice (Esquina) as linhas passam um pouco do ponto, como a fita
 
 
 def _h(*xs):
     return int(hashlib.md5("|".join(map(str, xs)).encode()).hexdigest(), 16)
 
 
-def recorte(p, d, w=W, h=H):
-    """Interseção da reta p + t·d com o retângulo: devolve (t_entrada, t_saída) ou None."""
-    t0, t1 = -1e9, 1e9
-    for pi, di, lo, hi in ((p[0], d[0], 0, w), (p[1], d[1], 0, h)):
-        if abs(di) < 1e-9:
-            if pi < lo or pi > hi:
-                return None
-            continue
-        a, b = (lo - pi) / di, (hi - pi) / di
-        if a > b:
-            a, b = b, a
-        t0, t1 = max(t0, a), min(t1, b)
-    return (t0, t1) if t0 < t1 else None
+class Cena:
+    """O desenho no espaço, centrado na origem, dentro de um elipsoide do tamanho do quadro."""
 
+    def __init__(self, w, h, vertical):
+        self.w, self.h, self.vertical = w, h, vertical
+        self.cx, self.cy = w / 2, h / 2
+        self.a, self.b = w / 2 - 8, h / 2 - 6       # raios horizontal e vertical
+        self.c = self.a * 0.95                       # raio em profundidade: igual ao horizontal, a esfera gira sem sair do quadro
 
-def segmento(v, a, s, raio=False, w=W, h=H):
-    """Trecho da reta que vai do ponto de fuga v pelo ponto a; s = frações (início, fim) do trecho dentro do quadro."""
-    d = (a[0] - v[0], a[1] - v[1])
-    r = recorte(v, d, w, h)
-    if not r:
-        return None
-    t0, t1 = r
-    if raio:
-        t0 = max(t0, -PASSA)
-    if t1 <= t0:
-        return None
-    ta, tb = t0 + (t1 - t0) * s[0], t0 + (t1 - t0) * s[1]
-    return (v[0] + d[0] * ta, v[1] + d[1] * ta, v[0] + d[0] * tb, v[1] + d[1] * tb)
+    def T(self, x, y):
+        """Desenho horizontal → composição do quadro (gira 90° no celular)."""
+        return (y, W - x) if self.vertical else (x, y)
 
+    def ponto(self, x, y, z):
+        """Coordenadas do quadro + z → espaço centrado."""
+        return (x - self.cx, y - self.cy, z)
 
-def geometria(pos, T):
-    """Lista de linhas: dict(v=sistema, a=âncora, s=frações, w=espessura, n=obras, raio). pos já transformadas."""
-    linhas = []
-    for sv, itens in SISTEMAS.items():
-        for anc, wd, fr in itens:
-            if isinstance(anc, str):
-                a, ns, no = pos[anc], [anc], anc
-            else:
-                a, ns, no = T(anc), [], ""
-            if sv == "E":
-                ns = ["esquina"] + ns
-            linhas.append(dict(v=sv, a=a, no=no, s=fr, w=wd, n=ns, raio=(sv == "E")))
-    return linhas
+    def dentro(self, p, folga=0.9):
+        """Empurra um ponto para dentro do elipsoide, se preciso."""
+        X, Y, Z = p
+        q = (X / self.a) ** 2 + (Y / self.b) ** 2 + (Z / self.c) ** 2
+        if q <= folga ** 2:
+            return p
+        # reduz primeiro a profundidade; se não bastar, aproxima do centro
+        r2 = folga ** 2 - (X / self.a) ** 2 - (Y / self.b) ** 2
+        if r2 > 0.02:
+            return (X, Y, math.copysign(self.c * math.sqrt(r2), Z) if Z else 0)
+        k = folga / math.sqrt(q)
+        return (X * k, Y * k, Z * k)
 
+    def corda(self, v, p):
+        """Interseção da reta que passa por v e p com o elipsoide: (t0, t1) na forma v + t·(p − v)."""
+        d = [p[i] - v[i] for i in range(3)]
+        r = (self.a, self.b, self.c)
+        A = sum((d[i] / r[i]) ** 2 for i in range(3))
+        B = 2 * sum(v[i] * d[i] / r[i] ** 2 for i in range(3))
+        C = sum((v[i] / r[i]) ** 2 for i in range(3)) - 1
+        disc = B * B - 4 * A * C
+        if A == 0 or disc <= 0:
+            return None, d
+        s = math.sqrt(disc)
+        return ((-B - s) / (2 * A), (-B + s) / (2 * A)), d
 
-def arestas_planos(pos):
-    out = []
-    for pl in PLANOS:
-        pts = [pos[n] for n in pl["nos"]]
-        for i in range(len(pts)):
-            p, q = pts[i], pts[(i + 1) % len(pts)]
-            dx, dy = q[0] - p[0], q[1] - p[1]
-            L = math.hypot(dx, dy) or 1
-            e1, e2 = 8 + _h(p, q) % 14, 8 + _h(q, p) % 14     # a fita passa do vértice
-            ux, uy = dx / L, dy / L
-            out.append(dict(x1=p[0] - ux * e1, y1=p[1] - uy * e1, x2=q[0] + ux * e2, y2=q[1] + uy * e2, e=(e1, e2),
-                            w=pl["larg"], n=[pl["nos"][i], pl["nos"][(i + 1) % len(pts)]]))
-    return out
+    def projeta(self, p):
+        """Perspectiva sem giro (estado inicial, igual ao primeiro quadro de mapa.js)."""
+        k = FOCO / (FOCO - p[2])
+        return (self.cx + p[0] * k, self.cy + p[1] * k)
 
 
 def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
     """SVG do mapa. vertical=True gira a composição para o celular."""
     w, h = (H, W) if vertical else (W, H)
-    def T(p):
-        return (p[1], W - p[0]) if vertical else (p[0], p[1])
-    vps = {k: T(v) for k, v in VP.items()}
-    pos = {k: (PV[k][:2] if vertical and k in PV else T(nd["p"])) for k, nd in NOS.items()}
-    vps["E"] = pos["esquina"]
+    S = Cena(w, h, vertical)
+
+    # obras no espaço
+    pos3 = {}
+    for k, nd in NOS.items():
+        x, y = (PV[k][:2] if vertical and k in PV else S.T(*nd["p"]))
+        pos3[k] = S.dentro(S.ponto(x, y, nd["z"] * 0.5))   # profundidade moderada: de frente, todos os nomes legíveis
+    vps = {k: S.ponto(*S.T(v[0], v[1]), v[2]) for k, v in VP.items()}
+
     fundo, meio, halos, frente = [], [], [], []
 
-    def emite(x1, y1, x2, y2, wd, ns, extra=""):
-        attrs = f'x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" data-n="{" ".join(ns)}"{extra}'
+    def emite(p1, p2, wd, ns):
+        a, b = S.projeta(p1), S.projeta(p2)
+        dados = ",".join(f"{v:.1f}" for v in (*p1, *p2))
+        attrs = f'x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" y2="{b[1]:.1f}" data-n="{" ".join(ns)}" data-p="{dados}"'
         if wd >= FRENTE:
             halos.append(f'<line class="m-halo" {attrs} stroke-width="{wd + 7:.1f}"/>')
             frente.append(f'<line {attrs} stroke-width="{wd}"/>')
@@ -179,52 +172,93 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
         else:
             meio.append(f'<line {attrs} stroke-width="{wd}"/>')
 
-    for ln in geometria(pos, T):
-        v, a = vps[ln["v"]], ln["a"]
-        seg = segmento(v, a, ln["s"], ln.get("raio", False), w, h)
-        if not seg:
-            continue
-        extra = (f' data-v="{ln["v"]}" data-a="{a[0]:.1f},{a[1]:.1f}" data-s="{ln["s"][0]},{ln["s"][1]}"'
-                 + (f' data-no="{ln["no"]}"' if ln["no"] else "") + (' data-r="1"' if ln.get("raio") else ""))
-        emite(*seg, ln["w"], ln["n"], extra)
-    for ar in arestas_planos(pos):
-        p1, p2 = (ar["x1"], ar["y1"]), (ar["x2"], ar["y2"])
-        emite(p1[0], p1[1], p2[0], p2[1], ar["w"], ar["n"], f' data-plano="{ar["n"][0]} {ar["n"][1]}" data-e="{ar["e"][0]},{ar["e"][1]}"')
+    # cordas dos sistemas
+    for sv, itens in SISTEMAS.items():
+        for anc, wd, fr in itens:
+            if isinstance(anc, str):
+                p, ns = pos3[anc], [anc]
+            else:
+                p, ns = S.dentro(S.ponto(*S.T(anc[0], anc[1]), anc[2]), 1.2), []
+            if sv == "E":
+                v, ns = pos3["esquina"], ["esquina"] + ns
+            else:
+                v = vps[sv]
+            ts, d = S.corda(v, p)
+            if not ts:
+                continue
+            t0, t1 = ts
+            if sv == "E":
+                t0 = max(t0, -PASSA)
+            ta, tb = t0 + (t1 - t0) * fr[0], t0 + (t1 - t0) * fr[1]
+            emite(tuple(v[i] + d[i] * ta for i in range(3)), tuple(v[i] + d[i] * tb for i in range(3)), wd, ns)
 
+    # planos: arestas entre obras, passando do vértice
+    for pl in PLANOS:
+        nn = pl["nos"]
+        for i in range(len(nn)):
+            A, B = pos3[nn[i]], pos3[nn[(i + 1) % len(nn)]]
+            d = [B[j] - A[j] for j in range(3)]
+            L = math.sqrt(sum(x * x for x in d)) or 1
+            u = [x / L for x in d]
+            e1, e2 = 8 + _h(nn[i], i) % 14, 8 + _h(i, nn[i]) % 14
+            p1 = tuple(A[j] - u[j] * e1 for j in range(3))
+            p2 = tuple(B[j] + u[j] * e2 for j in range(3))
+            emite(p1, p2, pl["larg"], [nn[i], nn[(i + 1) % len(nn)]])
+            if pl.get("dupla"):          # segundo traço, levemente desencontrado
+                o1, o2 = 2 + _h(nn[i], "a") % 3, 4 + _h(nn[i], "b") % 4
+                emite((p1[0], p1[1] + o1, p1[2]), (p2[0] + 2, p2[1] + o2, p2[2]), 0.6, [nn[i], nn[(i + 1) % len(nn)]])
+
+    # vértice da Esquina e ponta fina
+    e = pos3[VERTICE["no"]]
+    for alvo, wd in VERTICE["alvos"]:
+        q = pos3[alvo]
+        d = [q[j] - e[j] for j in range(3)]
+        emite(tuple(e[j] - d[j] * 0.05 for j in range(3)), tuple(q[j] + d[j] * 0.04 for j in range(3)), wd, ["esquina", alvo])
+    ap = S.dentro(S.ponto(*S.T(PONTA["apice"][0], PONTA["apice"][1]), PONTA["apice"][2]), 1.0)
+    for alvo, wd in PONTA["de"]:
+        q = pos3[alvo]
+        d = [ap[j] - q[j] for j in range(3)]
+        emite(tuple(q[j] - d[j] * 0.04 for j in range(3)), ap, wd, [alvo])
+
+    # círculo de compasso: um meridiano da esfera, que gira com ela
+    pts = []
+    for i in range(73):
+        ang = 2 * math.pi * i / 72
+        pts.append((0.0, S.b * 0.96 * math.cos(ang), S.c * 0.96 * math.sin(ang)))
+    circulo = (f'<polyline class="m-circulo" points="{" ".join(f"{S.projeta(q)[0]:.1f},{S.projeta(q)[1]:.1f}" for q in pts)}" '
+               f'data-p="{" ".join(f"{q[0]:.0f},{q[1]:.0f},{q[2]:.0f}" for q in pts)}"/>')
+
+    # obras: só nome e ano
     nos = []
     for k, nd in NOS.items():
         o = by_id[k]
-        x, y = pos[k]
+        X, Y, Z = pos3[k]
+        x, y = S.projeta(pos3[k])
         t = nd["t"]
         esq = nd["lado"] == "e"
         if vertical:
-            esq = PV[k][2] == "e" if k in PV else x > 340
+            esq = PV[k][2] == "e" if k in PV else x > w * 0.6
         dx = -14 if esq else 14
         anchor = "end" if esq else "start"
         r = {3: 9.5, 2: 6.5, 1: 4.5}[t]
-        premio = (o.get("premio_curto_en") if c.lang == "en" else o.get("premio_curto")) or ""
+        premiada = bool(o.get("premio"))
         circ = f'<circle class="m-pt{"" if t >= 2 else " m-vazado"}" cx="{x:.1f}" cy="{y:.1f}" r="{r}"/>'
-        if premio:
+        if premiada:
             circ = f'<circle class="m-selo" cx="{x:.1f}" cy="{y:.1f}" r="{r + 4.5}"/>' + circ
-        fs = {3: 24, 2: 17, 1: 14}[t]
         ny = y - 6 if t == 3 else y - 4
         rot_ano = o.get("ano_mapa") or o["ano"].split(" /")[-1].strip()
         if c.lang == "en":
             rot_ano = ano_en.get(rot_ano, rot_ano)
-        linha_ano = esc(rot_ano)
         txt = (f'<text class="m-nome" x="{x + dx:.1f}" y="{ny:.1f}" text-anchor="{anchor}">{esc(o["titulo"])}</text>'
-               f'<text class="m-ano" x="{x + dx:.1f}" y="{ny + (16 if t == 3 else 13):.1f}" text-anchor="{anchor}">{linha_ano}</text>')
-        if premio:
-            txt += f'<text class="m-premio" x="{x + dx:.1f}" y="{ny + (29 if t == 3 else 25):.1f}" text-anchor="{anchor}">{esc(premio)}</text>'
+               f'<text class="m-ano" x="{x + dx:.1f}" y="{ny + (16 if t == 3 else 13):.1f}" text-anchor="{anchor}">{esc(rot_ano)}</text>')
         nos.append(
-            f'<a class="m-no t{t}{" premiada" if premio else ""}" href="obras/{k}.html" data-id="{k}" data-ano="{o["ano_num"]}" '
-            f'data-x="{x:.1f}" data-y="{y:.1f}" data-z="{nd["z"]}" '
-            f'aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}{", " + esc(premio) if premio else ""}">'
+            f'<a class="m-no t{t}{" premiada" if premiada else ""}" href="obras/{k}.html" data-id="{k}" data-ano="{o["ano_num"]}" '
+            f'data-x="{x:.1f}" data-y="{y:.1f}" data-p="{X:.1f},{Y:.1f},{Z:.1f}" data-lado="{"e" if esq else "d"}" '
+            f'aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}">'
             f'<circle class="m-alvo" cx="{x:.1f}" cy="{y:.1f}" r="22"/>{circ}{txt}</a>')
-    move = json.dumps({k: MOVE.get(k, 0) for k in vps})
-    pontos = json.dumps({k: [round(v[0], 1), round(v[1], 1)] for k, v in vps.items()})
+
     return (f'<svg class="mapa {"mapa-v" if vertical else "mapa-h"}" viewBox="0 0 {w} {h}" role="group" '
-            f'aria-label="{c.t["mapa_aria"]}" data-vp=\'{pontos}\' data-move=\'{move}\' data-w="{w}" data-h="{h}">'
-            f'<g class="m-linhas" aria-hidden="true"><g class="m-fundo">{"".join(fundo)}</g><g class="m-meio">{"".join(meio)}</g>'
+            f'aria-label="{c.t["mapa_aria"]}" data-w="{w}" data-h="{h}" data-foco="{FOCO}" data-raio="{S.c:.0f}">'
+            f'<g class="m-linhas" aria-hidden="true">{circulo}<g class="m-fundo">{"".join(fundo)}</g><g class="m-meio">{"".join(meio)}</g>'
             f'<g class="m-halos">{"".join(halos)}</g><g class="m-frente">{"".join(frente)}</g></g>'
             f'<g class="m-nos">{"".join(nos)}</g></svg>')

@@ -1,9 +1,7 @@
-/* Mapa Esquina.
-   Cada obra é o cruzamento de linhas que vêm de pontos de vista diferentes.
-   O mapa gira no espaço: cada obra tem uma profundidade, e ao mover o cursor o plano gira —
-   as obras da frente se deslocam mais que as do fundo, os planos se deformam, e ao mesmo tempo
-   os pontos de fuga se deslocam, fazendo as linhas girarem em torno das obras.
-   Sem cursor, o desenho gira devagar sozinho. Sobre uma obra, tudo para.
+/* Mapa Esquina — o desenho dentro de uma esfera.
+   Cada obra é um ponto no espaço; cada linha é uma corda da esfera. A esfera gira em torno do eixo vertical:
+   com o cursor, de um lado a outro do quadro, mais de 180 graus; sem cursor, gira devagar sozinha.
+   O que está atrás fica mais claro; o que está na frente, mais escuro. Sobre uma obra, tudo para.
    Ao passar sobre um cruzamento, as linhas que o atravessam ficam em evidência e um som escapa. */
 document.addEventListener("DOMContentLoaded", function () {
   var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -11,102 +9,66 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".mapa").forEach(function (svg) {
     var linhas = Array.prototype.slice.call(svg.querySelectorAll(".m-linhas line"));
     var W = parseFloat(svg.getAttribute("data-w")), H = parseFloat(svg.getAttribute("data-h"));
-    var VP0 = JSON.parse(svg.getAttribute("data-vp") || "{}");
-    var MOVE = JSON.parse(svg.getAttribute("data-move") || "{}");
-    var cx = W / 2, cy = H / 2, FOCO = 1700;
-    var AMP = H > W ? 0.6 : 1;   /* no celular (composição vertical) o giro é mais contido */
+    var FOCO = parseFloat(svg.getAttribute("data-foco")) || 2200;
+    var RAIO = parseFloat(svg.getAttribute("data-raio")) || 400;
+    var cx = W / 2, cy = H / 2;
 
-    /* obras: posição e profundidade */
-    var obras = {};
+    var segs = linhas.map(function (l) {
+      return { el: l, p: l.getAttribute("data-p").split(",").map(parseFloat), halo: l.classList.contains("m-halo") };
+    });
+    var circ = svg.querySelector(".m-circulo");
+    var circPts = circ ? circ.getAttribute("data-p").split(" ").map(function (t) { return t.split(",").map(parseFloat); }) : [];
+    var obras = [];
     svg.querySelectorAll(".m-no").forEach(function (no) {
-      obras[no.getAttribute("data-id")] = {
-        el: no, x: parseFloat(no.getAttribute("data-x")), y: parseFloat(no.getAttribute("data-y")),
-        z: parseFloat(no.getAttribute("data-z")) || 0, px: 0, py: 0
-      };
+      obras.push({
+        el: no, x0: parseFloat(no.getAttribute("data-x")), y0: parseFloat(no.getAttribute("data-y")),
+        p: no.getAttribute("data-p").split(",").map(parseFloat),
+        textos: Array.prototype.slice.call(no.querySelectorAll("text")),
+        lado: no.getAttribute("data-lado")
+      });
     });
 
-    /* linhas de ponto de fuga: âncora (obra ou ponto livre), sistema, frações */
-    var raios = [], planos = [];
-    linhas.forEach(function (l) {
-      if (l.hasAttribute("data-v")) {
-        raios.push({
-          el: l, v: l.getAttribute("data-v"), no: l.getAttribute("data-no"),
-          a: l.getAttribute("data-a").split(",").map(parseFloat),
-          s: l.getAttribute("data-s").split(",").map(parseFloat), raio: l.hasAttribute("data-r")
-        });
-      } else if (l.hasAttribute("data-e")) {
-        var ns = l.getAttribute("data-plano").split(" ");
-        planos.push({ el: l, a: ns[0], b: ns[1], e: l.getAttribute("data-e").split(",").map(parseFloat) });
+    /* giro: theta em torno do eixo vertical, phi inclina para cima e para baixo */
+    var ct = 1, st = 0, cp = 1, sp = 0;
+    function gira(X, Y, Z) {
+      var X1 = X * ct + Z * st, Z1 = -X * st + Z * ct;
+      var Y2 = Y * cp - Z1 * sp, Z2 = Y * sp + Z1 * cp;
+      var k = FOCO / (FOCO - Z2);
+      return [cx + X1 * k, cy + Y2 * k, Z2];
+    }
+    function frente(z) { return Math.max(0, Math.min(1, (z + RAIO) / (2 * RAIO))); }
+
+    function desenha(theta, phi) {
+      ct = Math.cos(theta); st = Math.sin(theta); cp = Math.cos(phi); sp = Math.sin(phi);
+      segs.forEach(function (s) {
+        var a = gira(s.p[0], s.p[1], s.p[2]), b = gira(s.p[3], s.p[4], s.p[5]);
+        s.el.setAttribute("x1", a[0].toFixed(1)); s.el.setAttribute("y1", a[1].toFixed(1));
+        s.el.setAttribute("x2", b[0].toFixed(1)); s.el.setAttribute("y2", b[1].toFixed(1));
+        var f = frente((a[2] + b[2]) / 2);
+        /* a linha da frente interrompe a de trás só quando está mesmo na frente */
+        s.el.setAttribute("stroke-opacity", s.halo ? Math.max(0, (f - 0.5) * 2).toFixed(2) : (0.3 + 0.7 * f).toFixed(2));
+      });
+      if (circ) {
+        circ.setAttribute("points", circPts.map(function (c) { var q = gira(c[0], c[1], c[2]); return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" "));
       }
-    });
-
-    /* giro do plano em três eixos, com perspectiva */
-    var R = { cz: 1, sz: 0, cy: 1, sy: 0, cx: 1, sx: 0 };
-    function giro(ox, oy) {
-      var rz = ox * 0.06 * AMP, ry = ox * 0.17 * AMP, rx = -oy * 0.10 * AMP;
-      R = { cz: Math.cos(rz), sz: Math.sin(rz), cy: Math.cos(ry), sy: Math.sin(ry), cx: Math.cos(rx), sx: Math.sin(rx) };
-    }
-    function projeta(x, y, z) {
-      var X = x - cx, Y = y - cy;
-      var X1 = X * R.cz - Y * R.sz, Y1 = X * R.sz + Y * R.cz;
-      var X2 = X1 * R.cy + z * R.sy, Z2 = -X1 * R.sy + z * R.cy;
-      var Y2 = Y1 * R.cx - Z2 * R.sx, Z3 = Y1 * R.sx + Z2 * R.cx;
-      var k = FOCO / (FOCO - Z3);
-      return [cx + X2 * k, cy + Y2 * k];
-    }
-
-    function recorte(px, py, dx, dy) {
-      var t0 = -1e9, t1 = 1e9, lim = [[px, dx, W], [py, dy, H]];
-      for (var i = 0; i < 2; i++) {
-        var p = lim[i][0], d = lim[i][1], hi = lim[i][2];
-        if (Math.abs(d) < 1e-9) { if (p < 0 || p > hi) return null; continue; }
-        var a = (0 - p) / d, b = (hi - p) / d;
-        if (a > b) { var tmp = a; a = b; b = tmp; }
-        if (a > t0) t0 = a;
-        if (b < t1) t1 = b;
-      }
-      return t0 < t1 ? [t0, t1] : null;
-    }
-    function poe(el, x1, y1, x2, y2) {
-      el.setAttribute("x1", x1.toFixed(1)); el.setAttribute("y1", y1.toFixed(1));
-      el.setAttribute("x2", x2.toFixed(1)); el.setAttribute("y2", y2.toFixed(1));
-    }
-
-    function desenha(ox, oy) {
-      giro(ox, oy);
-      /* obras */
-      Object.keys(obras).forEach(function (id) {
-        var o = obras[id], p = projeta(o.x, o.y, o.z);
-        o.px = p[0]; o.py = p[1];
-        o.el.setAttribute("transform", "translate(" + (p[0] - o.x).toFixed(1) + " " + (p[1] - o.y).toFixed(1) + ")");
-      });
-      /* pontos de fuga */
-      var vp = {};
-      Object.keys(VP0).forEach(function (k) {
-        var v = VP0[k], m = MOVE[k] || 0;
-        var dist = Math.min(Math.hypot(v[0] - cx, v[1] - cy), 2600);
-        vp[k] = [v[0] + ox * m * 0.13 * dist, v[1] + oy * m * 0.09 * dist];
-      });
-      if (obras.esquina) vp.E = [obras.esquina.px, obras.esquina.py];
-      /* linhas que passam pelas obras ou por pontos livres (que também giram) */
-      raios.forEach(function (m) {
-        var v = vp[m.v]; if (!v) return;
-        var a = m.no && obras[m.no] ? [obras[m.no].px, obras[m.no].py] : projeta(m.a[0], m.a[1], 0);
-        var dx = a[0] - v[0], dy = a[1] - v[1];
-        var r = recorte(v[0], v[1], dx, dy);
-        if (!r) { m.el.style.visibility = "hidden"; return; }
-        var t0 = r[0], t1 = r[1];
-        if (m.raio) t0 = Math.max(t0, -0.035);
-        if (t1 <= t0) { m.el.style.visibility = "hidden"; return; }
-        m.el.style.visibility = "";
-        var ta = t0 + (t1 - t0) * m.s[0], tb = t0 + (t1 - t0) * m.s[1];
-        poe(m.el, v[0] + dx * ta, v[1] + dy * ta, v[0] + dx * tb, v[1] + dy * tb);
-      });
-      /* planos: arestas entre obras, passando um pouco do vértice */
-      planos.forEach(function (pl) {
-        var A = obras[pl.a], B = obras[pl.b]; if (!A || !B) return;
-        var dx = B.px - A.px, dy = B.py - A.py, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L;
-        poe(pl.el, A.px - ux * pl.e[0], A.py - uy * pl.e[0], B.px + ux * pl.e[1], B.py + uy * pl.e[1]);
+      obras.forEach(function (o) {
+        var q = gira(o.p[0], o.p[1], o.p[2]);
+        o.el.setAttribute("transform", "translate(" + (q[0] - o.x0).toFixed(1) + " " + (q[1] - o.y0).toFixed(1) + ")");
+        var f = frente(q[2]);
+        o.el.style.opacity = (0.45 + 0.55 * f).toFixed(2);
+        /* nomes das obras que passam por trás quase se apagam, para não se misturar aos da frente */
+        var ft = Math.max(0.06, Math.min(1, (f - 0.2) / 0.12)).toFixed(2);
+        o.textos.forEach(function (t) { t.style.opacity = ft; });
+        /* o rótulo troca de lado perto da borda, para não sair do quadro */
+        var lado = o.lado;
+        if (q[0] > W * 0.66) lado = "e"; else if (q[0] < W * 0.34) lado = "d";
+        if (lado !== o.lado) {
+          o.lado = lado;
+          o.textos.forEach(function (t) {
+            t.setAttribute("x", (o.x0 + (lado === "e" ? -14 : 14)).toFixed(1));
+            t.setAttribute("text-anchor", lado === "e" ? "end" : "start");
+          });
+        }
       });
     }
 
@@ -137,15 +99,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (reduz) return;
 
-    /* giro conduzido pelo cursor; sem cursor, giro lento */
-    var alvo = [0, 0], atual = [0, 0], ultimoCursor = -1e9, visivel = true, inicio = performance.now();
+    /* cursor: de uma borda à outra, 220 graus; sem cursor, uma volta inteira a cada 100 s */
+    var ARCO = 220 * Math.PI / 180, VOLTA = 2 * Math.PI / 100;
+    var theta = 0, phi = 0, alvoT = 0, alvoP = 0, base = 0;
+    var comCursor = false, ultimoCursor = -1e9, visivel = true, antes = performance.now();
     var area = svg.closest(".inicio") || svg;
     area.addEventListener("pointermove", function (ev) {
       if (ev.pointerType && ev.pointerType !== "mouse") return;
       var r = svg.getBoundingClientRect();
       if (!r.width) return;
-      alvo[0] = Math.max(-1, Math.min(1, ((ev.clientX - r.left) / r.width - 0.5) * 2));
-      alvo[1] = Math.max(-1, Math.min(1, ((ev.clientY - r.top) / r.height - 0.5) * 2));
+      var ox = Math.max(-1, Math.min(1, ((ev.clientX - r.left) / r.width - 0.5) * 2));
+      var oy = Math.max(-1, Math.min(1, ((ev.clientY - r.top) / r.height - 0.5) * 2));
+      if (!comCursor) { base = theta - ox * ARCO / 2; comCursor = true; }
+      alvoT = base + ox * ARCO / 2;
+      alvoP = -oy * 0.22;
       ultimoCursor = performance.now();
     });
     if ("IntersectionObserver" in window) {
@@ -154,19 +121,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function quadro(t) {
       requestAnimationFrame(quadro);
-      if (!visivel || document.hidden || !svg.getBoundingClientRect().width) return;
-      var livre = t - ultimoCursor > 2500;
-      if (livre) {
-        var u = (t - inicio) / 1000;
-        alvo[0] = 0.55 * Math.sin(u * 0.12);
-        alvo[1] = 0.40 * Math.sin(u * 0.08 + 1.3);
+      var dt = Math.min(0.05, (t - antes) / 1000); antes = t;
+      if (!visivel || document.hidden || !svg.getBoundingClientRect().width || parado) return;
+      if (t - ultimoCursor > 2500) {
+        comCursor = false;
+        alvoT = theta + VOLTA * dt * 20;          /* segue girando devagar */
+        alvoP = 0.08 * Math.sin(t / 9000);
       }
-      if (parado) return;
-      var k = livre ? 0.03 : 0.07;
-      var nx = atual[0] + (alvo[0] - atual[0]) * k, ny = atual[1] + (alvo[1] - atual[1]) * k;
-      if (Math.abs(nx - atual[0]) + Math.abs(ny - atual[1]) < 0.0003) return;
-      atual = [nx, ny];
-      desenha(atual[0], atual[1]);
+      theta += (alvoT - theta) * (comCursor ? 0.08 : 0.05);
+      phi += (alvoP - phi) * 0.06;
+      desenha(theta, phi);
     }
     requestAnimationFrame(quadro);
   });

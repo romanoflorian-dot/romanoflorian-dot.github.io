@@ -370,3 +370,5 @@ a.play { text-decoration: none; }
 .lista-premios .indicacao .premio-nome { margin-top: 0; }
 .lista-simples a.nome { font-family: var(--f-name); font-style: italic; color: inherit; }
 .lista-premios .premio-nome.so-premio { margin-top: 0; font-size: 1.0625rem; color: var(--text); }
+.m-circulo { fill: none; stroke: var(--silver-400, #A7A9AC); stroke-width: 0.8; opacity: 0.55; }
+.m-no:hover text, .m-no:focus-visible text { opacity: 1 !important; }

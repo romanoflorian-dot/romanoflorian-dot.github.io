@@ -74,9 +74,10 @@ O mapa usa os recursos de troca de plano dos desenhos do artista (fita isolante,
 - **Espessura por plano**: `0.6–1` fundo · `1.4–2.2` meio · `≥ 3` frente. A linha da frente interrompe a de trás (contorno cor de papel).
 - **Planos dobrados**: triângulos e quadriláteros com vértices nas obras; as arestas passam do vértice.
 - **Linhas que começam ou terminam dentro do quadro** (frações do trecho visível).
-- **Giro**: cada obra tem profundidade (`z` em `mapa.py`). O cursor gira o plano em três eixos, com perspectiva: as obras da frente se deslocam mais, os planos se deformam, o leque acompanha a Esquina; ao mesmo tempo os pontos de fuga se deslocam e as linhas giram em torno das obras. Sem cursor, giro lento automático (mais contido no celular). Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
-- **Densidade**: cerca de 45 linhas (26 finas, 11 médias, 7 grossas); não acrescentar linhas finas ou médias sem retirar outras.
-- **Hierarquia**: nível 3 (disco vermelho grande) = obras premiadas e centrais (Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância); nível 2 = disco vermelho menor; nível 1 = círculo vazado em tinta. Obra premiada recebe anel vermelho e o nome do prêmio sob o ano.
+- **Esfera**: o desenho existe em 3D dentro de um elipsoide do tamanho do quadro. Cada obra é um ponto (profundidade `z` em `mapa.py`); cada linha é uma corda (passa por uma obra e por um ponto de fuga no espaço) ou aresta de plano. O cursor gira a esfera em torno do eixo vertical — 220° de uma borda à outra —; sem cursor, uma volta a cada 100 s. O que está atrás fica mais claro e os nomes de trás se apagam; parado sobre uma obra. Um meridiano prateado (círculo de compasso) gira junto. Sem movimento com `prefers-reduced-motion`.
+- **Densidade e traço**: referência no desenho a lápis de 2026 — poucos traços soltos, planos fechados que se sobrepõem, traço duplo em alguns lados, a Esquina como vértice de onde partem linhas, uma ponta longa e fina. Cerca de 37 linhas; não acrescentar linhas finas.
+- **Rótulos na página inicial**: só nome e ano; os prêmios ficam nas páginas de obra, no Índice e em Sobre.
+- **Hierarquia**: nível 3 (disco vermelho grande) = obras premiadas e centrais (Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância); nível 2 = disco vermelho menor; nível 1 = círculo vazado em tinta. Obra premiada recebe anel vermelho.
 - **Celular**: composição girada (560 × 1000), com posições próprias em `PV` onde os rótulos colidiriam.
 
 ## 5. Componentes
