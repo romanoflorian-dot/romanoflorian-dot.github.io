@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function estado(v) {
     tocando = v;
     botao.classList.toggle("tocando", v);
-    botao.setAttribute("aria-label", (v ? "Pausar " : "Escutar ") + document.querySelector(".obra-titulo").textContent);
+    botao.setAttribute("aria-label", ((window.LANG === "en") ? (v ? "Pause " : "Listen to ") : (v ? "Pausar " : "Escutar ")) + document.querySelector(".obra-titulo").textContent);
   }
 
   var ultimo = null;

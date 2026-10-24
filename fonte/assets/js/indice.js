@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       tr.hidden = !ok; if (ok) n++;
     });
     botoes.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-filtro") === tipo ? "true" : "false"); });
-    if (contagem) contagem.textContent = n + (n === 1 ? " obra" : " obras");
+    if (contagem) contagem.textContent = n + ((window.LANG === "en") ? (n === 1 ? " work" : " works") : (n === 1 ? " obra" : " obras"));
   }
   botoes.forEach(function (b) { b.addEventListener("click", function () { aplicar(b.getAttribute("data-filtro")); }); });
   aplicar("");

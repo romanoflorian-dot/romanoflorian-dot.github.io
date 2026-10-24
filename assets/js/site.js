@@ -59,7 +59,7 @@
     document.querySelectorAll("[data-som]").forEach(function (b) {
       b.setAttribute("aria-pressed", ligado ? "true" : "false");
       var r = b.querySelector("[data-som-rotulo]");
-      if (r) r.textContent = ligado ? "Desligar som" : "Ligar som";
+      if (r) r.textContent = (window.LANG === "en") ? (ligado ? "Sound off" : "Sound on") : (ligado ? "Desligar som" : "Ligar som");
     });
   }
 

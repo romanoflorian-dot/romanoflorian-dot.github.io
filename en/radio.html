@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio — Floriano Romano</title>
+<meta name="description" content="Radio art by Floriano Romano: micro-radio, programmes and radio plays.">
+<meta property="og:title" content="Radio — Floriano Romano">
+<meta property="og:description" content="Radio art by Floriano Romano: micro-radio, programmes and radio plays.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="pt-BR" href="../radio.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Jura:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="pg-radio noite">
+<a class="pular" href="#conteudo">Skip to content</a>
+<header class="topo">
+  <a class="marca" href="index.html">Floriano Romano</a>
+  <nav class="nav" aria-label="Menu"><a href="indice.html">Index</a><a href="exposicoes.html">Exhibitions</a><a href="radio.html" aria-current="page">Radio</a><a href="textos.html">Texts</a><a href="sobre.html">About</a></nav>
+  <div class="topo-acoes">
+    <a class="lingua" href="../radio.html" hreflang="pt-BR" title="Português">PT</a>
+    <button class="som" type="button" aria-pressed="false" data-som><span class="som-ponto" aria-hidden="true"></span><span data-som-rotulo>Sound on</span></button>
+  </div>
+</header>
+<main id="conteudo">
+
+<section class="radio">
+  <h1 class="oculto">Radio</h1>
+  <div class="dial" data-dial tabindex="0" role="slider" aria-label="Dial: drag or use the arrow keys to tune" aria-valuemin="2000" aria-valuemax="2027" aria-valuenow="2016" aria-valuetext="2016">
+    <div class="dial-ruido" aria-hidden="true"><canvas data-ruido></canvas></div>
+    <div class="dial-faixa" data-faixa aria-hidden="true"></div>
+    <div class="dial-agulha" aria-hidden="true"></div>
+  </div>
+  <div class="dial-leitura"><span class="dado" data-freq>2016</span><span class="dado">drag to tune</span></div>
+  <div class="estacao" data-estacao aria-live="polite"></div>
+  <div class="radio-lista"><h2 class="sub">Stations</h2><ul><li><a href="obras/cidade-sensivel.html"><span class="dado">2021</span> <span class="nome">Cidade Sensível</span></a></li><li><a href="obras/motoboy.html"><span class="dado">2016</span> <span class="nome">Motoboy</span></a></li><li><a href="obras/a-dama.html"><span class="dado">2016</span> <span class="nome">A Dama</span></a></li><li><a href="obras/radionovelas.html"><span class="dado">2013</span> <span class="nome">Radionovelas</span></a></li><li><a href="obras/radio-invisivel.html"><span class="dado"></span> <span class="nome">Rádio Invisível</span></a></li><li><a href="obras/radiomochilas.html"><span class="dado">2007</span> <span class="nome">RadioMochilas</span></a></li><li><a href="obras/microradio.html"><span class="dado">2006</span> <span class="nome">Microrádio</span></a></li><li><a href="obras/o-inusitado.html"><span class="dado">2002–2004</span> <span class="nome">O Inusitado</span></a></li><li><a href="obras/cruz.html"><span class="dado">early 2000s</span> <span class="nome">Cruz</span></a></li></ul></div>
+</section>
+<script>window.ESTACOES = [{"id": "cruz", "titulo": "Cruz", "ano": "early 2000s", "freq": 2002, "texto": "A micro-radio draws a cross over the crossroads. Beyond its reach, the broadcast disappears.", "soundcloud": ""}, {"id": "o-inusitado", "titulo": "O Inusitado", "ano": "2002–2004", "freq": 2003.5, "texto": "A weekly programme on a community radio station in Lapa, open to anyone with something to say. From 2002 to 2004, Rio's sound scene met on air.", "soundcloud": ""}, {"id": "microradio", "titulo": "Microrádio", "ano": "2006", "freq": 2006.0, "texto": "Homemade transmitters and a guide for anyone who wants to occupy the air: radio as common ground.", "soundcloud": ""}, {"id": "radiomochilas", "titulo": "RadioMochilas", "ano": "2007", "freq": 2007.5, "texto": "", "soundcloud": ""}, {"id": "radio-invisivel", "titulo": "Rádio Invisível", "ano": "", "freq": 2009.5, "texto": "", "soundcloud": ""}, {"id": "radionovelas", "titulo": "Radionovelas", "ano": "2013", "freq": 2013.5, "texto": "Old radios tell short fictions about dreams and about the act of listening itself.", "soundcloud": "https://soundcloud.com/floriano-romano/radionovela"}, {"id": "a-dama", "titulo": "A Dama", "ano": "2016", "freq": 2016.3, "texto": "", "soundcloud": "https://soundcloud.com/floriano-romano/a-dama"}, {"id": "motoboy", "titulo": "Motoboy", "ano": "2016", "freq": 2016.9, "texto": "", "soundcloud": "https://soundcloud.com/floriano-romano/motoboy"}, {"id": "cidade-sensivel", "titulo": "Cidade Sensível", "ano": "2021", "freq": 2021, "texto": "Three walks through the empty city centre during the pandemic: Cinelândia, Pedra do Sal, Praça Mauá. To listen to the city is to remember who made it.", "soundcloud": ""}];</script>
+</main>
+<footer class="rodape">
+  <span>© 2026 Floriano Romano</span>
+  <span class="rodape-links"><a href="https://www.instagram.com/florianoromano/" rel="noopener">Instagram</a> <a href="https://www.youtube.com/@openradio" rel="noopener">YouTube</a> <a href="indice.html">All works</a></span>
+</footer>
+<script>window.LANG="en";</script><script src="../assets/js/site.js" defer></script><script src="../assets/js/dial.js" defer></script>
+</body>
+</html>

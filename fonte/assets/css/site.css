@@ -87,6 +87,12 @@ img { max-width: 100%; display: block; }
   display: inline-flex; align-items: center; gap: var(--s2); transition: color var(--t), border-color var(--t);
 }
 .som:hover { color: var(--text); border-color: var(--text-2); }
+.topo-acoes { display: inline-flex; align-items: center; gap: var(--s4); }
+.lingua {
+  font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-2);
+  text-decoration: none; padding: var(--s1) 0; transition: color var(--t);
+}
+.lingua:hover { color: var(--text); text-decoration: underline; }
 .som-ponto { width: 7px; height: 7px; border-radius: 50%; border: 1px solid currentColor; }
 .som[aria-pressed="true"] { color: var(--text); }
 .som[aria-pressed="true"] .som-ponto { background: var(--signal); border-color: var(--signal); }
@@ -94,7 +100,7 @@ img { max-width: 100%; display: block; }
   .topo { gap: var(--s3) var(--s4); }
   .marca { width: 100%; margin-right: 0; }
   .nav { gap: var(--s4); order: 3; width: 100%; }
-  .som { position: absolute; top: var(--s6); right: var(--margem); }
+  .topo-acoes { position: absolute; top: var(--s6); right: var(--margem); }
 }
 
 .rodape {
@@ -196,8 +202,8 @@ img { max-width: 100%; display: block; }
 
 .obra-corpo { display: grid; gap: var(--s12); margin: var(--s12) 0; }
 @media (min-width: 900px) { .obra-corpo { grid-template-columns: minmax(0, 38rem) minmax(0, 24rem); justify-content: space-between; } }
-.obra-texto p { margin: 0 0 var(--s4); font-size: 1.0625rem; }
-.obra-texto p:first-child { font-size: 1.25rem; line-height: 1.5; }
+.obra-texto p { margin: 0 0 var(--s4); font-size: 1rem; line-height: 1.6; max-width: 34rem; }
+.obra-texto p:first-child { font-size: 1.0625rem; }
 .pendente { font-size: 0.8125rem !important; }
 .ficha { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: var(--s2) var(--s4); align-content: start;
   border-top: 1px solid var(--rule); padding-top: var(--s4); }
@@ -241,8 +247,19 @@ img { max-width: 100%; display: block; }
 /* ---------- exposições, textos, sobre */
 .expo { padding: var(--s8) 0; border-top: 1px solid var(--rule); max-width: 46rem; scroll-margin-top: var(--s8); }
 .expo p { margin: var(--s1) 0; }
-.expo-titulo { font-family: var(--f-name); font-style: italic; font-weight: 400; font-size: 2.5rem; line-height: 1.05; margin: var(--s1) 0 var(--s2); }
-.expo-texto { margin-top: var(--s4) !important; font-size: 1.0625rem; }
+.expo-titulo { font-family: var(--f-name); font-style: italic; font-weight: 400; font-size: 2.25rem; line-height: 1.05; margin: var(--s1) 0 var(--s2); }
+.expo-titulo a { text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color var(--t); }
+.expo-titulo a:hover { border-color: var(--signal); }
+.expo-texto { margin-top: var(--s3) !important; font-size: 0.9375rem; line-height: 1.6; max-width: 34rem; }
+.cartoes { list-style: none; padding: 0; margin: var(--s6) 0 var(--s2); display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: var(--s4); }
+.cartoes a { display: flex; flex-direction: column; gap: var(--s1); text-decoration: none; }
+.cartoes img, .cartao-vazio { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--ink-100, #E4E1DB); filter: grayscale(0.15); transition: filter var(--t); }
+.cartoes a:hover img { filter: none; }
+.cartoes .nome { font-size: 1.0625rem; line-height: 1.2; margin-top: var(--s1); }
+.cartoes a:hover .nome { text-decoration: underline; }
+.faixa { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); margin: var(--s6) 0 var(--s2); }
+.faixa img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+@media (max-width: 720px) { .faixa { grid-template-columns: repeat(2, 1fr); } .expo-titulo { font-size: 1.875rem; } }
 .expo-obras a { font-family: var(--f-name); font-style: italic; font-size: 1.125rem; }
 .lista-simples { list-style: none; padding: 0; margin: 0; }
 .lista-simples li { padding: var(--s2) 0; border-bottom: 1px solid var(--rule); display: flex; gap: var(--s4); }

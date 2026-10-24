@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dentro !== atual) {
       atual = dentro;
       if (atual === null) {
-        caixa.innerHTML = '<p class="entre">entre estações</p>';
-        dial.setAttribute("aria-valuetext", freq.toFixed(1) + ", entre estações");
+        caixa.innerHTML = '<p class="entre">' + ((window.LANG === "en") ? "between stations" : "entre estações") + '</p>';
+        dial.setAttribute("aria-valuetext", freq.toFixed(1) + ((window.LANG === "en") ? ", between stations" : ", entre estações"));
       } else {
         var s = EST[atual];
-        var sc = s.soundcloud && window.PREVIA ? '<p><a class="dado" href="' + esc(s.soundcloud) + '" target="_blank" rel="noopener">ouvir no SoundCloud ↗</a></p>' :
+        var sc = s.soundcloud && window.PREVIA ? '<p><a class="dado" href="' + esc(s.soundcloud) + '" target="_blank" rel="noopener">' + ((window.LANG === "en") ? "listen on SoundCloud" : "ouvir no SoundCloud") + ' ↗</a></p>' :
           s.soundcloud ? '<iframe title="Áudio de ' + esc(s.titulo) + '" loading="lazy" src="https://w.soundcloud.com/player/?url=' +
           encodeURIComponent(s.soundcloud) + '&color=%23e2493a&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>' : "";
         caixa.innerHTML = '<p class="dado">' + esc(s.ano) + '</p><h2><a href="obras/' + s.id + '.html">' + esc(s.titulo) + "</a></h2>" +
