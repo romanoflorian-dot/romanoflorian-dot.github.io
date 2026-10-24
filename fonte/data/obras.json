@@ -759,7 +759,14 @@
       "local": "Centro Cultural Furnas, Rio de Janeiro",
       "texto": [],
       "pendente": "texto e registros",
-      "exposicao": "nuvem"
+      "exposicao": "nuvem",
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "HJF3r56K7lU",
+          "titulo": "Nuvem"
+        }
+      ]
     },
     {
       "id": "duas-mulheres",
