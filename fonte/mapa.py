@@ -36,7 +36,7 @@ NOS = {
     "chuveiros-sonoros": dict(p=(71, 365),  t=3, lado="d"),
     "errancia":          dict(p=(437, 348), t=3, lado="d"),
     "a-pele-do-mundo":   dict(p=(679, 130), t=3, lado="e", expo=True),   # exposição; no grande triângulo branco entre Muro de Som e Chapéu Panorâmico
-    "falante":           dict(p=(466, 528), t=2, lado="d"),
+    "falante":           dict(p=(466, 528), t=3, lado="d"),
     "sapatos-sonoros":   dict(p=(207, 289), t=2, lado="d"),
     "cidade-labirinto":  dict(p=(675, 397), t=2, lado="d"),
     "muro-de-som":       dict(p=(461, 142), t=2, lado="e"),

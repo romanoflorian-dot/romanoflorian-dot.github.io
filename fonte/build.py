@@ -45,7 +45,7 @@ T = {
    m_som="som", m_video="vídeo", m_img="imagem",
    radio="Rádio", dial_aria="Dial: arraste ou use as setas para sintonizar", sintonizar="arraste para sintonizar", estacoes="Estações",
    exposicoes="Exposições", individuais="Individuais", coletivas="Coletivas (seleção)", curadoria="Curadoria",
-   textos="Textos", sobre_obra="Sobre a obra", do_artista="Do artista", entrevistas="Entrevistas",
+   textos="Textos", em_destaque="Em destaque", col_destaque="Coletivas em destaque", sobre_obra="Sobre a obra", do_artista="Do artista", entrevistas="Entrevistas",
    academia="Mais textos e catálogos no Academia.edu ↗",
    sobre="Sobre", premios="Prêmios", financiamentos="Financiamentos e residências", indicacao="Indicação", colecoes="Coleções", videos="Vídeos", contato="Contato", contato_txt="e-mail a definir",
    d_indice="Todas as obras de Floriano Romano, da mais recente à mais antiga.",
@@ -69,7 +69,7 @@ T = {
    m_som="sound", m_video="video", m_img="image",
    radio="Radio", dial_aria="Dial: drag or use the arrow keys to tune", sintonizar="drag to tune", estacoes="Stations",
    exposicoes="Exhibitions", individuais="Solo", coletivas="Group (selection)", curadoria="Curated by",
-   textos="Texts", sobre_obra="On the work", do_artista="By the artist", entrevistas="Interviews",
+   textos="Texts", em_destaque="Highlights", col_destaque="Selected group exhibitions", sobre_obra="On the work", do_artista="By the artist", entrevistas="Interviews",
    academia="More texts and catalogues on Academia.edu ↗",
    sobre="About", premios="Awards", financiamentos="Funding and residencies", indicacao="Nomination", colecoes="Collections", videos="Videos", contato="Contact", contato_txt="email to be confirmed",
    d_indice="All works by Floriano Romano, from the most recent to the earliest.",
@@ -420,7 +420,21 @@ def build_exposicoes(c):
         if simples:
             partes.append('<ul class="lista-simples">' + "".join(simples) + "</ul>")
             simples.clear()
-    for col in DATA["coletivas"]:
+    destaque_col = []
+    for col in [x for x in DATA["coletivas"] if x.get("destaque")]:
+        obras_col = [o for o in OBRAS if col["id"] in o.get("exposicoes_coletivas", [])]
+        titulo_col = e(tr(col, "titulo", lang))
+        if col.get("url"):
+            titulo_col = f'<a href="{e(col["url"])}" rel="noopener">{titulo_col} ↗</a>'
+        destaque_col.append(f"""
+<section class="expo expo-destaque" id="{e(col['id'])}">
+  <p class="dado sinal">{e(col['ano'])}</p>
+  <h3 class="expo-titulo">{titulo_col}</h3>
+  <p class="dado expo-meta">{e(tr(col, 'local', lang))}</p>
+  {f'<p class="expo-texto">{e(tr(col, "texto", lang))}</p>' if col.get("texto") else ''}
+  {cartoes(obras_col, c) if obras_col else ''}
+</section>""")
+    for col in [x for x in DATA["coletivas"] if not x.get("destaque")]:
         if col.get("video") or col.get("texto"):
             fecha()
             vid = video_embed(col["video"], c) if col.get("video") else ""
@@ -442,6 +456,8 @@ def build_exposicoes(c):
   <h1 class="titulo-pagina">{t['exposicoes']}</h1>
   <h2 class="sub">{t['individuais']}</h2>
   {''.join(blocos)}
+  <h2 class="sub">{t['col_destaque']}</h2>
+  {''.join(destaque_col)}
   <h2 class="sub">{t['coletivas']}</h2>
   {''.join(partes)}
 </section>"""
@@ -461,7 +477,11 @@ def item_texto(x, com_autor=True):
 
 def build_textos(c):
     t = c.t
-    sobre = "".join(item_texto(x) for x in DATA["textos_sobre"])
+    ordem_d = ["Making Oneself Heard", "Floriano Romano: Esquina", "Acoustic Territories", "Brasilidade", "Corpo impulso", "Desorientação"]
+    dest = sorted((x for x in DATA["textos_sobre"] if x.get("destaque")),
+                  key=lambda x: next((i for i, k in enumerate(ordem_d) if x["titulo"].startswith(k)), 99))
+    destaques = "".join(item_texto(x) for x in dest)
+    sobre = "".join(item_texto(x) for x in DATA["textos_sobre"] if not x.get("destaque"))
     dele = "".join(item_texto(x, False) for x in DATA["textos_do_artista"])
     ents = DATA.get("entrevistas", [])
     entrevistas = (f'<h2 class="sub">{t["entrevistas"]}</h2>' + "".join(
@@ -470,6 +490,8 @@ def build_textos(c):
     body = f"""
 <section class="textos">
   <h1 class="titulo-pagina">{t['textos']}</h1>
+  <h2 class="sub">{t['em_destaque']}</h2>
+  <ul class="lista-textos lista-destaque">{destaques}</ul>
   <h2 class="sub">{t['sobre_obra']}</h2>
   <ul class="lista-textos">{sobre}</ul>
   <h2 class="sub">{t['do_artista']}</h2>

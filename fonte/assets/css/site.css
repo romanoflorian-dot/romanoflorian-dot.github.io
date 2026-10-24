@@ -270,7 +270,7 @@ img { max-width: 100%; display: block; }
 .lista-textos li { display: grid; grid-template-columns: 4rem 1fr; gap: var(--s4); padding: var(--s4) 0; border-bottom: 1px solid var(--rule); }
 .lista-textos li > .dado { padding-top: 6px; }
 .lista-textos .autor { display: block; font-size: 0.875rem; color: var(--ink-700); }
-.lista-textos .nome { display: block; font-size: 1.5rem; line-height: 1.2; }
+.lista-textos .nome { display: block; font-size: 1.2rem; line-height: 1.25; }
 .lista-textos .fonte { display: block; margin-top: var(--s1); }
 .sobre-grade { display: grid; gap: var(--s12); }
 @media (min-width: 900px) { .sobre-grade { grid-template-columns: minmax(0, 38rem) minmax(0, 26rem); justify-content: space-between; } }
@@ -372,3 +372,11 @@ a.play { text-decoration: none; }
 .lista-premios .premio-nome.so-premio { margin-top: 0; font-size: 1.0625rem; color: var(--text); }
 .m-circulo { fill: none; stroke: var(--silver-400, #A7A9AC); stroke-width: 0.8; opacity: 0.55; }
 .m-no:hover text, .m-no:focus-visible text { opacity: 1 !important; }
+
+/* ---------- destaques */
+.lista-destaque { margin-bottom: var(--s12); }
+.lista-destaque .nome { font-size: 1.9rem; line-height: 1.15; }
+.lista-destaque .autor { font-size: 1rem; }
+.expo-destaque .expo-titulo { font-size: 2.25rem; }
+.expo-destaque .expo-titulo a { color: inherit; text-decoration: none; }
+.expo-destaque .expo-titulo a:hover { color: var(--signal-text); }

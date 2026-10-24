@@ -516,6 +516,9 @@
      "titulo": "Rui Chaves, em Making It Heard (Bloomsbury, 2019), pp. 49–51",
      "url": "https://www.bloomsbury.com/us/making-it-heard-9781501344435/"
     }
+   ],
+   "exposicoes_coletivas": [
+    "media-art-festival-arad"
    ]
   },
   {
@@ -614,7 +617,10 @@
    "materiais_en": "Vintage radios and fictional recordings",
    "local_en": "Casa de Cultura Laura Alvim, in the exhibition Sonar",
    "colecao": "Coleção Sérgio Carvalho",
-   "colecao_en": "Sérgio Carvalho Collection"
+   "colecao_en": "Sérgio Carvalho Collection",
+   "exposicoes_coletivas": [
+    "brasilidade-pos-modernismo"
+   ]
   },
   {
    "id": "a-dama",
@@ -1129,10 +1135,14 @@
   {
    "id": "virada-sonica",
    "ano": "2024",
-   "titulo": "Virada Sônica: a escalada do som na arte contemporânea — Espreguiçadeiras Sonoras",
-   "local": "Farol Santander, São Paulo. Curadoria de Chico Dub",
-   "local_en": "Farol Santander, São Paulo. Curated by Chico Dub",
-   "titulo_en": "Virada Sônica: the rise of sound in contemporary art — Espreguiçadeiras Sonoras"
+   "titulo": "Virada Sônica: a escalada do som na arte contemporânea",
+   "local": "Farol Santander, São Paulo, 5 de julho a 13 de outubro de 2024 — curadoria de Chico Dub",
+   "local_en": "Farol Santander, São Paulo, 5 July to 13 October 2024 — curated by Chico Dub",
+   "titulo_en": "Virada Sônica: The Sonic Turn — The Surge of Sound in Contemporary Art",
+   "destaque": true,
+   "texto": "Exposição internacional de arte sonora, com obras de John Cage a artistas contemporâneos. Floriano Romano apresentou Espreguiçadeiras Sonoras (2016), com o som do mar de Ipanema. Catálogo digital.",
+   "texto_en": "International exhibition of sound art, from John Cage to contemporary artists. Floriano Romano showed Espreguiçadeiras Sonoras (2016), with the sound of the sea at Ipanema. Digital catalogue.",
+   "url": "https://www.farolsantander.com.br/sp/exposicao/virada-sonica"
   },
   {
    "ano": "2023",
@@ -1142,10 +1152,15 @@
    "id": "espacos-do-ainda-2023"
   },
   {
-   "ano": "2022",
+   "ano": "2021–2022",
    "titulo": "Brasilidade Pós-Modernismo 1922–2022",
-   "local": "Centro Cultural Banco do Brasil, Rio de Janeiro",
-   "local_en": "Centro Cultural Banco do Brasil, Rio de Janeiro"
+   "local": "Centro Cultural Banco do Brasil: Rio de Janeiro, São Paulo, Brasília e Belo Horizonte — curadoria de Tereza de Arruda",
+   "local_en": "Centro Cultural Banco do Brasil: Rio de Janeiro, São Paulo, Brasília and Belo Horizonte — curated by Tereza de Arruda",
+   "id": "brasilidade-pos-modernismo",
+   "destaque": true,
+   "texto": "Exposição coletiva pelo centenário da Semana de Arte Moderna de 1922, com 51 artistas, entre eles Adriana Varejão, Cildo Meireles, Ernesto Neto, Lenora de Barros, Mira Schendel, Rosana Paulino e Tunga. Floriano Romano participou com Radionovelas (Coleção Sérgio Carvalho), no núcleo Estética. Rio de Janeiro, 1º de setembro a 22 de novembro de 2021; São Paulo, 15 de dezembro de 2021 a 7 de março de 2022; Brasília, 5 de abril a 5 de junho de 2022; Belo Horizonte, 29 de junho a 19 de setembro de 2022. Catálogo bilíngue.",
+   "texto_en": "Group exhibition for the centenary of the 1922 Modern Art Week, with 51 artists, including Adriana Varejão, Cildo Meireles, Ernesto Neto, Lenora de Barros, Mira Schendel, Rosana Paulino and Tunga. Floriano Romano took part with Radionovelas (Sérgio Carvalho Collection), in the Aesthetics section. Rio de Janeiro, 1 September to 22 November 2021; São Paulo, 15 December 2021 to 7 March 2022; Brasília, 5 April to 5 June 2022; Belo Horizonte, 29 June to 19 September 2022. Bilingual catalogue.",
+   "titulo_en": "Brasilidade Pós-Modernismo [Postmodernism Brazilianness] 1922–2022"
   },
   {
    "ano": "2022",
@@ -1232,9 +1247,15 @@
   },
   {
    "ano": "2017",
-   "titulo": "4 Media Arts Festival ARAD",
-   "local": "Arad, Romênia",
-   "local_en": "Arad, Romania"
+   "titulo": "Media Art Festival Arad, 4ª edição — CINEMA",
+   "local": "Cinema Arta e Museu de Arte de Arad, Romênia, 8 de setembro a 1º de outubro de 2017 — curadoria de Călin Man e Ileana Selejan",
+   "local_en": "Arta Cinema and Arad Art Museum, Romania, 8 September to 1 October 2017 — curated by Călin Man and Ileana Selejan",
+   "id": "media-art-festival-arad",
+   "destaque": true,
+   "titulo_en": "Media Art Festival Arad, 4th edition — CINEMA",
+   "texto": "Festival internacional de arte e mídia. Falante (2007, 7 min 53 s) integrou o programa de vídeos continental drift.",
+   "texto_en": "International media art festival. Falante (2007, 7 min 53 s) was part of the continental drift screening programme.",
+   "url": "https://mafa.ro/MAF/CINEMA/indexCINEMA.html"
   },
   {
    "ano": "2016",
@@ -1403,14 +1424,16 @@
    "titulo": "Floriano Romano: Esquina e outras intersecções",
    "fonte": "A Pele do Mundo, catálogo, Refresco / Futuros",
    "ano": "2023",
-   "url": "https://ualresearchonline.arts.ac.uk/id/eprint/21817/1/Asbury%2C%20M%20Floriano%20Romano%20-%20A%20Pele%20do%20Mundo.pdf"
+   "url": "https://ualresearchonline.arts.ac.uk/id/eprint/21817/1/Asbury%2C%20M%20Floriano%20Romano%20-%20A%20Pele%20do%20Mundo.pdf",
+   "destaque": true
   },
   {
    "autor": "Rui Chaves",
    "titulo": "Making Oneself Heard in Public, through Art and in Sound-Based Scholarship",
    "fonte": "Em Rui Chaves e Fernando Iazzetta (org.), Making It Heard: A History of Brazilian Sound Art. Nova York: Bloomsbury Academic, 2019, cap. 2, pp. 43–68 (sobre Falante, pp. 49–51)",
    "ano": "2019",
-   "url": "https://www.bloomsbury.com/us/making-it-heard-9781501344435/"
+   "url": "https://www.bloomsbury.com/us/making-it-heard-9781501344435/",
+   "destaque": true
   },
   {
    "autor": "Neide Marcondes e Nara Silvia Martins",
@@ -1418,6 +1441,14 @@
    "fonte": "Revista Estúdio, v. 11, n. 33, pp. 20–30",
    "ano": "2021",
    "url": "https://scielo.pt/pdf/est/v12n33/1647-6158-est-12-33-20.pdf"
+  },
+  {
+   "autor": "Tereza de Arruda (curadoria)",
+   "titulo": "Brasilidade Pós-Modernismo",
+   "fonte": "catálogo da exposição, Centro Cultural Banco do Brasil, 2021–2022 (com Radionovelas)",
+   "ano": "2021",
+   "url": "",
+   "destaque": true
   },
   {
    "autor": "Prêmio PIPA",
@@ -1452,14 +1483,16 @@
    "titulo": "Corpo impulso",
    "fonte": "Errância, Prêmio CCBB Contemporâneo; reeditado em Cidade Labirinto (2021)",
    "ano": "2016",
-   "url": ""
+   "url": "",
+   "destaque": true
   },
   {
    "autor": "Luisa Duarte",
    "titulo": "Desorientação afetiva pela noite",
    "fonte": "O Globo",
    "ano": "2016",
-   "url": ""
+   "url": "",
+   "destaque": true
   },
   {
    "autor": "João Paulo Quintella (curadoria)",
@@ -1508,7 +1541,8 @@
    "titulo": "Acoustic Territories: Sound, Culture and Everyday Life",
    "fonte": "Continuum, pp. 104–105 (sobre Falante)",
    "ano": "2010",
-   "url": ""
+   "url": "",
+   "destaque": true
   },
   {
    "autor": "Prêmio PIPA",
