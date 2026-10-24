@@ -357,7 +357,14 @@
         "tier": 1,
         "lx": 10,
         "ly": 6
-      }
+      },
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "6ghQ7m3ytLM",
+          "titulo": "A Cidade Sonora"
+        }
+      ]
     },
     {
       "id": "sapatos-sonoros",
