@@ -133,9 +133,9 @@ img { max-width: 100%; display: block; }
 .m-no { cursor: pointer; text-decoration: none; }
 .m-no:focus { outline: none; }
 .m-alvo { fill: transparent; }
-.m-pt { fill: var(--red-600); stroke: var(--paper-100); stroke-width: 2; paint-order: stroke; }
-.m-vazado { fill: var(--paper-100); stroke: var(--ink-900); stroke-width: 1.4; }
-.m-selo { fill: var(--paper-100); stroke: var(--red-600); stroke-width: 1.2; }
+.m-pt { fill: var(--red-600); stroke: var(--paper-100); stroke-width: 1.5; paint-order: stroke; }
+.m-vazado { fill: var(--paper-100); stroke: var(--ink-900); stroke-width: 1.1; }
+.m-selo { fill: var(--paper-100); stroke: var(--red-600); stroke-width: 0.8; stroke-opacity: 0.7; }
 .m-nome, .m-ano, .m-premio {
   paint-order: stroke; stroke: var(--paper-100); stroke-width: 5px; stroke-linejoin: round;
 }

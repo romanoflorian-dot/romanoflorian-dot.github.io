@@ -5,7 +5,7 @@ mesmas linhas, mesmos vértices, mesmas espessuras relativas, incluindo os feixe
 O desenho é alargado para o formato do quadro e recortado pela moldura; cada obra ocupa um cruzamento
 real do desenho, escolhido para que os nomes se leiam bem.
 
-Movimento (assets/js/mapa.js): leve e bidimensional. O plano inteiro se inclina um pouco em perspectiva
+Movimento (assets/js/mapa.js): leve e bidimensional, sem giro. O plano inteiro se inclina um pouco em perspectiva
 conforme o cursor (uma transformação projetiva, que mantém linhas retas e vértices unidos); sem cursor,
 deriva devagar.
 """
@@ -194,11 +194,11 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
         esq = (PV[k][2] == "e" if k in PV else x > w * 0.6) if vertical else nd["lado"] == "e"
         dx = -13 if esq else 13
         anchor = "end" if esq else "start"
-        r = {3: 8.5, 2: 6, 1: 4.5}[t]
+        r = {3: 5, 2: 4, 1: 3.2}[t]
         premiada = bool(o.get("premio"))
         circ = f'<circle class="m-pt{"" if t >= 2 else " m-vazado"}" cx="{x:.1f}" cy="{y:.1f}" r="{r}"/>'
         if premiada:
-            circ = f'<circle class="m-selo" cx="{x:.1f}" cy="{y:.1f}" r="{r + 4}"/>' + circ
+            circ = f'<circle class="m-selo" cx="{x:.1f}" cy="{y:.1f}" r="{r + 2.6}"/>' + circ
         ny = y - 5 if t == 3 else y - 4
         rot_ano = o.get("ano_mapa") or o["ano"].split(" /")[-1].strip()
         if c.lang == "en":

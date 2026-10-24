@@ -71,8 +71,8 @@ Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400p
 - **Formato**: no computador o desenho é alargado (1,12 × 0,80) e recortado pela moldura; no celular a tela fica de pé (0,69 × 1,18). As linhas se cruzam sem interrupção, como na pintura.
 - **Obras**: cada uma ocupa um cruzamento real do desenho, escolhido à mão para a leitura dos nomes (`NOS` para o computador, `PV` para o celular, em `mapa.py`).
 - **Rótulos**: só nome e ano, todos no mesmo tamanho: 15 px (nível 1: 12,5 px); celular 17 / 15 no quadro de 560.
-- **Hierarquia**: nível 3 (disco vermelho maior) = Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância; nível 2 = disco vermelho menor; nível 1 = círculo vazado. Obra premiada recebe anel vermelho.
-- **Giro**: cada linha está numa camada de profundidade própria (`profundidade()` em `mapa.py`); o conjunto gira em torno do eixo vertical, sem perspectiva — de frente, o desenho é exatamente o da tela. Cursor de uma borda à outra = 360°; sem cursor, uma volta a cada 90 s. O que vai para trás clareia e os nomes de trás se apagam; parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Hierarquia**: pontos pequenos e sutis — nível 3 raio 5, nível 2 raio 4 (vermelhos), nível 1 raio 3,2 (vazado); obra premiada recebe um anel vermelho fino.
+- **Movimento**: leve e bidimensional, sem giro — o plano se inclina um pouco em perspectiva conforme o cursor; sem cursor, deriva lenta. O artista experimentou o giro de 360° e preferiu sem giro.
 - **Ajuste do artista**: entre Errância e Esquina a linha da direita do feixe some e volta depois da linha que cruza, encostando na Esquina.
 
 ## 5. Componentes
