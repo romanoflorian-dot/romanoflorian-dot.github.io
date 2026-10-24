@@ -889,6 +889,27 @@
         }
       ],
       "pendente": "texto"
+    },
+    {
+      "id": "permanencias-e-destruicoes",
+      "titulo": "Permanências e Destruições",
+      "ano": "2015",
+      "ano_num": 2015,
+      "tipo": "exposição",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "Antigo Hotel Balneário Sete de Setembro, hoje Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro — 17 a 30 de janeiro de 2015",
+      "texto": [
+        "Projeto coletivo no antigo Hotel Balneário Sete de Setembro, construído em 1922 para o centenário da Independência e depois hospital, internato e Casa do Estudante, até se tornar o Colégio Brasileiro de Altos Estudos da UFRJ. Os trabalhos exploram a sobreposição das camadas de tempo deixadas pelos diferentes usos do edifício."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "RxDZoHMGIUg",
+          "titulo": "Permanências e Destruições — Hotel Sete de Setembro, Canal-Arte, 2015"
+        }
+      ],
+      "pendente": "qual obra foi apresentada"
     }
   ],
   "mapa_pares": [
@@ -1100,6 +1121,11 @@
       "ano": "2017",
       "titulo": "4 Media Arts Festival ARAD",
       "local": "Arad, Romênia"
+    },
+    {
+      "ano": "2015",
+      "titulo": "Permanências e Destruições",
+      "local": "Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro"
     },
     {
       "ano": "2015",
