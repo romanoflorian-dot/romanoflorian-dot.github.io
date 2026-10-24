@@ -355,7 +355,6 @@ def build_obra(o, prev, nxt, c):
   </div>
   {imagens}
   {videos}
-  {viz}
 </article>"""
     desc = (paras or [f"{o['titulo']}, {ano(o, lang)}. Floriano Romano."])[0][:155]
     return page(c, o["titulo"], body, desc=desc, scripts=("obra.js",) if som_local else (), body_class="pg-obra")
