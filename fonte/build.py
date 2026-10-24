@@ -245,6 +245,10 @@ def build_obra(o, prev, nxt):
         if o.get(chave):
             ficha.append(f"<dt>{rotulo}</dt><dd>{e(o[chave])}</dd>")
     exps = ([o["exposicao"]] if o.get("exposicao") else []) + o.get("exposicoes_extra", [])
+    COL = {c.get("id"): c for c in DATA["coletivas"] if c.get("id")}
+    for cid in o.get("exposicoes_coletivas", []):
+        if cid in COL:
+            ficha.append(f'<dt>Exposição coletiva</dt><dd><a href="{r}exposicoes.html#{cid}">{e(COL[cid]["titulo"])}</a> ({e(COL[cid]["ano"])})</dd>')
     if exps:
         links = ", ".join(
             f'<a href="{r}exposicoes.html#{x}">{e(EXPOS[x]["titulo"])}</a> ({EXPOS[x]["ano"]})' for x in exps)

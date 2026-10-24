@@ -755,15 +755,11 @@
       "local": "Museu de Arte do Rio — exposição O Rio dos Navegantes, curadoria de Evandro Salles, 2019–2020",
       "colecao": "Museu de Arte do Rio",
       "texto": [
-        "Instalação sonora comissionada para O Rio dos Navegantes, a principal exposição de 2019 do Museu de Arte do Rio, que contou a história do Rio como cidade portuária a partir dos povos, navegantes e imigrantes que chegaram a ela desde o século XVI. A obra passou a integrar o acervo do museu."
+        "Instalação sonora comissionada pelo Museu de Arte do Rio para a exposição O Rio dos Navegantes. A obra passou a integrar o acervo do museu."
       ],
       "pendente": "texto do artista sobre a obra",
-      "video": [
-        {
-          "plataforma": "youtube",
-          "id": "YyU4-x5BTgg",
-          "titulo": "Vinheta da exposição O Rio dos Navegantes, Museu de Arte do Rio, 2019"
-        }
+      "exposicoes_coletivas": [
+        "o-rio-dos-navegantes"
       ]
     },
     {
@@ -1116,7 +1112,14 @@
     {
       "ano": "2019",
       "titulo": "O Rio dos Navegantes",
-      "local": "Museu de Arte do Rio"
+      "local": "Museu de Arte do Rio, maio de 2019 a maio de 2020. Concepção e curadoria de Evandro Salles",
+      "id": "o-rio-dos-navegantes",
+      "texto": "A história do Rio como cidade portuária, contada a partir dos povos, navegantes e imigrantes que chegaram pelo mar desde o século XVI. Para a exposição, Floriano Romano criou uma instalação sonora comissionada, que passou ao acervo do museu.",
+      "video": {
+        "plataforma": "youtube",
+        "id": "r_2CfyHtPrg",
+        "titulo": "O Rio dos Navegantes, Museu de Arte do Rio"
+      }
     },
     {
       "ano": "2019",
