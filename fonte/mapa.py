@@ -9,15 +9,21 @@ Movimento (assets/js/mapa.js): leve e bidimensional. O plano inteiro se inclina 
 conforme o cursor (uma transformação projetiva, que mantém linhas retas e vértices unidos); sem cursor,
 deriva devagar.
 """
-import json, math
+import hashlib, json, math
 from pathlib import Path
 
 W, H = 1000, 560
 DESENHO = json.loads((Path(__file__).parent / "data" / "esquina-06.json").read_text(encoding="utf-8"))
+# Ajuste pedido pelo artista (out/2026): entre Errância e Esquina, a linha da direita do feixe some
+# e volta só depois da linha que cruza, para encostar na Esquina.
+_l = DESENHO[14]
+DESENHO[14] = dict(a=_l["a"], b=[374.0, 506.3], w=_l["w"])
+DESENHO.append(dict(a=[431.8, 344.5], b=[443.6, 280.1], w=_l["w"]))
 DW, DH = 800, 790            # tamanho da imagem de onde as linhas foram tiradas
 SX, SY = 1.12, 0.80          # alargamento para o quadro horizontal
 SXV, SYV = 0.69, 1.18        # no celular a tela fica de pé, alongada na vertical (quadro 560 × 1000)
 ESP = 0.42                   # espessura medida (px da imagem) → unidades do quadro
+PROF = 230                   # profundidade máxima das camadas de linha (±), para o giro
 FRENTE = 99                  # na tela pintada as linhas se cruzam sem interrupção (sem contorno de papel)
 
 # Obras: cruzamento do desenho escolhido para cada uma (coordenadas aproximadas do quadro; o código
@@ -122,6 +128,25 @@ def posicoes(ls, vertical=False):
     return pos, linhas_de
 
 
+def _h(*xs):
+    return int(hashlib.md5("|".join(map(str, xs)).encode()).hexdigest(), 16)
+
+
+def profundidade(i):
+    """Cada linha numa camada própria, com leve inclinação: (z no início, z no fim)."""
+    base = ((_h("z", i) % 1000) / 1000 * 2 - 1) * PROF
+    incl = ((_h("i", i) % 1000) / 1000 * 2 - 1) * PROF * 0.35
+    return base - incl, base + incl
+
+
+def z_no_ponto(l, z, p):
+    """Profundidade de uma linha no ponto p (interpolação ao longo do segmento)."""
+    (ax, ay), (bx, by) = l["a"], l["b"]
+    dx, dy = bx - ax, by - ay
+    t = max(0, min(1, ((p[0] - ax) * dx + (p[1] - ay) * dy) / ((dx * dx + dy * dy) or 1)))
+    return z[0] + (z[1] - z[0]) * t
+
+
 def _dist_seg(p, a, b):
     ax, ay = a; bx, by = b; px, py = p
     dx, dy = bx - ax, by - ay
@@ -139,11 +164,14 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
     pos, linhas_de = posicoes(ls, vertical)
     obras_na = {i: [k for k, idx in linhas_de.items() if i in idx] for i in range(len(ls))}
 
+    cx, cy = w / 2, h / 2
+    zs = [profundidade(i) for i in range(len(ls))]
     fundo, halos, frente = [], [], []
     for i, l in enumerate(ls):
-        a, b = T(l["a"]), T(l["b"])
+        a, b = l["a"], l["b"]
+        dados = f'{a[0] - cx:.1f},{a[1] - cy:.1f},{zs[i][0]:.0f},{b[0] - cx:.1f},{b[1] - cy:.1f},{zs[i][1]:.0f}'
         attrs = (f'x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" y2="{b[1]:.1f}" '
-                 f'data-p="{a[0]:.1f},{a[1]:.1f},{b[0]:.1f},{b[1]:.1f}" data-n="{" ".join(obras_na[i])}"')
+                 f'data-p="{dados}" data-n="{" ".join(obras_na[i])}"')
         if l["w"] >= FRENTE:
             halos.append(f'<line class="m-halo" {attrs} stroke-width="{l["w"] + 6:.1f}"/>')
             frente.append(f'<line {attrs} stroke-width="{l["w"]}"/>')
@@ -157,6 +185,12 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
         o = by_id[k]
         x, y = T(pos[k])
         t = nd["t"]
+        idx = linhas_de.get(k) or []
+        if idx:      # a obra fica na camada das linhas que a atravessam (a mais grossa pesa mais)
+            pesos = [ls[i]["w"] for i in idx]
+            z = sum(z_no_ponto(ls[i], zs[i], (x, y)) * wgt for i, wgt in zip(idx, pesos)) / sum(pesos)
+        else:
+            z = 0
         esq = (PV[k][2] == "e" if k in PV else x > w * 0.6) if vertical else nd["lado"] == "e"
         dx = -13 if esq else 13
         anchor = "end" if esq else "start"
@@ -173,11 +207,11 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
                f'<text class="m-ano" x="{x + dx:.1f}" y="{ny + (14 if t == 3 else 12):.1f}" text-anchor="{anchor}">{esc(rot_ano)}</text>')
         nos.append(
             f'<a class="m-no t{t}{" premiada" if premiada else ""}" href="obras/{k}.html" data-id="{k}" data-ano="{o["ano_num"]}" '
-            f'data-x="{x:.1f}" data-y="{y:.1f}" aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}">'
+            f'data-x="{x:.1f}" data-y="{y:.1f}" data-p="{x - cx:.1f},{y - cy:.1f},{z:.0f}" data-lado="{"e" if esq else "d"}" aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}">'
             f'<circle class="m-alvo" cx="{x:.1f}" cy="{y:.1f}" r="22"/>{circ}{txt}</a>')
 
     return (f'<svg class="mapa {"mapa-v" if vertical else "mapa-h"}" viewBox="0 0 {w} {h}" role="group" '
-            f'aria-label="{c.t["mapa_aria"]}" data-w="{w}" data-h="{h}">'
+            f'aria-label="{c.t["mapa_aria"]}" data-w="{w}" data-h="{h}" data-foco="0" data-raio="{w / 2:.0f}">'
             f'<defs><clipPath id="corte-{"v" if vertical else "h"}"><rect x="0" y="0" width="{w}" height="{h}"/></clipPath></defs>'
             f'<g class="m-linhas" aria-hidden="true" clip-path="url(#corte-{"v" if vertical else "h"})"><g class="m-fundo">{"".join(fundo)}</g>'
             f'<g class="m-halos">{"".join(halos)}</g><g class="m-frente">{"".join(frente)}</g></g>'

@@ -70,9 +70,10 @@ Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400p
 - **Base**: as linhas da tela Esquina VI (série Esquinas I–X, 2023), vetorizadas da fotografia por `tools/vetoriza_esquina.py` e guardadas em `data/esquina-06.json` (30 linhas, com espessura). Mesmos vértices, feixes de três paralelas, planos dobrados e a ponta da base.
 - **Formato**: no computador o desenho é alargado (1,12 × 0,80) e recortado pela moldura; no celular a tela fica de pé (0,69 × 1,18). As linhas se cruzam sem interrupção, como na pintura.
 - **Obras**: cada uma ocupa um cruzamento real do desenho, escolhido à mão para a leitura dos nomes (`NOS` para o computador, `PV` para o celular, em `mapa.py`).
-- **Rótulos**: só nome e ano. Tamanhos: nível 3 = 19 px, nível 2 = 15 px, nível 1 = 12,5 px (celular: 21 / 17 / 15 no quadro de 560).
+- **Rótulos**: só nome e ano, todos no mesmo tamanho: 15 px (nível 1: 12,5 px); celular 17 / 15 no quadro de 560.
 - **Hierarquia**: nível 3 (disco vermelho maior) = Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância; nível 2 = disco vermelho menor; nível 1 = círculo vazado. Obra premiada recebe anel vermelho.
-- **Movimento**: leve e bidimensional — o plano do desenho se inclina um pouco em perspectiva conforme o cursor (transformação projetiva: linhas retas, vértices unidos, obras nos cruzamentos). Sem cursor, deriva lenta. Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Giro**: cada linha está numa camada de profundidade própria (`profundidade()` em `mapa.py`); o conjunto gira em torno do eixo vertical, sem perspectiva — de frente, o desenho é exatamente o da tela. Cursor de uma borda à outra = 360°; sem cursor, uma volta a cada 90 s. O que vai para trás clareia e os nomes de trás se apagam; parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Ajuste do artista**: entre Errância e Esquina a linha da direita do feixe some e volta depois da linha que cruza, encostando na Esquina.
 
 ## 5. Componentes
 
@@ -89,3 +90,7 @@ Transições de 160–240ms, `ease-out`. Nada pisca. Respeita `prefers-reduced-m
 ## 7. Acessibilidade
 
 Contraste AA verificado para todos os pares texto/fundo acima. Som nunca toca sem ação do visitante. Todo conteúdo visual tem alternativa em texto; o Índice dá acesso a todas as obras sem depender do mapa.
+
+## 8. Textos
+
+Textos de obras, exposições e biografia são descrições formais (o que é, materiais, onde e quando, prêmio). Frases autorais ficam a cargo do artista; não acrescentar frases de efeito.

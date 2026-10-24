@@ -144,9 +144,9 @@ img { max-width: 100%; display: block; }
 .m-premio { font-family: var(--f-data); fill: var(--red-700); letter-spacing: 0.06em; }
 .t3 .m-nome, .t2 .m-nome { fill: var(--ink-900); }
 .t3 .m-ano, .t2 .m-ano { fill: var(--red-700); }
-.mapa-h .t3 .m-nome { font-size: 19px; } .mapa-h .t2 .m-nome { font-size: 15px; } .mapa-h .t1 .m-nome { font-size: 12.5px; }
+.mapa-h .t3 .m-nome { font-size: 15px; } .mapa-h .t2 .m-nome { font-size: 15px; } .mapa-h .t1 .m-nome { font-size: 12.5px; }
 .mapa-h .m-ano { font-size: 9.5px; } .mapa-h .t1 .m-ano { font-size: 8.5px; } .mapa-h .m-premio { font-size: 9.5px; }
-.mapa-v .t3 .m-nome { font-size: 21px; } .mapa-v .t2 .m-nome { font-size: 17px; } .mapa-v .t1 .m-nome { font-size: 15px; }
+.mapa-v .t3 .m-nome { font-size: 17px; } .mapa-v .t2 .m-nome { font-size: 17px; } .mapa-v .t1 .m-nome { font-size: 15px; }
 .mapa-v .m-ano, .mapa-v .m-premio { font-size: 12px; }
 .m-no:hover .m-nome, .m-no:focus-visible .m-nome { fill: var(--red-700); }
 .m-no:hover .m-vazado, .m-no:focus-visible .m-vazado { fill: var(--red-600); stroke: var(--red-600); }

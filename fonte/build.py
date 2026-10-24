@@ -201,7 +201,6 @@ def build_index(c):
   </div>
   <div class="inicio-pe">
     <p class="dica"><span class="dica-hover">{t['dica_hover']}</span><span class="dica-toque">{t['dica_toque']}</span></p>
-    <p class="apresenta">{t['apresenta']}</p>
   </div>
 </section>"""
     return page(c, "", body, scripts=("mapa.js",), body_class="pg-inicio")
@@ -484,12 +483,12 @@ def build_textos(c):
 
 # ----------------------------------------------------------------- sobre
 BIO = {
- "pt": ["Floriano Romano (Rio de Janeiro, 1969) trabalha com som em instalações, objetos e ações urbanas desde 2002.",
-        "Para ele, o ruído é a expressão do mundo: indeterminado, fala direto aos sentidos. Todo corpo que fala abre um campo sonoro próprio dentro da paisagem; caminhar, transmitir e escutar são seus gestos, e a cidade, sua matéria.",
-        "Criou o programa O Inusitado (2002–2004), na Rádio Madame Satã. Participou da 7ª Bienal do Mercosul (2009). Doutor em Artes Visuais, é professor da Escola de Belas Artes da UFRJ e do Programa de Pós-Graduação em Linguagens Visuais."],
- "en": ["Floriano Romano (Rio de Janeiro, 1969) has worked with sound in installations, objects and urban actions since 2002.",
-        "For him, noise is the expression of the world: undetermined, it speaks directly to the senses. Every speaking body opens a sound field of its own within the landscape; walking, broadcasting and listening are his gestures, and the city is his material.",
-        "He created the radio programme O Inusitado (2002–2004) on Rádio Madame Satã and took part in the 7th Mercosul Biennial (2009). He holds a PhD in Visual Arts and teaches at the School of Fine Arts of the Federal University of Rio de Janeiro (UFRJ) and in its Graduate Programme in Visual Languages."],
+ "pt": ["Floriano Romano (Rio de Janeiro, 1969) é artista visual. Trabalha com som em instalações, objetos, ações urbanas e rádio desde 2002.",
+        "Criou o programa O Inusitado (2002–2004), na Rádio Madame Satã, e participou da 7ª Bienal do Mercosul (2009).",
+        "É doutor em Artes Visuais pela Universidade Federal do Rio de Janeiro e professor da Escola de Belas Artes da UFRJ e do Programa de Pós-Graduação em Linguagens Visuais."],
+ "en": ["Floriano Romano (Rio de Janeiro, 1969) is a visual artist. He has worked with sound in installations, objects, urban actions and radio since 2002.",
+        "He created the radio programme O Inusitado (2002–2004) on Rádio Madame Satã and took part in the 7th Mercosul Biennial (2009).",
+        "He holds a PhD in Visual Arts from the Federal University of Rio de Janeiro and teaches at its School of Fine Arts (EBA/UFRJ) and in the Graduate Programme in Visual Languages."],
 }
 # Prêmios — inclui os financiamentos e residências por edital, que o artista conta como premiações.
 # (ano, prêmio pt, prêmio en, obra, id da página da obra ou "")
@@ -515,6 +514,8 @@ COLECOES = [
  ("Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico", "Museu de Arte Contemporânea de Niterói — Chuveiros Sonoros, Chapéu Panorâmico"),
  ("Museo de Artes Visuales, Santiago do Chile — Falante (vídeo)", "Museo de Artes Visuales, Santiago, Chile — Falante (video)"),
  ("Centro Provincial de Diseño y Oficios, Havana — mochila de Falante", "Centro Provincial de Diseño y Oficios, Havana — Falante backpack"),
+ ("Coleção Sérgio Carvalho", "Sérgio Carvalho Collection"),
+ ("Coleção Augusto Rodrigues", "Augusto Rodrigues Collection"),
 ]
 
 
