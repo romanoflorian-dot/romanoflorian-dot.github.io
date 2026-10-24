@@ -996,6 +996,27 @@
       "radio": {
         "freq": 2009.5
       }
+    },
+    {
+      "id": "arte-pra-sentir",
+      "titulo": "Arte pra Sentir",
+      "ano": "2018",
+      "ano_num": 2018,
+      "tipo": "exposição",
+      "materiais": "",
+      "dimensoes": "",
+      "local": "Caixa Cultural Brasília (16 de outubro a 23 de dezembro de 2018) e Caixa Cultural São Paulo. Curadoria de Isabel Portella",
+      "texto": [
+        "Exposição coletiva com Carolina Ponte, Ernesto Neto, Flávio Cerqueira, Floriano Romano, Opavivará e Pedro Varela: obras que estimulam outros sentidos do visitante, além da visão."
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "07QevmSq3zs",
+          "titulo": "Exposição Arte pra Sentir, Caixa Cultural Brasília, 2018"
+        }
+      ],
+      "pendente": "qual obra foi apresentada"
     }
   ],
   "mapa_pares": [
