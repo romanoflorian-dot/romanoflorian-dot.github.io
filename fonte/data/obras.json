@@ -220,6 +220,9 @@
       "soundcloud": "https://soundcloud.com/floriano-romano/espreguicadeiras-sonoras",
       "exposicoes_extra": [
         "a-pele-do-mundo"
+      ],
+      "exposicoes_coletivas": [
+        "virada-sonica"
       ]
     },
     {
@@ -736,13 +739,20 @@
       "titulo": "Poema Tornado",
       "ano": "2020",
       "ano_num": 2020,
-      "tipo": "exposição",
-      "materiais": "",
+      "tipo": "instalação",
+      "materiais": "Poema-instalação: escrita, sons e fontes visuais espalhados pela galeria",
       "dimensoes": "",
-      "local": "Galeria Reserva Cultural, Niterói",
-      "texto": [],
-      "pendente": "texto e registros",
-      "exposicao": "poema-tornado"
+      "local": "Galeria Reserva Cultural, Niterói. Curadoria de Marisa Flórido; coordenação de Vilmar Madruga, EIXO Arte Contemporânea",
+      "texto": [
+        "Um poema-instalação em que escrita, som e sentido se entrelaçam e se espalham pela galeria: uma poesia expandida, espaço-labirinto de fontes sonoras e visuais que o visitante percorre. As palavras que o guiam: respira, olha, siga."
+      ],
+      "exposicao": "poema-tornado",
+      "links": [
+        {
+          "url": "https://www.eixoarte.com/floriano-romano",
+          "titulo": "Texto curatorial de Marisa Flórido"
+        }
+      ]
     },
     {
       "id": "o-rio-dos-navegantes",
@@ -1085,6 +1095,12 @@
   ],
   "coletivas": [
     {
+      "id": "virada-sonica",
+      "ano": "2024",
+      "titulo": "Virada Sônica: a escalada do som na arte contemporânea — Espreguiçadeiras Sonoras",
+      "local": "Farol Santander, São Paulo. Curadoria de Chico Dub"
+    },
+    {
       "ano": "2023",
       "titulo": "Espaços do Ainda",
       "local": "Centro Cultural São Paulo"
@@ -1180,7 +1196,7 @@
     {
       "ano": "2015",
       "titulo": "Permanências e Destruições",
-      "local": "Antigo Hotel Balneário Sete de Setembro, hoje Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro — 17 a 30 de janeiro de 2015",
+      "local": "Antigo Hotel Balneário Sete de Setembro, hoje Colégio Brasileiro de Altos Estudos da UFRJ, Rio de Janeiro — 17 a 30 de janeiro de 2015. Curadoria de João Paulo Quintella",
       "id": "permanencias-e-destruicoes",
       "texto": "Projeto coletivo no antigo Hotel Balneário Sete de Setembro, construído em 1922 para o centenário da Independência e depois hospital, internato e Casa do Estudante, até se tornar o Colégio Brasileiro de Altos Estudos da UFRJ. Os trabalhos exploram a sobreposição das camadas de tempo deixadas pelos diferentes usos do edifício.",
       "video": {
@@ -1300,7 +1316,35 @@
       "titulo": "Floriano Romano: Esquina e outras intersecções",
       "fonte": "A Pele do Mundo, catálogo, Refresco / Futuros",
       "ano": "2023",
-      "url": ""
+      "url": "https://ualresearchonline.arts.ac.uk/id/eprint/21817/1/Asbury%2C%20M%20Floriano%20Romano%20-%20A%20Pele%20do%20Mundo.pdf"
+    },
+    {
+      "autor": "Neide Marcondes e Nara Silvia Martins",
+      "titulo": "Caminhos da escuta e da plasticidade no repertório artístico de Floriano Romano e Gersony Silva",
+      "fonte": "Revista Estúdio, v. 11, n. 33, pp. 20–30",
+      "ano": "2021",
+      "url": "https://scielo.pt/pdf/est/v12n33/1647-6158-est-12-33-20.pdf"
+    },
+    {
+      "autor": "Prêmio PIPA",
+      "titulo": "“Cidade Labirinto”: Floriano Romano explora o som do Rio em mostra totalmente digital",
+      "fonte": "premiopipa.com, 24 de agosto",
+      "ano": "2021",
+      "url": "https://www.premiopipa.com/2021/08/cidade-labirinto-floriano-romano-explora-o-som-do-rio-em-mostra-totalmente-digital/"
+    },
+    {
+      "autor": "Bolsa de Arte — O Paralelo",
+      "titulo": "Exposição virtual de Floriano Romano",
+      "fonte": "bolsadearte.com, sobre Cidade Labirinto",
+      "ano": "2021",
+      "url": "https://www.bolsadearte.com/oparalelo/exposicao-virtual-de-floriano-romano"
+    },
+    {
+      "autor": "Marisa Flórido",
+      "titulo": "Poema Tornado",
+      "fonte": "texto curatorial, Galeria Reserva Cultural, Niterói",
+      "ano": "2020",
+      "url": "https://www.eixoarte.com/floriano-romano"
     },
     {
       "autor": "Guilherme Bueno",
@@ -1324,18 +1368,39 @@
       "url": ""
     },
     {
+      "autor": "João Paulo Quintella (curadoria)",
+      "titulo": "Permanências e Destruições",
+      "fonte": "catálogo da exposição, vários autores",
+      "ano": "2015",
+      "url": "https://www.academia.edu/40573064/Catalogo_da_exposicao_Permanencias_e_Destruicoes_varios_autores_Curadoria_Joao_Paulo_Quintella"
+    },
+    {
+      "autor": "Fernanda Lopes",
+      "titulo": "Aparição",
+      "fonte": "texto curatorial, Caixa Cultural Rio de Janeiro",
+      "ano": "2015",
+      "url": "https://www.academia.edu/40637894/EXPOSICAO_APARI%C3%87%C3%83O_TEXTO_E_CURADORIA_POR_FERNANDA_LOPES"
+    },
+    {
       "autor": "Glória Ferreira",
       "titulo": "Sonar",
       "fonte": "catálogo, Casa de Cultura Laura Alvim; reeditado em Cidade Labirinto (2021)",
       "ano": "2013",
-      "url": ""
+      "url": "https://www.academia.edu/40573060/Catalogo_da_Exposicao_SONAR_curadoria_Gloria_Ferreira"
     },
     {
       "autor": "Luisa Duarte",
       "titulo": "Em alto e bom som",
       "fonte": "O Globo, 16 de dezembro",
       "ano": "2013",
-      "url": ""
+      "url": "https://www.academia.edu/40573061/Em_alto_e_bom_som_Luisa_Duarte"
+    },
+    {
+      "autor": "Bolsa de Arte — O Paralelo",
+      "titulo": "A arte sonora de Floriano Romano",
+      "fonte": "bolsadearte.com, sobre Sonar",
+      "ano": "2013",
+      "url": "https://www.bolsadearte.com/oparalelo/a-arte-sonora-de-floriano-romano"
     },
     {
       "autor": "Brandon LaBelle",
@@ -1345,11 +1410,25 @@
       "url": ""
     },
     {
+      "autor": "Prêmio PIPA",
+      "titulo": "Romano — página do artista",
+      "fonte": "premiopipa.com, artista indicado em 2010",
+      "ano": "2010",
+      "url": "https://www.premiopipa.com/pag/artistas/romano/"
+    },
+    {
       "autor": "Guilherme Bueno",
       "titulo": "O homem com um chapéu e quatro câmeras na cabeça",
       "fonte": "Floriano Romano: Chapéu Panorâmico, MAC Niterói",
       "ano": "2009",
       "url": ""
+    },
+    {
+      "autor": "7ª Bienal do Mercosul",
+      "titulo": "Grito e Escuta",
+      "fonte": "catálogo",
+      "ano": "2009",
+      "url": "https://www.academia.edu/40626526/Catalogo_7_Bienal_mercosul_GRITO_E_ESCUTA"
     },
     {
       "autor": "nendu; — arquivo da arte sonora no Brasil",
@@ -1364,6 +1443,34 @@
       "fonte": "O Globo, Cultura — sobre a residência HOBRA",
       "ano": "",
       "url": "https://oglobo.globo.com/cultura/teatro/projeto-de-residencia-artistica-une-brasileiros-holandeses-no-rio-19819389"
+    },
+    {
+      "autor": "Mauro Sá Rego Costa, Adriana Gomes Ribeiro e Pedro de Albuquerque Araujo",
+      "titulo": "Radio Art in Brazil: A Panorama of Artists and Productions",
+      "fonte": "Research Catalogue",
+      "ano": "",
+      "url": "https://www.researchcatalogue.net/view/863825/863847"
+    },
+    {
+      "autor": "Marisa Flórido Cesar",
+      "titulo": "O eco da distância",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40573062/O_eco_da_dist%C3%A2ncia_Marisa_Florido_Cesar"
+    },
+    {
+      "autor": "Nani Rubin",
+      "titulo": "Os deslocamentos do som",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40573063/Os_deslocamentos_do_som_Nani_Rubin"
+    },
+    {
+      "autor": "Luisa Duarte e Marisa Flórido Cesar",
+      "titulo": "Arte e música",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40584382/Arte_e_m%C3%BAsica_Luisa_Duarte_e_Marisa_Florido_Cesar"
     }
   ],
   "textos_do_artista": [
@@ -1376,20 +1483,56 @@
     {
       "titulo": "Campos Autônomos",
       "fonte": "Poiésis, Universidade Federal Fluminense",
-      "ano": "",
+      "ano": "2018",
       "url": "https://periodicos.uff.br/poiesis/article/download/24672/14321/87216"
     },
     {
       "titulo": "On Air",
       "fonte": "Sites of Sound #2: of architecture and the ear, Errant Bodies Press, pp. 241–243",
       "ano": "2011",
-      "url": ""
+      "url": "https://www.academia.edu/40573068/Art_on_air_Published_by_Brandon_Labelle_Author_Floriano_Romano"
     },
     {
       "titulo": "Entrevista a Glória Ferreira",
       "fonte": "Cidade Sonora, catálogo, Funarte",
       "ano": "2013",
       "url": ""
+    },
+    {
+      "titulo": "Da cidade como labirinto",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40572909/Da_cidade_como_labirinto_Floriano_Romano"
+    },
+    {
+      "titulo": "O Labirinto",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40572905/O_Labirinto_Floriano_Romano"
+    },
+    {
+      "titulo": "Do caminhar",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40572910/Do_caminhar_Floriano_Romano"
+    },
+    {
+      "titulo": "Histórias Anônimas no Arquivo Nacional",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40572911/Hist%C3%B3rias_An%C3%B4nimas_no_Arquivo_Nacional_Floriano_Romano"
+    },
+    {
+      "titulo": "Cabaret Voltaire",
+      "fonte": "resenha",
+      "ano": "",
+      "url": "https://www.academia.edu/40573065/Cabaret_voltaire_resenha_por_Floriano_Romano"
+    },
+    {
+      "titulo": "Lance 36",
+      "fonte": "",
+      "ano": "",
+      "url": "https://www.academia.edu/40572907/Lance_36_final_Floriano_Romano"
     }
   ],
   "entrevistas": [
@@ -1423,5 +1566,6 @@
         "titulo": "Romano, artista indicado ao Prêmio PIPA 2010"
       }
     }
-  ]
+  ],
+  "perfil_academia": "https://ufrj.academia.edu/FlorianoRomano"
 }

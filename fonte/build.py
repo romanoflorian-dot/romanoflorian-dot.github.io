@@ -446,6 +446,7 @@ def build_textos():
   <ul class="lista-textos">{sobre}</ul>
   <h2 class="sub">Do artista</h2>
   <ul class="lista-textos">{dele}</ul>
+  <p class="dado"><a href="https://ufrj.academia.edu/FlorianoRomano" rel="noopener">Mais textos e catálogos no Academia.edu ↗</a></p>
   {entrevistas}
 </section>"""
     return page("Textos", body, active="textos.html",
