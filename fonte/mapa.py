@@ -17,7 +17,7 @@ import hashlib, json, math
 
 W, H = 1000, 560
 
-# Pontos de fuga. "E" é a própria obra Esquina (vértice interno, não se move).
+# Pontos de fuga. "E" é a própria obra Esquina (vértice interno, acompanha a obra).
 VP = {
     "A": (-520, -640),    # diagonais finas que descem para a direita (fundo)
     "B": (1270, 300),     # feixe que converge logo além da borda direita (teto)
@@ -27,36 +27,37 @@ VP = {
 }
 MOVE = {"A": 1.0, "B": 0.7, "C": 1.1, "D": 0.5, "F": 0.9, "E": 0}   # quanto cada ponto de vista se desloca
 
-# Obras no mapa: posição, nível (3 = premiadas e centrais), lado do rótulo.
+# Obras no mapa: posição, nível (3 = premiadas e centrais), lado do rótulo, profundidade z (positivo = mais perto).
+# A profundidade faz o mapa girar no espaço: as obras da frente se deslocam mais que as do fundo.
 NOS = {
     # nível 3 — prêmios e obras centrais
-    "esquina":           dict(p=(612, 196), t=3, lado="d"),
-    "sonar":             dict(p=(318, 96),  t=3, lado="d"),
-    "cidade-sonora":     dict(p=(92, 210),  t=3, lado="d"),
-    "chuveiros-sonoros": dict(p=(122, 462), t=3, lado="d"),
-    "errancia":          dict(p=(420, 352), t=3, lado="d"),
+    "esquina":           dict(p=(612, 196), t=3, lado="d", z=60),
+    "sonar":             dict(p=(318, 96),  t=3, lado="d", z=-90),
+    "cidade-sonora":     dict(p=(92, 210),  t=3, lado="d", z=-130),
+    "chuveiros-sonoros": dict(p=(122, 462), t=3, lado="d", z=110),
+    "errancia":          dict(p=(420, 352), t=3, lado="d", z=70),
     # nível 2
-    "esquinas":          dict(p=(818, 318), t=2, lado="d"),
-    "falante":           dict(p=(470, 512), t=2, lado="d"),
-    "sapatos-sonoros":   dict(p=(262, 292), t=2, lado="d"),
-    "cidade-labirinto":  dict(p=(700, 470), t=2, lado="d"),
-    "muro-de-som":       dict(p=(206, 128), t=2, lado="e"),
-    "chapeu-panoramico": dict(p=(848, 98),  t=2, lado="d"),
-    "intrasom":          dict(p=(652, 284), t=2, lado="d"),
-    "radio-lugar":       dict(p=(286, 524), t=2, lado="d"),
+    "esquinas":          dict(p=(818, 318), t=2, lado="d", z=-40),
+    "falante":           dict(p=(470, 512), t=2, lado="d", z=90),
+    "sapatos-sonoros":   dict(p=(262, 292), t=2, lado="d", z=-10),
+    "cidade-labirinto":  dict(p=(700, 470), t=2, lado="d", z=20),
+    "muro-de-som":       dict(p=(206, 128), t=2, lado="e", z=-120),
+    "chapeu-panoramico": dict(p=(848, 98),  t=2, lado="d", z=-150),
+    "intrasom":          dict(p=(652, 284), t=2, lado="e", z=30),
+    "radio-lugar":       dict(p=(286, 524), t=2, lado="d", z=60),
     # nível 1
-    "turbina":           dict(p=(726, 62),  t=1, lado="d"),
-    "mascara-sonora":    dict(p=(934, 222), t=1, lado="e"),
-    "historias-anonimas": dict(p=(492, 150), t=1, lado="e"),
-    "mar-sobre-mar":     dict(p=(566, 408), t=1, lado="d"),
-    "cruz":              dict(p=(36, 336),  t=1, lado="d"),
-    "desenhos":          dict(p=(944, 486), t=1, lado="e"),
+    "turbina":           dict(p=(726, 62),  t=1, lado="d", z=-180),
+    "mascara-sonora":    dict(p=(934, 222), t=1, lado="e", z=-60),
+    "historias-anonimas": dict(p=(492, 150), t=1, lado="e", z=-100),
+    "mar-sobre-mar":     dict(p=(566, 408), t=1, lado="d", z=0),
+    "cruz":              dict(p=(36, 336),  t=1, lado="d", z=40),
+    "desenhos":          dict(p=(944, 486), t=1, lado="e", z=-20),
 }
 
 # Celular (composição vertical, 560 × 1000): posições próprias onde a rotação simples faria rótulos colidirem.
 PV = {
     "cidade-sonora":     (104, 944, "d"),
-    "chuveiros-sonoros": (446, 848, "e"),
+    "chuveiros-sonoros": (450, 836, "e"),
     "falante":           (522, 492, "e"),
     "errancia":          (346, 586, "d"),
     "sapatos-sonoros":   (286, 744, "d"),
@@ -68,29 +69,26 @@ PV = {
 # Sistemas de linhas: cada um é um ponto de vista. Âncora = obra (nome) ou ponto livre (x, y).
 # (âncora, espessura, frações do trecho visível)
 SISTEMAS = {
-    "B": [("sonar", 1, (0, .97)), ("muro-de-som", .6, (0, .9)), ("cidade-sonora", 3.4, (0, .99)),
-          ("esquina", 2.2, (0, .98)), ((0, 252), 1.4, (0, .96)), ((0, 270), .6, (0, .99)), ("mascara-sonora", .6, (.5, 1))],
+    "B": [("sonar", 1, (0, .97)), ("cidade-sonora", 3.4, (0, .99)), ("esquina", 2.2, (0, .98)),
+          ("mascara-sonora", .6, (.5, 1))],
     "C": [("falante", 2.2, (0, .78)), ("errancia", 3.4, (0, .86)), ("sapatos-sonoros", 1, (0, 1)),
-          ("mar-sobre-mar", 1.4, (0, .7)), ("historias-anonimas", .6, (0, 1)), ((300, 0), .6, (0, .55)), ((650, 0), 1, (0, .62)), ("radio-lugar", .6, (0, .4))],
-    "A": [("chuveiros-sonoros", 1.4, (.1, 1)), ("cruz", .6, (0, 1)), ("esquinas", 1, (.2, 1)),
-          ("turbina", .6, (0, .8)), ("desenhos", .6, (.3, 1)), ("intrasom", 1, (.15, .9))],
-    "F": [("chapeu-panoramico", 1.4, (.15, 1)), ("cidade-labirinto", 2.2, (.25, 1)), ("sonar", 1, (.2, 1)),
-          ("mascara-sonora", 1, (.4, 1)), ("chuveiros-sonoros", 4.4, (0, .62)), ("radio-lugar", 1, (0, .7))],
-    "D": [("muro-de-som", .6, (0, .7)), ("turbina", 1, (0, .5)), ("desenhos", .6, (.25, 1)), ("cruz", 1, (.3, 1)),
-          ("historias-anonimas", .6, (0, .45)), ((410, 0), .6, (.4, 1)), ((880, 0), 1.4, (.1, .66)), ("intrasom", .6, (.1, .55))],
+          ("mar-sobre-mar", 1, (0, .7)), ("radio-lugar", .6, (0, .4))],
+    "A": [("chuveiros-sonoros", 1.4, (.1, 1)), ("cruz", .6, (0, 1)), ("esquinas", 1, (.2, 1)), ("intrasom", 1, (.15, .9))],
+    "F": [("chapeu-panoramico", 1.4, (.15, 1)), ("cidade-labirinto", 2.2, (.25, 1)), ("mascara-sonora", 1, (.4, 1)),
+          ("chuveiros-sonoros", 4.4, (0, .62)), ("radio-lugar", 1, (0, .7))],
+    "D": [("muro-de-som", .6, (0, .7)), ("turbina", .6, (0, .5)), ("desenhos", .6, (.25, 1)), ("cruz", .6, (.3, 1)),
+          ("historias-anonimas", .6, (0, .45)), ("intrasom", .6, (.1, .55))],
     # leque denso que nasce na Esquina e desce para a direita, como o vértice dos desenhos de fita
-    "E": [((694, 560), 3.4, (0, 1)), ((706, 560), 1, (0, 1)), ((717, 560), .6, (0, 1)), ((731, 560), 2.2, (0, 1)),
-          ((748, 560), .6, (0, 1)), ((772, 560), 1, (0, 1)), ("cidade-labirinto", 1.4, (0, 1)), ("esquinas", 1, (0, 1)),
-          ((1000, 404), .6, (0, 1))],
+    "E": [((694, 560), 3.4, (0, 1)), ((731, 560), 2.2, (0, 1)), ((772, 560), 1, (0, 1)),
+          ("cidade-labirinto", 1.4, (0, 1)), ("esquinas", 1, (0, 1))],
 }
 
 # Planos fechados que se dobram: vértices em obras; a fita passa um pouco além do vértice.
 PLANOS = [
     dict(nos=["cidade-sonora", "muro-de-som", "sonar", "sapatos-sonoros"], larg=1.4),
-    dict(nos=["sapatos-sonoros", "sonar", "errancia"], larg=0.6),
     dict(nos=["errancia", "falante", "chuveiros-sonoros"], larg=4.0),
-    dict(nos=["esquinas", "mar-sobre-mar", "cidade-labirinto"], larg=1),
-    dict(nos=["turbina", "chapeu-panoramico", "esquina"], larg=0.6),
+    dict(nos=["esquinas", "desenhos", "cidade-labirinto", "mar-sobre-mar"], larg=1),
+    dict(nos=["historias-anonimas", "turbina", "chapeu-panoramico", "esquina"], larg=0.6),
 ]
 
 FRENTE = 3.0      # a partir desta espessura a linha interrompe as que passam atrás
@@ -137,12 +135,12 @@ def geometria(pos, T):
     for sv, itens in SISTEMAS.items():
         for anc, wd, fr in itens:
             if isinstance(anc, str):
-                a, ns = pos[anc], [anc]
+                a, ns, no = pos[anc], [anc], anc
             else:
-                a, ns = T(anc), []
+                a, ns, no = T(anc), [], ""
             if sv == "E":
                 ns = ["esquina"] + ns
-            linhas.append(dict(v=sv, a=a, s=fr, w=wd, n=ns, raio=(sv == "E")))
+            linhas.append(dict(v=sv, a=a, no=no, s=fr, w=wd, n=ns, raio=(sv == "E")))
     return linhas
 
 
@@ -156,7 +154,7 @@ def arestas_planos(pos):
             L = math.hypot(dx, dy) or 1
             e1, e2 = 8 + _h(p, q) % 14, 8 + _h(q, p) % 14     # a fita passa do vértice
             ux, uy = dx / L, dy / L
-            out.append(dict(x1=p[0] - ux * e1, y1=p[1] - uy * e1, x2=q[0] + ux * e2, y2=q[1] + uy * e2,
+            out.append(dict(x1=p[0] - ux * e1, y1=p[1] - uy * e1, x2=q[0] + ux * e2, y2=q[1] + uy * e2, e=(e1, e2),
                             w=pl["larg"], n=[pl["nos"][i], pl["nos"][(i + 1) % len(pts)]]))
     return out
 
@@ -187,11 +185,11 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
         if not seg:
             continue
         extra = (f' data-v="{ln["v"]}" data-a="{a[0]:.1f},{a[1]:.1f}" data-s="{ln["s"][0]},{ln["s"][1]}"'
-                 + (' data-r="1"' if ln.get("raio") else ""))
+                 + (f' data-no="{ln["no"]}"' if ln["no"] else "") + (' data-r="1"' if ln.get("raio") else ""))
         emite(*seg, ln["w"], ln["n"], extra)
     for ar in arestas_planos(pos):
         p1, p2 = (ar["x1"], ar["y1"]), (ar["x2"], ar["y2"])
-        emite(p1[0], p1[1], p2[0], p2[1], ar["w"], ar["n"], ' data-plano="1"')
+        emite(p1[0], p1[1], p2[0], p2[1], ar["w"], ar["n"], f' data-plano="{ar["n"][0]} {ar["n"][1]}" data-e="{ar["e"][0]},{ar["e"][1]}"')
 
     nos = []
     for k, nd in NOS.items():
@@ -220,6 +218,7 @@ def svg(c, by_id, esc, ano_fn, ano_en, vertical=False):
             txt += f'<text class="m-premio" x="{x + dx:.1f}" y="{ny + (29 if t == 3 else 25):.1f}" text-anchor="{anchor}">{esc(premio)}</text>'
         nos.append(
             f'<a class="m-no t{t}{" premiada" if premio else ""}" href="obras/{k}.html" data-id="{k}" data-ano="{o["ano_num"]}" '
+            f'data-x="{x:.1f}" data-y="{y:.1f}" data-z="{nd["z"]}" '
             f'aria-label="{esc(o["titulo"])}, {esc(ano_fn(o, c.lang))}{", " + esc(premio) if premio else ""}">'
             f'<circle class="m-alvo" cx="{x:.1f}" cy="{y:.1f}" r="22"/>{circ}{txt}</a>')
     move = json.dumps({k: MOVE.get(k, 0) for k in vps})

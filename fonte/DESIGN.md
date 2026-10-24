@@ -74,7 +74,8 @@ O mapa usa os recursos de troca de plano dos desenhos do artista (fita isolante,
 - **Espessura por plano**: `0.6–1` fundo · `1.4–2.2` meio · `≥ 3` frente. A linha da frente interrompe a de trás (contorno cor de papel).
 - **Planos dobrados**: triângulos e quadriláteros com vértices nas obras; as arestas passam do vértice.
 - **Linhas que começam ou terminam dentro do quadro** (frações do trecho visível).
-- **Movimento**: o cursor desloca os pontos de fuga e as linhas giram em torno das obras; as obras não se movem. Sem cursor, deriva lenta. Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Giro**: cada obra tem profundidade (`z` em `mapa.py`). O cursor gira o plano em três eixos, com perspectiva: as obras da frente se deslocam mais, os planos se deformam, o leque acompanha a Esquina; ao mesmo tempo os pontos de fuga se deslocam e as linhas giram em torno das obras. Sem cursor, giro lento automático (mais contido no celular). Parado sobre uma obra. Sem movimento com `prefers-reduced-motion`.
+- **Densidade**: cerca de 45 linhas (26 finas, 11 médias, 7 grossas); não acrescentar linhas finas ou médias sem retirar outras.
 - **Hierarquia**: nível 3 (disco vermelho grande) = obras premiadas e centrais (Esquina, Sonar, A Cidade Sonora, Chuveiros Sonoros, Errância); nível 2 = disco vermelho menor; nível 1 = círculo vazado em tinta. Obra premiada recebe anel vermelho e o nome do prêmio sob o ano.
 - **Celular**: composição girada (560 × 1000), com posições próprias em `PV` onde os rótulos colidiriam.
 
