@@ -796,6 +796,38 @@
         "freq": 2006.0
       },
       "pendente": "ficha técnica e texto"
+    },
+    {
+      "id": "radio-lugar",
+      "titulo": "Rádio Lugar",
+      "ano": "2010",
+      "ano_num": 2010,
+      "tipo": "intervenção urbana",
+      "materiais": "MP3 players e alto-falantes costurados sobre sapatos comuns",
+      "dimensoes": "Dimensões variáveis",
+      "local": "Barca Rio–Niterói e Praça XV, Rio de Janeiro — Projeto EME>> Conexão Artes Visuais, Funarte",
+      "texto": [
+        "Sapatos com alto-falantes e MP3 players costurados são usados por bailarinos durante a travessia da barca entre o Rio e Niterói. Sutilmente, eles envolvem os passageiros e transformam o percurso numa apresentação que termina na chegada."
+      ],
+      "imagens": [
+        {
+          "src": "media/obras/radio-lugar/radio-lugar-01.jpg",
+          "alt": "Sapatos com MP3 player e alto-falante costurados",
+          "credito": "Rádio Lugar, 2010 · frame do vídeo"
+        },
+        {
+          "src": "media/obras/radio-lugar/radio-lugar-02.jpg",
+          "alt": "Sapatos com MP3 player e alto-falante costurados",
+          "credito": "Rádio Lugar, 2010 · frame do vídeo"
+        }
+      ],
+      "video": [
+        {
+          "plataforma": "youtube",
+          "id": "J3_n6gCZ9Fs",
+          "titulo": "Rádio Lugar — sapatos sonoros na barca"
+        }
+      ]
     }
   ],
   "mapa_pares": [
