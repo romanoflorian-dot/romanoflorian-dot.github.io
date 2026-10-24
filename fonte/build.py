@@ -488,7 +488,8 @@ def build_sobre():
         <li>Centro Provincial de Diseño y Oficios, Havana — mochila de Falante</li>
       </ul>
       <h2 class="sub">Vídeos</h2>
-      <p><a href="https://www.youtube.com/@openradio" rel="noopener">Canal no YouTube — @openradio</a></p>
+      <p><a href="https://www.youtube.com/@openradio" rel="noopener">Canal no YouTube — @openradio</a><br>
+      <a href="https://vimeo.com/user12897613" rel="noopener">Vimeo</a></p>
       <h2 class="sub">Contato</h2>
       <p class="dado" data-contato>e-mail a definir</p>
     </div>
