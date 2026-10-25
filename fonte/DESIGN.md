@@ -73,7 +73,7 @@ Margem lateral: 16px no celular, 64px a partir de 900px, 140px a partir de 1400p
 - **Obras**: cada uma ocupa um cruzamento real do desenho, escolhido à mão para a leitura dos nomes (`NOS` para o computador, `PV` para o celular, em `mapa.py`).
 - **Rótulos**: só nome e ano, todos no mesmo tamanho: 15 px (nível 1: 12,5 px); celular 17 / 15 no quadro de 560.
 - **Hierarquia**: pontos pequenos e sutis — nível 3 raio 5, nível 2 raio 4 (vermelhos), nível 1 raio 3,2 (vazado); obra premiada recebe um anel vermelho fino.
-- **Movimento**: leve e bidimensional, sem giro — o plano se inclina um pouco em perspectiva conforme o cursor; sem cursor, deriva lenta. O artista experimentou o giro de 360° e preferiu sem giro.
+- **Movimento**: nenhum. O desenho fica parado, bidimensional, a pedido do artista; só o destaque das linhas ao passar sobre uma obra permanece.
 - **Ajuste do artista**: entre Errância e Esquina a linha da direita do feixe some e volta depois da linha que cruza, encostando na Esquina.
 
 ## 5. Componentes

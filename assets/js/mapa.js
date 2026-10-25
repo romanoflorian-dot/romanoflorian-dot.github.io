@@ -1,7 +1,5 @@
 /* Mapa Esquina — sobre o desenho Esquina VI.
-   Movimento leve e bidimensional: o plano do desenho se inclina um pouco em perspectiva conforme o cursor
-   (transformação projetiva: as linhas continuam retas e os vértices unidos, as obras ficam nos cruzamentos).
-   Sem cursor, deriva devagar. Sobre uma obra, tudo para.
+   Desenho parado, sem movimento.
    Ao passar sobre um cruzamento, as linhas que o atravessam ficam em evidência e um som escapa. */
 document.addEventListener("DOMContentLoaded", function () {
   var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -69,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
       no.addEventListener("blur", soltar);
     });
 
-    if (reduz) return;
+    /* sem movimento: o desenho fica parado, bidimensional (a pedido do artista) */
+    return;
 
     var alvo = [0, 0], atual = [0, 0], ultimoCursor = -1e9, visivel = true, inicio = performance.now();
     var area = svg.closest(".inicio") || svg;
